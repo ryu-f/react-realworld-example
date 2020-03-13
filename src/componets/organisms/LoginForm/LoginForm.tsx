@@ -3,18 +3,25 @@ import * as React from 'react'
 import { BasicButton } from '@/componets/atoms/Button'
 import { InputText } from '@/componets/atoms/InputText'
 import styled from 'styled-components'
+import { useForm } from 'react-hook-form'
 
 type Props = {
-  onSubmit: (e: React.FormEvent) => void
+  onSubmit: (data: FormData) => void
+}
+
+type FormData = {
+  email: string
+  password: string
 }
 
 export const LoginForm: React.FC<Props> = props => {
   const { onSubmit } = props
+  const { register, handleSubmit } = useForm<FormData>()
 
   return (
-    <Form onSubmit={onSubmit}>
-      <MailInputText type="email" />
-      <PasswordInputText type="password" />
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <MailInputText type="email" name="email" placeholder="email" ref={register} />
+      <PasswordInputText type="password" name="password" placeholder="password" ref={register} />
       <BasicButton size="BASE" textcolor="BLACK" type="submit">
         Submit
       </BasicButton>

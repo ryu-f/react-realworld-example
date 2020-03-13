@@ -10,9 +10,8 @@ export default {
 
 export const basic = () => (
   <LoginForm
-    onSubmit={e => {
-      e.preventDefault()
-      action('form submitted')(e)
+    onSubmit={() => {
+      action('form submitted')
     }}
   />
 )
