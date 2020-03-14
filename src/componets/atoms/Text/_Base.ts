@@ -1,13 +1,20 @@
-import { COLOR, FONT_SIZE } from '@/styles/Constants'
+import { media, vw } from '@/styles/Mixin'
 
+import { COLOR } from '@/styles/Constants'
 import styled from 'styled-components'
 
 export type BaseProps = {
-  size: 'BASE' | 'SMALL' | 'LARGE'
+  size: number
   textcolor: 'BLACK' | 'WHITE' | 'GLAY'
 }
 
 export const BaseStyle = styled.p<BaseProps>`
-  font-size: ${({ size }) => FONT_SIZE[size]}px;
   color: ${({ textcolor }) => COLOR[textcolor]};
+
+  @media (${media.desktop}) {
+    font-size: ${({ size }) => size}px;
+  }
+  @media (${media.mobile}) {
+    font-size: ${({ size }) => vw(size * 2)};
+  }
 `

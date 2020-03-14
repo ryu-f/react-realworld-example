@@ -8,7 +8,7 @@ export default {
 }
 
 export const basic = () => (
-  <BasicText size={'BASE'} textcolor={'BLACK'}>
+  <BasicText size={16} textcolor={'BLACK'}>
     test
   </BasicText>
 )

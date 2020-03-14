@@ -4,7 +4,7 @@ import { BasicText } from './'
 import { render } from '@testing-library/react'
 
 describe('Text', () => {
-  const size = 'BASE'
+  const size = 16
   const textcolor = 'BLACK'
 
   test('チルドレンに渡されたテキストが表示されているか', () => {

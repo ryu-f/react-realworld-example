@@ -9,7 +9,7 @@ export const User: React.FC = () => {
 
   return (
     <PageWrapper>
-      <BasicText size="BASE" textcolor="BLACK">
+      <BasicText size={16} textcolor="BLACK">
         by {name}
       </BasicText>
     </PageWrapper>

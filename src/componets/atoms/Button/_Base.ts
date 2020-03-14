@@ -1,4 +1,5 @@
-import { COLOR, FONT_SIZE } from '@/styles/Constants'
+import { BUTTON_FONT_SIZE, COLOR } from '@/styles/Constants'
+import { media, vw } from '@/styles/Mixin'
 
 import styled from 'styled-components'
 
@@ -10,6 +11,12 @@ export type BaseProps = {
 }
 
 export const BaseStyle = styled.button<BaseProps>`
-  font-size: ${({ size }) => FONT_SIZE[size]}px;
   color: ${({ textcolor }) => COLOR[textcolor]};
+
+  @media (${media.desktop}) {
+    font-size: ${({ size }) => BUTTON_FONT_SIZE[size]}px;
+  }
+  @media (${media.mobile}) {
+    font-size: ${({ size }) => vw(BUTTON_FONT_SIZE[size] * 2)};
+  }
 `
