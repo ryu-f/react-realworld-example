@@ -55,7 +55,7 @@ export const users = {
   /**
    * Gets the currently logged-in user
    */
-  get: () => API.request('/users', { method: 'GET' }),
+  get: () => API.request<UserResponse | Error>('/user', { method: 'GET' }),
 
   /**
    * Updated user information for current user
