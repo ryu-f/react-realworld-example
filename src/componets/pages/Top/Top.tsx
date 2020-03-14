@@ -11,5 +11,4 @@ export const Top: React.FC = () => (
 
 const PageWrapper = styled.div`
   width: 100%;
-  padding: 80px 40px;
 `

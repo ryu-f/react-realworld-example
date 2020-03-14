@@ -7,7 +7,7 @@ describe('Text', () => {
   const size = 'BASE'
   const textcolor = 'BLACK'
 
-  test('renders children when passed', () => {
+  test('チルドレンに渡されたテキストが表示されているか', () => {
     const { getByText } = render(
       <BasicText size={size} textcolor={textcolor}>
         Test
