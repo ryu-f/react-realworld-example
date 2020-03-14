@@ -1,8 +1,7 @@
-import * as React from 'react'
+import React, { useCallback } from 'react'
 
 import { LoginForm } from '@/componets/organisms/LoginForm'
-
-// import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 type FormData = {
   email: string
@@ -10,12 +9,15 @@ type FormData = {
 }
 
 export const LoginFormContainer: React.FC = () => {
-  // const dispatch = useDispatch()
-  const onSubmit = (data: FormData) => {
-    const { email, password } = data
-    console.log(email)
-    console.log(password)
-  }
+  const dispatch = useDispatch()
+  const onSubmit = useCallback(
+    (data: FormData) => {
+      const { email, password } = data
+      console.log(email)
+      console.log(password)
+    },
+    [dispatch]
+  )
 
   return (
     <>
