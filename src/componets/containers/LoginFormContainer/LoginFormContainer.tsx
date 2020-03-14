@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react'
+import * as React from 'react'
 
 import { LoginForm } from '@/componets/organisms/LoginForm'
-import { useDispatch } from 'react-redux'
+import { userOperations } from '@/store/user'
 
 type FormData = {
   email: string
@@ -9,15 +9,11 @@ type FormData = {
 }
 
 export const LoginFormContainer: React.FC = () => {
-  const dispatch = useDispatch()
-  const onSubmit = useCallback(
-    (data: FormData) => {
-      const { email, password } = data
-      console.log(email)
-      console.log(password)
-    },
-    [dispatch]
-  )
+  const { loginAsync } = userOperations.useLogin()
+  const onSubmit = (data: FormData) => {
+    const { email, password } = data
+    loginAsync({ email, password })
+  }
 
   return (
     <>

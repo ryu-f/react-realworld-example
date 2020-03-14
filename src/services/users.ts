@@ -1,3 +1,5 @@
+import { Error, UserResponse } from '@/types/domain'
+
 import { API } from './API'
 
 type LoginRequest = {
@@ -33,7 +35,7 @@ export const users = {
         password: payload.password
       }
     })
-    return API.request('/users/login', { method: 'POST', body })
+    return API.request<UserResponse | Error>('/users/login', { method: 'POST', body })
   },
 
   /**

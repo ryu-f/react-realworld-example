@@ -1,3 +1,9 @@
+export type Error = {
+  errors: {
+    [key: string]: Array<string>
+  }
+}
+
 export type Article = {
   slug: string
   title: string
