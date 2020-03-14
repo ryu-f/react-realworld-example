@@ -11,7 +11,7 @@ export const BUTTON_FONT_SIZE = {
  * Text color
  */
 export const COLOR = {
-  BLACK: 'rgb(131, 131, 131)',
+  BLACK: 'rgb(13, 13, 13)',
   WHITE: 'rgb(255, 255, 255)',
   GLAY: 'rgba(0,0,0,0.54)'
 }

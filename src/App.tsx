@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+import { Footer } from '@/componets/organisms/Footer'
 import { GlobalStyle } from './styles'
 import { HeaderContainer } from '@/componets/containers/HeaderContainer'
 import { Routes } from './Routes'
@@ -21,6 +22,7 @@ export const App: React.FC = () => {
       <Main>
         <Routes />
       </Main>
+      <Footer />
     </>
   )
 }

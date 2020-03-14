@@ -7,16 +7,16 @@ export type State = {
   email: string
   token: null | string
   username: string
-  bio: string
-  image: string
+  bio: null | string
+  image: null | string
 }
 
 const initialState: State = {
   email: '',
   token: null,
   username: '',
-  bio: '',
-  image: ''
+  bio: null,
+  image: null
 }
 
 type Actions = CreatorToActions<typeof creators>
