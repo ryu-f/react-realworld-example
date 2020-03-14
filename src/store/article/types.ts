@@ -1,3 +1,4 @@
 export const types = {
-  GET_ALL_ARTICLE_DATA: 'GET_ALL_ARTICLE_DATA'
+  GET_ARTICLE: 'GET_ARTICLE',
+  GET_TAGS: 'GET_TAGS'
 } as const

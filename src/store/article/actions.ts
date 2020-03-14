@@ -1,9 +1,16 @@
 import { State } from './reducer'
 import { types } from './types'
 
-type GetAllArticleDataPayload = Pick<State, 'articles' | 'tags'>
+type GetArticlesPayload = Pick<State, 'articles' | 'count'>
 
-export const getAllArticleData = (payload: GetAllArticleDataPayload) => ({
-  type: types.GET_ALL_ARTICLE_DATA,
+export const getArticle = (payload: GetArticlesPayload) => ({
+  type: types.GET_ARTICLE,
+  payload
+})
+
+type GetTagsPayload = Pick<State, 'tags'>
+
+export const getTags = (payload: GetTagsPayload) => ({
+  type: types.GET_TAGS,
   payload
 })

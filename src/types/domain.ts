@@ -4,6 +4,11 @@ export type Error = {
   }
 }
 
+export type RequestNumber = {
+  limit: number
+  offset: number
+}
+
 export type Article = {
   slug: string
   title: string
