@@ -10,13 +10,17 @@ export type State = {
   count: number
   tags: TagsResponse['tags']
   selectedTag: string
+  limit: number
+  offset: number
 }
 
 const initialState: State = {
   articles: [],
   count: 0,
   tags: [],
-  selectedTag: ''
+  selectedTag: '',
+  limit: 10,
+  offset: 0
 }
 
 type Actions = CreatorToActions<typeof creators>

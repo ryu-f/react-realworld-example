@@ -15,7 +15,7 @@ export const Routes: React.FC = () => {
 
   return (
     <TransitionGroup>
-      <CSSTransition key={location.key} classNames="routing-animation" timeout={500}>
+      <CSSTransition key={location.key} classNames="routing-transition" timeout={500}>
         <Switch>
           <Route path="/" component={Top} exact />
           <Route path="/login" component={LoginRoute} exact />

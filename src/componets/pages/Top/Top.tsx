@@ -15,6 +15,7 @@ export const Top: React.FC = () => {
   return (
     <PageWrapper>
       <Content>
+        <LayoutArticle></LayoutArticle>
         <LayoutTagList>
           <TagListContainer />
         </LayoutTagList>
@@ -37,6 +38,13 @@ const Content = styled.div`
     justify-content: space-between;
     max-width: 1000px;
     margin: 0 auto;
+  }
+`
+
+const LayoutArticle = styled.div`
+  width: 100%;
+  @media (${media.desktop}) {
+    max-width: 750px;
   }
 `
 
