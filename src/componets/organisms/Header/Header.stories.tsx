@@ -7,6 +7,6 @@ export default {
   component: Header
 }
 
-export const LoggedIn = () => <Header loggedIn={true} />
+export const LoggedIn = () => <Header loggedIn={true} name="loggedIn user" />
 
-export const NotLoggedIn = () => <Header loggedIn={false} />
+export const Logout = () => <Header loggedIn={false} name="logout user" />

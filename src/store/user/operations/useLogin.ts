@@ -5,6 +5,7 @@ import { useCallback, useState } from 'react'
 import { API } from '@/services/API'
 import { isError } from '@/services/isError'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { users } from '@/services/users'
 
 type LoginAsyncPayload = {
@@ -16,6 +17,7 @@ export const useLogin = () => {
   const [isLoading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const loginAsync = useCallback(
     async (input: LoginAsyncPayload) => {
@@ -33,6 +35,7 @@ export const useLogin = () => {
       localStorage.setItem('jwt', token)
       API.setToken(token)
       dispatch(actions.login(response.user))
+      history.push('/')
     },
     [dispatch]
   )

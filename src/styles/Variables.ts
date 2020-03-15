@@ -6,7 +6,9 @@ const THEME_COLOR = {
   SKY_BLUE: '#7ebcf2',
   HORIZON_BLUE: '#5ed7f2',
   NILE_GREEN: '#05f2db',
-  PEER_AQUA: '#7ef2e7'
+  PEER_AQUA: '#7ef2e7',
+  GRADIENT:
+    'linear-gradient(178.25617065509755deg, rgba(126, 188, 242,1) 2.151162790697675%,rgba(126, 188, 241,1) 2.151162790697675%,rgba(126, 242, 231,1) 92.4260042283298%)'
 }
 
 /**
@@ -15,6 +17,7 @@ const THEME_COLOR = {
 const BASE_COLOR = {
   WHIET: '#fff',
   SILVER: '#ccc',
+  GLAY: '#818a91',
   ALPHA_GLAY: 'rgba(0,0,0,0.54)'
 }
 
@@ -32,8 +35,10 @@ export const COLOR = {
  */
 export const BACKGROUND_COLOR = {
   WHITE: BASE_COLOR.WHIET,
+  GLAY: BASE_COLOR.GLAY,
   SKY_BLUE: THEME_COLOR.SKY_BLUE,
-  HORIZON_BLUE: THEME_COLOR.HORIZON_BLUE
+  HORIZON_BLUE: THEME_COLOR.HORIZON_BLUE,
+  GRADIENT: THEME_COLOR.GRADIENT
 }
 
 /**
@@ -51,13 +56,4 @@ export const BORDER_COLOR = {
 export const BREAK_POINT = {
   MOBILE: 750,
   TABLET: 1024
-}
-
-/**
- * font-size
- */
-export const BUTTON_FONT_SIZE = {
-  BASE: 16,
-  SMALL: 14,
-  LARGE: 18
 }

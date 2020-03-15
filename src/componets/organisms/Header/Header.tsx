@@ -8,17 +8,19 @@ import styled from 'styled-components'
 
 type Props = {
   loggedIn: boolean
+  name: string
 }
 
 export const Header: React.FC<Props> = props => {
-  const { loggedIn } = props
+  const { loggedIn, name } = props
 
   const NavigationContent: React.FC = () =>
     loggedIn ? (
       <nav>
         <NavigationList>
-          <NavigationItem to="/setting">Setting</NavigationItem>
-          <NavigationItem to="/profile">Profile</NavigationItem>
+          <NavigationItem to="/editor">New Post</NavigationItem>
+          <NavigationItem to="/setting">Settings</NavigationItem>
+          <NavigationItem to={`/user/${name}`}>{name}</NavigationItem>
         </NavigationList>
       </nav>
     ) : (
@@ -31,7 +33,7 @@ export const Header: React.FC<Props> = props => {
     )
 
   return (
-    <HeaderWrapper>
+    <Wrapper>
       <h1>
         <HeadingLink to="/">
           <LogoImage src="/img/logo/logo.png" />
@@ -41,11 +43,11 @@ export const Header: React.FC<Props> = props => {
         </HeadingLink>
       </h1>
       <NavigationContent />
-    </HeaderWrapper>
+    </Wrapper>
   )
 }
 
-const HeaderWrapper = styled.header`
+const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;

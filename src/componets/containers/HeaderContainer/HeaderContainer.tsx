@@ -1,14 +1,17 @@
 import * as React from 'react'
 
 import { Header } from '@/componets/organisms/Header'
+import { RootState } from '@/store/rootReducer'
+import { useSelector } from 'react-redux'
 import { userSelectors } from '@/store/user'
 
 export const HeaderContainer: React.FC = () => {
+  const { username } = useSelector((state: RootState) => state.user)
   const { loggedIn } = userSelectors.useLoggedIn()
 
   return (
     <>
-      <Header loggedIn={loggedIn} />
+      <Header loggedIn={loggedIn} name={username} />
     </>
   )
 }

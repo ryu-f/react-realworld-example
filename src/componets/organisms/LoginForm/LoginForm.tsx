@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicButton } from '@/componets/atoms/Button'
 import { BasicText } from '@/componets/atoms/Text'
 import { InputText } from '@/componets/atoms/InputText'
@@ -48,6 +49,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: ${BACKGROUND_COLOR.WHITE};
 
   @media (${media.desktop}) {
     max-width: 448px;
