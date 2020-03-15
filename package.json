@@ -15,7 +15,7 @@
     "unit:watch": "jest --watch",
     "e2e": "jest --config=jest.e2e.config.js",
     "e2e:watch": "cross-env HEADLESS=false jest --config=jest.e2e.config.js",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./src/static",
     "storybook:build": "build-storybook",
     "copy:static": "cpx \"./src/static/**/*\" \"./dist\"",
     "del:dist": "rimraf \"./dist\"",

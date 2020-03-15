@@ -8,4 +8,4 @@ export default {
   component: InputText
 }
 
-export const basic = () => <InputText onInput={action('onInput')} />
+export const Basic = () => <InputText onInput={action('onInput')} />

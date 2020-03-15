@@ -8,7 +8,7 @@ export default {
   component: LoginForm
 }
 
-export const basic = () => (
+export const Basic = () => (
   <LoginForm
     onSubmit={() => {
       action('form submitted')

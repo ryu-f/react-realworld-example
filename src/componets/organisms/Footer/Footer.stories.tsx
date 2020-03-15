@@ -7,4 +7,4 @@ export default {
   component: Text
 }
 
-export const basic = () => <Footer />
+export const Basic = () => <Footer />
