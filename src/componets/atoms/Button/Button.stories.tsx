@@ -12,13 +12,13 @@ export default {
 }
 
 export const Basic = () => (
-  <BasicButton onClick={action('onClick')} size={'BASE'} textcolor={'BLACK'}>
+  <BasicButton onClick={action('onClick')} size="BASE" layout="BASIC">
     {text('Label', 'Basic')}
   </BasicButton>
 )
 
 export const Anchor = () => (
-  <AnchorButton href="#" onClick={action('onClick')} size={'BASE'} textcolor={'BLACK'}>
+  <AnchorButton href="#" onClick={action('onClick')} size="BASE" layout="BASIC">
     {text('Label', 'Anchor')}
   </AnchorButton>
 )

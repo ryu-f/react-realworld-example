@@ -12,10 +12,10 @@ export interface LinkButtonProps extends BaseProps, LinkProps {
 // jsx
 ////////////////////////////////////////////////////////////
 export const LinkButton: React.FC<LinkButtonProps> = props => {
-  const { to, size, textcolor, children } = props
+  const { to, size, layout, children } = props
 
   return (
-    <LinkView to={to} size={size} textcolor={textcolor} {...props}>
+    <LinkView to={to} size={size} layout={layout} {...props}>
       {children}
     </LinkView>
   )

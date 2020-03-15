@@ -1,4 +1,4 @@
-import { BREAK_POINT } from './Constants'
+import { BREAK_POINT } from './Variables'
 
 export const vw = (size: number) => {
   const rate = 100 / BREAK_POINT.MOBILE

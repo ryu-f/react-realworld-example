@@ -12,5 +12,7 @@ export const Login: React.FC = () => {
 }
 
 const PageWrapper = styled.div`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

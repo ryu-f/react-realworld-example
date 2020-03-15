@@ -32,12 +32,14 @@ export const Header: React.FC<Props> = props => {
 
   return (
     <HeaderWrapper>
-      <Heading>
-        <LogoImage src="/img/logo/logo.png" />
-        <BasicText size={18} textcolor="BLACK">
-          React Real World
-        </BasicText>
-      </Heading>
+      <h1>
+        <HeadingLink to="/">
+          <LogoImage src="/img/logo/logo.png" />
+          <BasicText size={18} textcolor="BLACK">
+            React Real World
+          </BasicText>
+        </HeadingLink>
+      </h1>
       <NavigationContent />
     </HeaderWrapper>
   )
@@ -55,7 +57,7 @@ const HeaderWrapper = styled.header`
   }
 `
 
-const Heading = styled.h1`
+const HeadingLink = styled(Link)`
   display: flex;
   align-items: center;
 `

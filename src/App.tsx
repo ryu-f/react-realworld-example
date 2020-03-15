@@ -18,13 +18,25 @@ export const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <HeaderContainer />
       <Main>
+        <HeaderContainer />
         <Routes />
+        <LayoutFooter>
+          <Footer />
+        </LayoutFooter>
       </Main>
-      <Footer />
     </>
   )
 }
 
-const Main = styled.main``
+const Main = styled.main`
+  position: relative;
+  min-height: 100vh;
+`
+
+const LayoutFooter = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+`
