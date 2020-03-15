@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+import { ArticleListContainer } from '@/componets/containers/ArticleListContainer'
 import { TagListContainer } from '@/componets/containers/TagListContainer'
 import { articleOperations } from '@/store/article'
 import { media } from '@/styles/Mixin'
@@ -15,7 +16,9 @@ export const Top: React.FC = () => {
   return (
     <PageWrapper>
       <Content>
-        <LayoutArticle></LayoutArticle>
+        <LayoutArticle>
+          <ArticleListContainer />
+        </LayoutArticle>
         <LayoutTagList>
           <TagListContainer />
         </LayoutTagList>

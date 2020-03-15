@@ -29,16 +29,16 @@ export const LoginForm: React.FC<Props> = props => {
         name="email"
         id="email"
         placeholder="Email address"
-        ref={register}
+        ref={register({ required: true })}
       />
       <PasswordInputText
         type="password"
         name="password"
         id="password"
         placeholder="Password"
-        ref={register}
+        ref={register({ required: true, min: 6, max: 99 })}
       />
-      <BasicButton size="BASE" type="submit">
+      <BasicButton size="LARGE" type="submit">
         Sign In
       </BasicButton>
     </Form>
@@ -50,6 +50,7 @@ const Form = styled.form`
   flex-direction: column;
   width: 100%;
   background-color: ${BACKGROUND_COLOR.WHITE};
+  border-radius: 5px;
 
   @media (${media.desktop}) {
     max-width: 448px;
@@ -59,9 +60,13 @@ const Form = styled.form`
 `
 
 const MailInputText = styled(InputText)`
-  margin-top: 10px;
+  @media (${media.desktop}) {
+    margin-top: 20px;
+  }
 `
 
 const PasswordInputText = styled(InputText)`
-  margin-top: 10px;
+  @media (${media.desktop}) {
+    margin-top: 30px;
+  }
 `

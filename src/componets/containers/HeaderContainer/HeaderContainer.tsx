@@ -9,9 +9,5 @@ export const HeaderContainer: React.FC = () => {
   const { username } = useSelector((state: RootState) => state.user)
   const { loggedIn } = userSelectors.useLoggedIn()
 
-  return (
-    <>
-      <Header loggedIn={loggedIn} name={username} />
-    </>
-  )
+  return <Header loggedIn={loggedIn} name={username} />
 }

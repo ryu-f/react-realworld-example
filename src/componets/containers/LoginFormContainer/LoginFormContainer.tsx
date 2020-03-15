@@ -15,9 +15,5 @@ export const LoginFormContainer: React.FC = () => {
     loginAsync({ email, password })
   }
 
-  return (
-    <>
-      <LoginForm onSubmit={onSubmit} />
-    </>
-  )
+  return <LoginForm onSubmit={onSubmit} />
 }
