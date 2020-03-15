@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 
-import { LoginFormContainer } from '@/componets/containers/LoginFormContainer'
 import { articleOperations } from '@/store/article'
 import styled from 'styled-components'
 
@@ -11,11 +10,7 @@ export const Top: React.FC = () => {
     initialDataAsync()
   }, [])
 
-  return (
-    <PageWrapper>
-      <LoginFormContainer />
-    </PageWrapper>
-  )
+  return <PageWrapper></PageWrapper>
 }
 
 const PageWrapper = styled.div`

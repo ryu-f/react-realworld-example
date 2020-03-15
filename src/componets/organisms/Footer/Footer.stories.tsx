@@ -4,7 +4,7 @@ import { Footer } from './'
 
 export default {
   title: 'organisms|Footer',
-  component: Text
+  component: Footer
 }
 
 export const Basic = () => <Footer />

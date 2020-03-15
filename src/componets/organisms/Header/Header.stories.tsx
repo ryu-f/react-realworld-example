@@ -4,7 +4,9 @@ import { Header } from './'
 
 export default {
   title: 'organisms|Header',
-  component: Text
+  component: Header
 }
 
-export const Basic = () => <Header />
+export const LoggedIn = () => <Header loggedIn={true} />
+
+export const NotLoggedIn = () => <Header loggedIn={false} />

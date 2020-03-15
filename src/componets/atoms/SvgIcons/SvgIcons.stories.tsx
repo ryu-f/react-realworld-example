@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 export default {
   title: 'atoms|SvgIcons',
-  component: Text,
+  component: SvgIcons,
   decorators: [withKnobs]
 }
 

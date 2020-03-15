@@ -2,17 +2,16 @@ import * as React from 'react'
 
 import { Redirect, Route } from 'react-router-dom'
 
-import { RootState } from '@/store/rootReducer'
-import { useSelector } from 'react-redux'
+import { userSelectors } from '@/store/user'
 
 export const UnregistedRoute: React.FC = ({ children, ...rest }) => {
-  const { token } = useSelector((state: RootState) => state.user)
+  const { loggedIn } = userSelectors.useLoggedIn()
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        !token ? (
+        !loggedIn ? (
           children
         ) : (
           <Redirect

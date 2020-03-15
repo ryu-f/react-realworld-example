@@ -1,9 +1,14 @@
 import * as React from 'react'
 
+import { LoginFormContainer } from '@/componets/containers/LoginFormContainer'
 import styled from 'styled-components'
 
 export const Login: React.FC = () => {
-  return <PageWrapper></PageWrapper>
+  return (
+    <PageWrapper>
+      <LoginFormContainer />
+    </PageWrapper>
+  )
 }
 
 const PageWrapper = styled.div`
