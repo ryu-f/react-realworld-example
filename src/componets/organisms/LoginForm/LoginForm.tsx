@@ -3,6 +3,7 @@ import * as React from 'react'
 import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicButton } from '@/componets/atoms/Button'
 import { BasicText } from '@/componets/atoms/Text'
+import { CheckBox } from '@/componets/atoms/CheckBox'
 import { InputText } from '@/componets/atoms/InputText'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
@@ -38,6 +39,9 @@ export const LoginForm: React.FC<Props> = props => {
         placeholder="Password"
         ref={register({ required: true, min: 6, max: 99 })}
       />
+      <LayoutCheckBox>
+        <CheckBox name="remember" id="remember" ref={register} />
+      </LayoutCheckBox>
       <BasicButton size="LARGE" type="submit">
         Sign In
       </BasicButton>
@@ -68,5 +72,11 @@ const MailInputText = styled(InputText)`
 const PasswordInputText = styled(InputText)`
   @media (${media.desktop}) {
     margin-top: 30px;
+  }
+`
+
+const LayoutCheckBox = styled.div`
+  @media (${media.desktop}) {
+    margin-top: 20px;
   }
 `
