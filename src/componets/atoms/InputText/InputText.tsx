@@ -13,6 +13,7 @@ export const InputText = forwardRef<HTMLInputElement, Props>((props, ref) => {
 })
 
 const View = styled.input`
+  width: 100%;
   background-color: ${BACKGROUND_COLOR.WHITE};
   border: 1px solid ${BORDER_COLOR.SILVER};
   border-radius: 5px;

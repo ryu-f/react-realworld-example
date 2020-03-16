@@ -5,6 +5,7 @@ import { BasicText, LinkText } from '@/componets/atoms/Text'
 
 import { Article as ArticleType } from '@/types/domain'
 import { Image } from '@/componets/atoms/Image'
+import { LayoutMargin } from '@/componets/templates/LayoutMargin'
 import { Link } from 'react-router-dom'
 import { LinkButton } from '@/componets/atoms/Button'
 import { Tag } from '@/componets/atoms/Tag'
@@ -46,7 +47,7 @@ export const Article: React.FC<Props> = props => {
         <ImageWrapper to={`/user/${author.username}`}>
           <Image src={author.image} loading="lazy" />
         </ImageWrapper>
-        <Detail>
+        <LayoutMargin left={15}>
           <TitleText size={20} weight="bold">
             {title}
           </TitleText>
@@ -55,10 +56,12 @@ export const Article: React.FC<Props> = props => {
           <UserText to={`/user/${author.username}`} size={16} textcolor="DARK_GLAY">
             {author.username}
           </UserText>
-        </Detail>
+        </LayoutMargin>
       </Primary>
       <Secondary>
-        <DescriptionText size={14}>{`${readingTime} min read`}</DescriptionText>
+        <LayoutMargin top={10}>
+          <DescriptionText size={14}>{`${readingTime} min read`}</DescriptionText>
+        </LayoutMargin>
         <LinkButton to={`/article/${slug}`} size="SMALL">
           READ
         </LinkButton>
@@ -103,12 +106,6 @@ const ImageWrapper = styled(Link)`
   }
 `
 
-const Detail = styled.div`
-  @media (${media.desktop}) {
-    margin-left: 15px;
-  }
-`
-
 const TitleText = styled(BasicText)`
   &::first-line {
     line-height: 1;
@@ -116,10 +113,6 @@ const TitleText = styled(BasicText)`
 `
 
 const DescriptionText = styled(BasicText)`
-  @media (${media.desktop}) {
-    margin-top: 10px;
-  }
-
   &::first-line {
     line-height: 1;
   }
