@@ -8,7 +8,7 @@ export type BaseProps = {
   weight?: string | number
   align?: string
   lineHeight?: number
-  textcolor?: 'BLACK' | 'WHITE' | 'GLAY'
+  textcolor?: 'BLACK' | 'WHITE' | 'GLAY' | 'DARK_GLAY'
 }
 
 export const BaseStyle = styled.p<BaseProps>`

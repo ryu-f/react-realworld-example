@@ -1,21 +1,33 @@
 import * as React from 'react'
 
+import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import { BasicText, LinkText } from '@/componets/atoms/Text'
 
 import { Article as ArticleType } from '@/types/domain'
-import { BORDER_COLOR } from '@/styles/Variables'
 import { Image } from '@/componets/atoms/Image'
 import { Link } from 'react-router-dom'
+import { LinkButton } from '@/componets/atoms/Button'
 import { Tag } from '@/componets/atoms/Tag'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
+import { useReadingTime } from '@/hooks/useReadingTime'
 
 type Props = {
   article: ArticleType
 }
 
 export const Article: React.FC<Props> = props => {
-  const { title, description, slug, tagList, author } = props.article
+  const {
+    title,
+    description,
+    slug,
+    body,
+    tagList,
+    author,
+    favorited,
+    favoritesCount
+  } = props.article
+  const { readingTime } = useReadingTime(body)
 
   const Tags = () =>
     tagList.length ? (
@@ -29,9 +41,9 @@ export const Article: React.FC<Props> = props => {
     ) : null
 
   return (
-    <Wrapper to={`/article/${slug}`}>
+    <Wrapper>
       <Primary>
-        <ImageWrapper>
+        <ImageWrapper to={`/user/${author.username}`}>
           <Image src={author.image} loading="lazy" />
         </ImageWrapper>
         <Detail>
@@ -40,16 +52,22 @@ export const Article: React.FC<Props> = props => {
           </TitleText>
           <DescriptionText size={14}>{description}</DescriptionText>
           <Tags />
-          <UserText to={`/user/${author.username}`} size={16}>
+          <UserText to={`/user/${author.username}`} size={16} textcolor="DARK_GLAY">
             {author.username}
           </UserText>
         </Detail>
       </Primary>
+      <Secondary>
+        <DescriptionText size={14}>{`${readingTime} min read`}</DescriptionText>
+        <LinkButton to={`/article/${slug}`} size="SMALL">
+          READ
+        </LinkButton>
+      </Secondary>
     </Wrapper>
   )
 }
 
-const Wrapper = styled(Link)`
+const Wrapper = styled.div`
   display: block;
   width: 100%;
   border: 1px solid ${BORDER_COLOR.SILVER};
@@ -57,19 +75,31 @@ const Wrapper = styled(Link)`
   box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
   @media (${media.desktop}) {
     padding: 10px;
+    cursor: pointer;
+    transition: background 0.5s;
+    &:hover {
+      background-color: ${BACKGROUND_COLOR.SILVER};
+    }
   }
 `
 
 const Primary = styled.div`
   display: flex;
 `
-const ImageWrapper = styled.div`
+
+const ImageWrapper = styled(Link)`
+  display: block;
   flex-shrink: 0;
   clip-path: circle(50%);
   object-fit: cover;
   @media (${media.desktop}) {
     width: 40px;
     height: 40px;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.3;
+    }
   }
 `
 
@@ -104,4 +134,18 @@ const TagListItem = styled.li`
   }
 `
 
-const UserText = styled(LinkText)``
+const UserText = styled(LinkText)`
+  @media (${media.desktop}) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (${media.mobile}) {
+    text-decoration: underline;
+  }
+`
+
+const Secondary = styled.div`
+  display: flex;
+`
