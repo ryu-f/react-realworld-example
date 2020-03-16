@@ -5,11 +5,17 @@ import styled from 'styled-components'
 
 export type BaseProps = {
   size: number
+  weight?: string | number
+  align?: string
+  lineHeight?: number
   textcolor?: 'BLACK' | 'WHITE' | 'GLAY'
 }
 
 export const BaseStyle = styled.p<BaseProps>`
+  font-weight: ${({ weight }) => weight};
+  line-height: ${({ lineHeight }) => lineHeight};
   color: ${({ textcolor }) => COLOR[textcolor || 'BLACK']};
+  text-align: ${({ align }) => align};
 
   @media (${media.desktop}) {
     font-size: ${({ size }) => size}px;

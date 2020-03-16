@@ -1,8 +1,7 @@
 import * as React from 'react'
 
 import { BACKGROUND_COLOR } from '@/styles/Variables'
-import { BasicText } from '@/componets/atoms/Text'
-import { Link } from 'react-router-dom'
+import { LinkText } from '@/componets/atoms/Text'
 import { LoginFormContainer } from '@/componets/containers/LoginFormContainer'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
@@ -11,9 +10,9 @@ export const Login: React.FC = () => {
   return (
     <PageWrapper>
       <LoginFormContainer />
-      <TextLink to="/register">
-        <BasicText size={14}>Create an account.</BasicText>
-      </TextLink>
+      <RegisterLinkText to="/register" size={14}>
+        Create an account.
+      </RegisterLinkText>
     </PageWrapper>
   )
 }
@@ -27,7 +26,7 @@ const PageWrapper = styled.div`
   background: ${BACKGROUND_COLOR.GRADIENT};
 `
 
-const TextLink = styled(Link)`
+const RegisterLinkText = styled(LinkText)`
   display: block;
 
   @media (${media.desktop}) {

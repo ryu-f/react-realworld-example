@@ -16,7 +16,9 @@ export const TagList: React.FC<Props> = props => {
 
   return (
     <Wrapper>
-      <BasicText size={14}>Popular Tags</BasicText>
+      <BasicText size={14} lineHeight={1}>
+        Popular Tags
+      </BasicText>
       <List>
         {tags.map((tag, i) => (
           <ListItem key={i} onClick={() => onClick(tag)}>

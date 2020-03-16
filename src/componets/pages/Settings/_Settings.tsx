@@ -3,7 +3,7 @@ import * as React from 'react'
 import { BACKGROUND_COLOR } from '@/styles/Variables'
 import styled from 'styled-components'
 
-export const User: React.FC = () => {
+export const Settings: React.FC = () => {
   return <PageWrapper></PageWrapper>
 }
 
