@@ -34,9 +34,9 @@ export const LoginForm: React.FC<Props> = props => {
           placeholder="Email address"
           ref={register({ required: 'Email address is required.' })}
         />
-        <BasicText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="RED">
           {errors.email && errors.email.message}
-        </BasicText>
+        </ErrorText>
       </LayoutInput>
       <LayoutInput>
         <InputText
@@ -50,12 +50,14 @@ export const LoginForm: React.FC<Props> = props => {
             maxLength: { value: 99, message: 'Maxlength is 99' }
           })}
         />
-        <BasicText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="RED">
           {errors.password && errors.password.message}
-        </BasicText>
+        </ErrorText>
       </LayoutInput>
       <LayoutFoot>
-        <CheckBox name="remember" id="remember" ref={register} />
+        <CheckBox name="remember" id="remember" ref={register}>
+          Keep signed in
+        </CheckBox>
       </LayoutFoot>
       <LayoutFoot>
         <BasicButton size="LARGE" type="submit">
@@ -90,5 +92,13 @@ const LayoutInput = styled.div`
 const LayoutFoot = styled.div`
   @media (${media.desktop}) {
     margin-top: 30px;
+  }
+`
+
+const ErrorText = styled(BasicText)`
+  position: absolute;
+  left: 0;
+  @media (${media.desktop}) {
+    bottom: -25px;
   }
 `

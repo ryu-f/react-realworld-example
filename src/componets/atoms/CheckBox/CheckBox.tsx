@@ -1,34 +1,33 @@
+import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import React, { forwardRef } from 'react'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 type Props = React.InputHTMLAttributes<HTMLInputElement>
 
 export const CheckBox = forwardRef<HTMLInputElement, Props>((props, ref) => {
-  const { ...rest } = props
+  const { children, ...rest } = props
 
   return (
-    <>
-      <View>
-        <Input type="checkbox" ref={ref} {...rest} />
-      </View>
-    </>
+    <Label>
+      <Input type="checkbox" ref={ref} {...rest} />
+      <View>{children}</View>
+    </Label>
   )
 })
 
-const Input = styled.input`
-  display: none;
+const Label = styled.label`
+  width: 100%;
 `
 
-const View = styled.label`
+const View = styled.span`
   position: relative;
-  display: block;
+  display: inline-block;
+  line-height: 1;
 
   @media (${media.desktop}) {
-    width: 18px;
-    height: 18px;
+    padding-left: 25px;
     cursor: pointer;
   }
 
@@ -40,20 +39,41 @@ const View = styled.label`
     width: 100%;
     height: 100%;
     content: '';
-    background-color: ${BACKGROUND_COLOR.SKY_BLUE};
-    border: none;
+    background-color: ${BACKGROUND_COLOR.WHITE};
+    border: 1px solid ${BORDER_COLOR.SILVER};
     border-radius: 5px;
+    @media (${media.desktop}) {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &::after {
     position: absolute;
-    top: 3px;
-    left: 3px;
     display: block;
-    width: 10px;
-    height: 10px;
     content: '';
-    background: #000;
+    background: url('/img/icon/check.png') no-repeat;
+    background-size: cover;
     opacity: 0;
+    @media (${media.desktop}) {
+      top: 1px;
+      left: 1px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+`
+
+const Input = styled.input`
+  display: none;
+  &:checked {
+    + ${View}::before {
+      background-color: ${BACKGROUND_COLOR.HORIZON_BLUE};
+      border: 1px solid ${BORDER_COLOR.HORIZON_BLUE};
+    }
+
+    + ${View}::after {
+      opacity: 1;
+    }
   }
 `
