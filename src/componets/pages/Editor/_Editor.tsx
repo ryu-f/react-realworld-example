@@ -1,10 +1,14 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
+import { ArticleEditorContainer } from '@/componets/containers/ArticleEditorContainer'
 import styled from 'styled-components'
 
 export const Editor: React.FC = () => {
-  return <PageWrapper></PageWrapper>
+  return (
+    <PageWrapper>
+      <ArticleEditorContainer />
+    </PageWrapper>
+  )
 }
 
 const PageWrapper = styled.div`
@@ -12,5 +16,4 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: ${BACKGROUND_COLOR.GRADIENT};
 `

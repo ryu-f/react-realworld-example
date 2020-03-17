@@ -19,4 +19,8 @@ export const Base = css`
   select {
     appearance: none;
   }
+
+  li {
+    list-style-type: none;
+  }
 `

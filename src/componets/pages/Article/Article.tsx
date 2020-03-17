@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import styled from 'styled-components'
 
 export const Article: React.FC = () => {
@@ -12,5 +11,4 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: ${BACKGROUND_COLOR.GRADIENT};
 `

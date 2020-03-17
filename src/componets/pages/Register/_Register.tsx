@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { LinkText } from '@/componets/atoms/Text'
 import { RegistrationFormContainer } from '@/componets/containers/RegistrationFormContainer'
 import { media } from '@/styles/Mixin'
@@ -23,7 +22,6 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: ${BACKGROUND_COLOR.GRADIENT};
 `
 
 const RegisterLinkText = styled(LinkText)`

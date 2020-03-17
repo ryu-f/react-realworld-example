@@ -3,7 +3,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 interface Props extends React.SVGAttributes<SVGElement> {
-  id: 'person' | 'edit' | 'github' | 'heart' | 'in' | 'unlock' | 'clock'
+  id: 'person' | 'edit' | 'github' | 'heart' | 'in' | 'unlock' | 'clock' | 'plus'
 }
 
 export const SvgIcons: React.FC<Props> = props => {
