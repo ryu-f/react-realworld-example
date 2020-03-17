@@ -11,13 +11,13 @@ export const useInitialAuth = () => {
 
   const initialAuthAsync = useCallback(
     async (token: string | null) => {
-      if (!token) return
+      if (!token) return dispatch(actions.appLoaded())
       API.setToken(token)
       const response = await users.get()
 
-      if (isError(response)) return
+      if (isError(response)) return dispatch(actions.appLoaded())
 
-      dispatch(actions.authenticate(response.user))
+      return dispatch(actions.authenticate(response.user))
     },
     [dispatch]
   )

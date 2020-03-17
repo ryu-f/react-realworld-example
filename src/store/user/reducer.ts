@@ -9,6 +9,7 @@ export type State = {
   username: string
   bio: null | string
   image: null | string
+  loaded: boolean
 }
 
 const initialState: State = {
@@ -16,7 +17,8 @@ const initialState: State = {
   token: null,
   username: '',
   bio: null,
-  image: null
+  image: null,
+  loaded: false
 }
 
 type Actions = CreatorToActions<typeof creators>
@@ -30,7 +32,13 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         token: action.payload.token,
         username: action.payload.username,
         bio: action.payload.bio,
-        image: action.payload.image
+        image: action.payload.image,
+        loaded: true
+      }
+    case types.APP_LOADED:
+      return {
+        ...state,
+        loaded: true
       }
     default:
       return state

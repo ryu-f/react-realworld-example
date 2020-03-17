@@ -3,11 +3,14 @@ import React, { useEffect } from 'react'
 import { Footer } from '@/componets/organisms/Footer'
 import { GlobalStyle } from './styles'
 import { HeaderContainer } from '@/componets/containers/HeaderContainer'
+import { RootState } from '@/store/rootReducer'
 import { Routes } from './Routes'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 import { userOperations } from '@/store/user'
 
 export const App: React.FC = () => {
+  const { loaded } = useSelector((state: RootState) => state.user)
   const { initialAuthAsync } = userOperations.useInitialAuth()
 
   useEffect(() => {
@@ -15,7 +18,7 @@ export const App: React.FC = () => {
     initialAuthAsync(token)
   }, [])
 
-  return (
+  return loaded ? (
     <>
       <GlobalStyle />
       <Main>
@@ -26,7 +29,7 @@ export const App: React.FC = () => {
         </LayoutFooter>
       </Main>
     </>
-  )
+  ) : null
 }
 
 const Main = styled.main`

@@ -9,3 +9,7 @@ export const authenticate = (input: Payload['payload']) => ({
   type: types.AUTHENTICATE,
   payload: input
 })
+
+export const appLoaded = () => ({
+  type: types.APP_LOADED
+})
