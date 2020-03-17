@@ -1,20 +1,18 @@
 import * as React from 'react'
 
 import { BACKGROUND_COLOR } from '@/styles/Variables'
-import { LayoutMargin } from '@/componets/templates/LayoutMargin'
 import { LinkText } from '@/componets/atoms/Text'
 import { LoginFormContainer } from '@/componets/containers/LoginFormContainer'
+import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 export const Login: React.FC = () => {
   return (
     <PageWrapper>
       <LoginFormContainer />
-      <LayoutMargin top={5}>
-        <RegisterLinkText to="/register" size={14}>
-          Create an account.
-        </RegisterLinkText>
-      </LayoutMargin>
+      <RegisterLinkText to="/register" size={14}>
+        Create an account.
+      </RegisterLinkText>
     </PageWrapper>
   )
 }
@@ -30,4 +28,7 @@ const PageWrapper = styled.div`
 
 const RegisterLinkText = styled(LinkText)`
   display: block;
+  ${media.desktop} {
+    margin-top: 5px;
+  }
 `

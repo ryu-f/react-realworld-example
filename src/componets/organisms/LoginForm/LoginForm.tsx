@@ -5,7 +5,6 @@ import { BasicButton } from '@/componets/atoms/Button'
 import { BasicText } from '@/componets/atoms/Text'
 import { CheckBox } from '@/componets/atoms/CheckBox'
 import { InputText } from '@/componets/atoms/InputText'
-import { LayoutMargin } from '@/componets/templates/LayoutMargin'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
@@ -27,7 +26,7 @@ export const LoginForm: React.FC<Props> = props => {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <BasicText size={20}>Sign in to Real World</BasicText>
-      <LayoutMargin top={40}>
+      <LayoutInput>
         <InputText
           type="email"
           name="email"
@@ -38,8 +37,8 @@ export const LoginForm: React.FC<Props> = props => {
         <BasicText size={16} textcolor="RED">
           {errors.email && errors.email.message}
         </BasicText>
-      </LayoutMargin>
-      <LayoutMargin top={40}>
+      </LayoutInput>
+      <LayoutInput>
         <InputText
           type="password"
           name="password"
@@ -54,15 +53,15 @@ export const LoginForm: React.FC<Props> = props => {
         <BasicText size={16} textcolor="RED">
           {errors.password && errors.password.message}
         </BasicText>
-      </LayoutMargin>
-      <LayoutMargin top={30}>
+      </LayoutInput>
+      <LayoutFoot>
         <CheckBox name="remember" id="remember" ref={register} />
-      </LayoutMargin>
-      <LayoutMargin top={30}>
+      </LayoutFoot>
+      <LayoutFoot>
         <BasicButton size="LARGE" type="submit">
           Sign In
         </BasicButton>
-      </LayoutMargin>
+      </LayoutFoot>
     </Form>
   )
 }
@@ -78,5 +77,18 @@ const Form = styled.form`
     max-width: 448px;
     padding: 40px 40px 35px;
     box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
+  }
+`
+
+const LayoutInput = styled.div`
+  position: relative;
+  @media (${media.desktop}) {
+    margin-top: 40px;
+  }
+`
+
+const LayoutFoot = styled.div`
+  @media (${media.desktop}) {
+    margin-top: 30px;
   }
 `
