@@ -1,11 +1,11 @@
 import { State } from './reducer'
 import { types } from './types'
 
-type LoginPayload = {
+type Payload = {
   payload: Pick<State, 'email' | 'bio' | 'image' | 'username' | 'token'>
 }
 
-export const login = (input: LoginPayload['payload']) => ({
-  type: types.LOGIN,
+export const authenticate = (input: Payload['payload']) => ({
+  type: types.AUTHENTICATE,
   payload: input
 })

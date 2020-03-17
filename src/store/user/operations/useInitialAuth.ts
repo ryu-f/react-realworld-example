@@ -17,7 +17,7 @@ export const useInitialAuth = () => {
 
       if (isError(response)) return
 
-      dispatch(actions.login(response.user))
+      dispatch(actions.authenticate(response.user))
     },
     [dispatch]
   )

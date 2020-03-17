@@ -23,7 +23,7 @@ type Actions = CreatorToActions<typeof creators>
 
 export const reducer = (state: State = initialState, action: Actions): State => {
   switch (action.type) {
-    case types.LOGIN:
+    case types.AUTHENTICATE:
       return {
         ...state,
         email: action.payload.email,

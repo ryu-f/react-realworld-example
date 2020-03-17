@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { SvgIcons } from '@/componets/atoms/SvgIcons'
 import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
@@ -20,7 +21,7 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   width: 100%;
   padding: 10px 0;
-  background-color: #7ebcf2;
+  background-color: ${BACKGROUND_COLOR.IRON_BLACK};
 `
 
 const Link = styled.a`

@@ -35,7 +35,7 @@ export const useLogin = () => {
       const { token } = response.user
       if (remember) localStorage.setItem('jwt', token)
       API.setToken(token)
-      dispatch(actions.login(response.user))
+      dispatch(actions.authenticate(response.user))
       history.push('/')
     },
     [dispatch]

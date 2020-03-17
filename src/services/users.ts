@@ -15,7 +15,7 @@ type RegisterRequest = {
 
 type UpdateRequest = {
   email: string
-  token: string
+  password: string
   username: string
   bio: string
   image: string
@@ -64,12 +64,12 @@ export const users = {
     const body = JSON.stringify({
       user: {
         email: payload.email,
-        token: payload.token,
+        password: payload.password,
         username: payload.username,
         bio: payload.bio,
         image: payload.image
       }
     })
-    return API.request('/users', { method: 'PUT', body })
+    return API.request<UserResponse | Error>('/user', { method: 'PUT', body })
   }
 }

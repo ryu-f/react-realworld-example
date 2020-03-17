@@ -5,28 +5,27 @@ import { useCallback, useState } from 'react'
 import { API } from '@/services/API'
 import { isError } from '@/services/isError'
 import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
 import { users } from '@/services/users'
 
-type LoginAsyncPayload = {
-  username: string
+type UpdateAsyncPayload = {
   email: string
   password: string
-  remember: boolean
+  username: string
+  bio: string
+  image: string
 }
 
-export const useRegistration = () => {
+export const useUpdate = () => {
   const [isLoading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const dispatch = useDispatch()
-  const history = useHistory()
 
-  const registrationAsync = useCallback(
-    async (input: LoginAsyncPayload) => {
-      const { username, email, password, remember } = input
+  const updateAsync = useCallback(
+    async (input: UpdateAsyncPayload) => {
+      const { username, email, password, bio, image } = input
       setLoading(true)
       setErrorMessage('')
-      const response = await users.register({ username, email, password })
+      const response = await users.update({ username, email, password, bio, image })
       setLoading(false)
 
       if (isError(response)) {
@@ -34,12 +33,11 @@ export const useRegistration = () => {
       }
 
       const { token } = response.user
-      if (remember) localStorage.setItem('jwt', token)
+      localStorage.setItem('jwt', token)
       API.setToken(token)
       dispatch(actions.authenticate(response.user))
-      history.push('/')
     },
     [dispatch]
   )
-  return { registrationAsync, isLoading, errorMessage }
+  return { updateAsync, isLoading, errorMessage }
 }

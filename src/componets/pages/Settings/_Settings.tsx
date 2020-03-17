@@ -1,10 +1,15 @@
 import * as React from 'react'
 
 import { BACKGROUND_COLOR } from '@/styles/Variables'
+import { ProfileEditorContainer } from '@/componets/containers/ProfileEditorContainer'
 import styled from 'styled-components'
 
 export const Settings: React.FC = () => {
-  return <PageWrapper></PageWrapper>
+  return (
+    <PageWrapper>
+      <ProfileEditorContainer />
+    </PageWrapper>
+  )
 }
 
 const PageWrapper = styled.div`

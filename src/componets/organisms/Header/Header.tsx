@@ -20,7 +20,7 @@ export const Header: React.FC<Props> = props => {
       <nav>
         <NavigationList>
           <NavigationItem to="/editor">New Post</NavigationItem>
-          <NavigationItem to="/setting">Settings</NavigationItem>
+          <NavigationItem to="/settings">Settings</NavigationItem>
           <NavigationItem to={`/user/${name}`}>{name}</NavigationItem>
         </NavigationList>
       </nav>
