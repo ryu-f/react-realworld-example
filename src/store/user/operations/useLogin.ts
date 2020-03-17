@@ -6,7 +6,7 @@ import { API } from '@/services/API'
 import { isError } from '@/services/isError'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { users } from '@/services/users'
+import { usersAPI } from '@/services/users'
 
 type LoginAsyncPayload = {
   email: string
@@ -25,7 +25,7 @@ export const useLogin = () => {
       const { email, password, remember } = input
       setLoading(true)
       setErrorMessage('')
-      const response = await users.login({ email, password })
+      const response = await usersAPI.login({ email, password })
       setLoading(false)
 
       if (isError(response)) {

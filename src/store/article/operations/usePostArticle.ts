@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 
-import { articles } from '@/services/articles'
+import { articlesAPI } from '@/services/articles'
 import { isError } from '@/services/isError'
 import { useHistory } from 'react-router-dom'
 
@@ -20,7 +20,7 @@ export const usePostArticle = () => {
     const { title, description, body, tagList } = input
     setLoading(true)
     setErrorMessage('')
-    const response = await articles.post({ title, description, body, tagList })
+    const response = await articlesAPI.post({ title, description, body, tagList })
     setLoading(false)
 
     if (isError(response)) {

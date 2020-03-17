@@ -4,7 +4,7 @@ import { API } from '@/services/API'
 import { isError } from '@/services/isError'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import { users } from '@/services/users'
+import { usersAPI } from '@/services/users'
 
 export const useInitialAuth = () => {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ export const useInitialAuth = () => {
     async (token: string | null) => {
       if (!token) return dispatch(actions.appLoaded())
       API.setToken(token)
-      const response = await users.get()
+      const response = await usersAPI.get()
 
       if (isError(response)) return dispatch(actions.appLoaded())
 

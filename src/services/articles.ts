@@ -38,7 +38,7 @@ type DeleteRequest = {
 /**
  * Articles
  */
-export const articles = {
+export const articlesAPI = {
   /**
    * Create an article. Auth is required
    */

@@ -11,7 +11,7 @@ export const SvgIcons: React.FC<Props> = props => {
 
   return (
     <View {...props}>
-      <use xlinkHref={`img/icon/icons.svg#${id}`}></use>
+      <use xlinkHref={`/img/icon/icons.svg#${id}`}></use>
     </View>
   )
 }

@@ -17,7 +17,7 @@ type Props = {
 }
 
 export const Article: React.FC<Props> = props => {
-  const { title, description, slug, body, tagList, author } = props.article
+  const { title, description, slug, body, tagList, createdAt, author } = props.article
   const { readingTime } = useReadingTime(body)
 
   const Tags = () =>
@@ -43,18 +43,22 @@ export const Article: React.FC<Props> = props => {
           </TitleText>
           <DescriptionText size={14}>{description}</DescriptionText>
           <Tags />
-          <UserText to={`/user/${author.username}`} size={16} textcolor="DARK_GLAY">
-            {author.username}
-          </UserText>
+          <UserDateArea>
+            <BasicText size={14}>by&ensp;</BasicText>
+            <UserText to={`/user/${author.username}`} size={16} textcolor="GLAY">
+              {author.username}
+            </UserText>
+            <BasicText size={16} textcolor="GLAY">
+              ・{new Date(createdAt).toDateString().slice(0, -5)}
+            </BasicText>
+          </UserDateArea>
         </LayoutTitle>
       </Primary>
       <Secondary>
-        <LayoutDescription>
-          <DescriptionText size={14}>{`${readingTime} min read`}</DescriptionText>
-        </LayoutDescription>
-        <LinkButton to={`/article/${slug}`} size="SMALL">
+        <MinText size={14}>{`${readingTime} min read`}</MinText>
+        <ReadButton to={`/article/${slug}`} size="SMALL">
           READ
-        </LinkButton>
+        </ReadButton>
       </Secondary>
     </Wrapper>
   )
@@ -109,12 +113,26 @@ const TitleText = styled(BasicText)`
 `
 
 const DescriptionText = styled(BasicText)`
+  @media (${media.desktop}) {
+    margin-top: 8px;
+  }
   &::first-line {
     line-height: 1;
   }
 `
 
-const TagList = styled.ul``
+const UserDateArea = styled.div`
+  display: flex;
+  @media (${media.desktop}) {
+    margin-top: 5px;
+  }
+`
+
+const TagList = styled.ul`
+  @media (${media.desktop}) {
+    margin-top: 10px;
+  }
+`
 
 const TagListItem = styled.li`
   display: inline-block;
@@ -137,10 +155,17 @@ const UserText = styled(LinkText)`
 
 const Secondary = styled.div`
   display: flex;
+  align-items: center;
 `
 
-const LayoutDescription = styled.div`
+const MinText = styled(BasicText)``
+
+const ReadButton = styled(LinkButton)`
+  text-align: center;
   @media (${media.desktop}) {
-    margin-top: 10px;
+    width: 60px;
+    height: 30px;
+    padding: 6px 8px;
+    margin-left: 10px;
   }
 `

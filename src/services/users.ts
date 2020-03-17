@@ -24,7 +24,7 @@ type UpdateRequest = {
 /**
  * User and Authentication
  */
-export const users = {
+export const usersAPI = {
   /**
    * Login for existing user
    */

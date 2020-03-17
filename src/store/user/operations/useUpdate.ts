@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react'
 import { API } from '@/services/API'
 import { isError } from '@/services/isError'
 import { useDispatch } from 'react-redux'
-import { users } from '@/services/users'
+import { usersAPI } from '@/services/users'
 
 type UpdateAsyncPayload = {
   email: string
@@ -25,7 +25,7 @@ export const useUpdate = () => {
       const { username, email, password, bio, image } = input
       setLoading(true)
       setErrorMessage('')
-      const response = await users.update({ username, email, password, bio, image })
+      const response = await usersAPI.update({ username, email, password, bio, image })
       setLoading(false)
 
       if (isError(response)) {

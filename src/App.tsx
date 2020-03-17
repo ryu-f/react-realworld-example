@@ -5,6 +5,7 @@ import { GlobalStyle } from './styles'
 import { HeaderContainer } from '@/componets/containers/HeaderContainer'
 import { RootState } from '@/store/rootReducer'
 import { Routes } from './Routes'
+import { ScrollToTop } from '@/componets/templates/ScrollToTop'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import { userOperations } from '@/store/user'
@@ -23,7 +24,9 @@ export const App: React.FC = () => {
       <GlobalStyle />
       <Main>
         <HeaderContainer />
-        <Routes />
+        <Routes>
+          <ScrollToTop />
+        </Routes>
         <LayoutFooter>
           <Footer />
         </LayoutFooter>

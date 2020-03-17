@@ -70,6 +70,9 @@ const Inner = styled.header`
 const HeadingLink = styled(Link)`
   display: flex;
   align-items: center;
+  @media (${media.desktop}) {
+    margin-left: -17px;
+  }
 `
 
 const LogoImage = styled(Image)`
