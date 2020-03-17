@@ -49,7 +49,7 @@ export const users = {
         password: payload.password
       }
     })
-    return API.request('/users', { method: 'POST', body })
+    return API.request<UserResponse | Error>('/users', { method: 'POST', body })
   },
 
   /**

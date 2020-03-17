@@ -10,8 +10,8 @@ export const Login: React.FC = () => {
   return (
     <PageWrapper>
       <LoginFormContainer />
-      <RegisterLinkText to="/register" size={14}>
-        Create an account.
+      <RegisterLinkText to="/register" textcolor="WHITE" size={15}>
+        Need an account?
       </RegisterLinkText>
     </PageWrapper>
   )
@@ -28,7 +28,12 @@ const PageWrapper = styled.div`
 
 const RegisterLinkText = styled(LinkText)`
   display: block;
+
   ${media.desktop} {
     margin-top: 5px;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
 `
