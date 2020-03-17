@@ -11,6 +11,7 @@ import { users } from '@/services/users'
 type LoginAsyncPayload = {
   email: string
   password: string
+  remember: boolean
 }
 
 export const useLogin = () => {
@@ -21,7 +22,7 @@ export const useLogin = () => {
 
   const loginAsync = useCallback(
     async (input: LoginAsyncPayload) => {
-      const { email, password } = input
+      const { email, password, remember } = input
       setLoading(true)
       setErrorMessage('')
       const response = await users.login({ email, password })
@@ -32,7 +33,7 @@ export const useLogin = () => {
       }
 
       const { token } = response.user
-      localStorage.setItem('jwt', token)
+      if (remember) localStorage.setItem('jwt', token)
       API.setToken(token)
       dispatch(actions.login(response.user))
       history.push('/')

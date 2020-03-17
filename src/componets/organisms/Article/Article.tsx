@@ -18,16 +18,7 @@ type Props = {
 }
 
 export const Article: React.FC<Props> = props => {
-  const {
-    title,
-    description,
-    slug,
-    body,
-    tagList,
-    author,
-    favorited,
-    favoritesCount
-  } = props.article
+  const { title, description, slug, body, tagList, author } = props.article
   const { readingTime } = useReadingTime(body)
 
   const Tags = () =>

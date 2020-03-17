@@ -19,7 +19,7 @@ const BASE_COLOR = {
   SILVER: '#ccc',
   GLAY: '#818a91',
   DARK_GLAY: '#666',
-  RED: '#b85c5c',
+  RED: '#cd3d64',
   ALPHA_GLAY: 'rgba(0,0,0,0.54)'
 }
 

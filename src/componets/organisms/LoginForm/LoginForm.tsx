@@ -17,39 +17,52 @@ type Props = {
 type FormData = {
   email: string
   password: string
+  remember: boolean
 }
 
 export const LoginForm: React.FC<Props> = props => {
   const { onSubmit } = props
-  const { register, handleSubmit } = useForm<FormData>()
+  const { register, handleSubmit, errors } = useForm<FormData>({ validateCriteriaMode: 'all' })
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <BasicText size={20}>Sign in to Real World</BasicText>
-      <LayoutMargin top={20}>
+      <LayoutMargin top={40}>
         <InputText
           type="email"
           name="email"
           id="email"
           placeholder="Email address"
-          ref={register({ required: true })}
+          ref={register({ required: 'Email address is required.' })}
         />
+        <BasicText size={16} textcolor="RED">
+          {errors.email && errors.email.message}
+        </BasicText>
       </LayoutMargin>
-      <LayoutMargin top={30}>
+      <LayoutMargin top={40}>
         <InputText
           type="password"
           name="password"
           id="password"
           placeholder="Password"
-          ref={register({ required: true, min: 6, max: 99 })}
+          ref={register({
+            required: 'Password is required.',
+            minLength: { value: 6, message: 'Minlength is 6' },
+            maxLength: { value: 99, message: 'Maxlength is 99' }
+          })}
         />
+        <BasicText size={16} textcolor="RED">
+          {errors.password && errors.password.message}
+        </BasicText>
       </LayoutMargin>
-      <LayoutMargin top={20}>
+      <LayoutMargin top={30}>
         <CheckBox name="remember" id="remember" ref={register} />
       </LayoutMargin>
-      <BasicButton size="LARGE" type="submit">
-        Sign In
-      </BasicButton>
+      <LayoutMargin top={30}>
+        <BasicButton size="LARGE" type="submit">
+          Sign In
+        </BasicButton>
+      </LayoutMargin>
     </Form>
   )
 }
