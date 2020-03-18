@@ -1,4 +1,5 @@
 export const types = {
   AUTHENTICATE: 'AUTHENTICATE',
+  GET_PROFILE: 'GET_PROFILE',
   APP_LOADED: 'APP_LOADED'
 } as const

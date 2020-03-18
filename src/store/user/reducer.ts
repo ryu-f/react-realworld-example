@@ -1,6 +1,7 @@
 import * as creators from './actions'
 
 import { CreatorToActions } from '@/types/utils'
+import { Profile } from '@/types/domain'
 import { types } from './types'
 
 export type State = {
@@ -9,6 +10,7 @@ export type State = {
   username: string
   bio: null | string
   image: null | string
+  user: null | Profile
   loaded: boolean
 }
 
@@ -18,6 +20,7 @@ const initialState: State = {
   username: '',
   bio: null,
   image: null,
+  user: null,
   loaded: false
 }
 
@@ -34,6 +37,11 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         bio: action.payload.bio,
         image: action.payload.image,
         loaded: true
+      }
+    case types.GET_PROFILE:
+      return {
+        ...state,
+        user: action.payload.user
       }
     case types.APP_LOADED:
       return {

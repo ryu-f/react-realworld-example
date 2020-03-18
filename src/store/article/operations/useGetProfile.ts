@@ -1,15 +1,14 @@
 import * as actions from '../actions'
 
-import { useCallback, useState } from 'react'
-
-import { Profile } from '@/types/domain'
 import { articlesAPI } from '@/services/articles'
 import { isError } from '@/services/isError'
 import { profilesAPI } from '@/services/profiles'
+import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import { userActions } from '@/store/user'
 
 export const useGetProfile = () => {
-  const [profile, setProfile] = useState<Profile | null>(null)
+  const { getProfile } = userActions
   const dispatch = useDispatch()
 
   const getProfileAsync = useCallback(
@@ -29,10 +28,10 @@ export const useGetProfile = () => {
             count: payload.articles.articlesCount
           })
         )
-      if (payload.profile) setProfile(payload.profile.profile)
+      if (payload.profile) dispatch(getProfile({ user: payload.profile.profile }))
     },
     [dispatch]
   )
 
-  return { getProfileAsync, profile }
+  return { getProfileAsync }
 }
