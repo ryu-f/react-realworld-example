@@ -11,6 +11,7 @@ import { useCallback } from 'react'
 export const useInitialData = () => {
   const { limit, offset } = useSelector((state: RootState) => state.article)
   const dispatch = useDispatch()
+  const { getArticles, getTags } = actions
 
   const initialDataAsync = useCallback(async () => {
     const response = await Promise.all([articlesAPI.get({ limit, offset }), tags.get()])
@@ -21,14 +22,14 @@ export const useInitialData = () => {
     batch(() => {
       if (payload.articles)
         dispatch(
-          actions.getArticles({
+          getArticles({
             articles: payload.articles.articles,
             count: payload.articles.articlesCount,
             limit,
             offset
           })
         )
-      if (payload.tags) dispatch(actions.getTags(payload.tags))
+      if (payload.tags) dispatch(getTags(payload.tags))
     })
   }, [dispatch])
 
