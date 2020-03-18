@@ -1,7 +1,15 @@
 import { State } from './reducer'
 import { types } from './types'
 
-type GetArticlesPayload = Pick<State, 'articles' | 'count'>
+type GetArticlesPayload = {
+  articles: State['articles']
+  count: State['count']
+  offset: State['offset']
+  limit: State['limit']
+  author?: State['authorQuery']
+  tag?: State['tagQuery']
+  favorited?: State['favoritedQuery']
+}
 
 export const getArticles = (payload: GetArticlesPayload) => ({
   type: types.GET_ARTICLES,
@@ -19,5 +27,12 @@ type GetTagsPayload = Pick<State, 'tags'>
 
 export const getTags = (payload: GetTagsPayload) => ({
   type: types.GET_TAGS,
+  payload
+})
+
+type GetCommentsPayload = Pick<State, 'comments'>
+
+export const getComments = (payload: GetCommentsPayload) => ({
+  type: types.GET_COMMENTS,
   payload
 })

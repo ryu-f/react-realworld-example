@@ -8,7 +8,7 @@ import styled from 'styled-components'
 export const Article: React.FC = () => {
   const history = useHistory()
   const { slug } = useParams()
-  const { comments, getArticlesAsync } = articleOperations.useGetArticle()
+  const { getArticlesAsync } = articleOperations.useGetArticle()
 
   useEffect(() => {
     if (!slug) return history.push('/')

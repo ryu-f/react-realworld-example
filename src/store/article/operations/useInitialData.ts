@@ -23,7 +23,9 @@ export const useInitialData = () => {
         dispatch(
           actions.getArticles({
             articles: payload.articles.articles,
-            count: payload.articles.articlesCount
+            count: payload.articles.articlesCount,
+            limit,
+            offset
           })
         )
       if (payload.tags) dispatch(actions.getTags(payload.tags))

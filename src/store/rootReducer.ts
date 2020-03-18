@@ -5,7 +5,7 @@ import { UserState, userReducer } from './user'
 import { History } from 'history'
 import { combineReducers } from 'redux'
 
-export interface RootState {
+export type RootState = {
   user: UserState
   article: ArticleState
   router: RouterState
