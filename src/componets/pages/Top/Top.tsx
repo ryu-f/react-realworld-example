@@ -30,7 +30,7 @@ export const Top: React.FC = () => {
 const PageWrapper = styled.div`
   width: 100%;
   @media (${media.desktop}) {
-    padding-top: 100px;
+    padding: 100px 0;
   }
 `
 

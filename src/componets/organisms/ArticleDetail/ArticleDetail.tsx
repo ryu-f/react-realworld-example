@@ -21,7 +21,7 @@ export const ArticleDetail: React.FC<Props> = props => {
       <TagList>
         {tagList.map((tag, i) => (
           <TagListItem key={i}>
-            <Tag size="BASE">{tag}</Tag>
+            <Tag size="LARGE">{tag}</Tag>
           </TagListItem>
         ))}
       </TagList>
@@ -51,9 +51,11 @@ export const ArticleDetail: React.FC<Props> = props => {
       </HeroView>
       <ArticleInner>
         <Tags />
-        <BasicText size={20} fontStyle="italic">
-          {description}
-        </BasicText>
+        <LayoutDescription>
+          <BasicText size={20} fontStyle="italic">
+            {description}
+          </BasicText>
+        </LayoutDescription>
         <LayoutBody>
           <BasicText size={18} whiteSpace="pre-wrap">
             {body}
@@ -137,6 +139,12 @@ const TagListItem = styled.li`
   display: inline-block;
   @media (${media.desktop}) {
     margin: 0 5px 5px 0;
+  }
+`
+
+const LayoutDescription = styled.div`
+  @media (${media.desktop}) {
+    margin-top: 30px;
   }
 `
 

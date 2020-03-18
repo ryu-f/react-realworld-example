@@ -7,14 +7,14 @@ import { articlesAPI } from '@/services/articles'
 import { commentsAPI } from '@/services/comments'
 import { isError } from '@/services/isError'
 
-export const useGetArticle = () => {
+export const useGetSingleArticle = () => {
   const { getSingleArticle, getComments } = articleActions
   const dispatch = useDispatch()
   const [isLoading, setLoading] = useState(false)
   const { token } = useSelector((state: RootState) => state.user)
   const { articles } = useSelector((state: RootState) => state.article)
 
-  const getArticlesAsync = useCallback(
+  const getSingleArticleAsync = useCallback(
     async (slug: string) => {
       setLoading(true)
       const findByArticle = articles.find(article => article.slug === slug)
@@ -35,5 +35,5 @@ export const useGetArticle = () => {
     [dispatch]
   )
 
-  return { isLoading, getArticlesAsync }
+  return { isLoading, getSingleArticleAsync }
 }

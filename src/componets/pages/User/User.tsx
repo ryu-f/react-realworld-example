@@ -28,6 +28,9 @@ export const User: React.FC = () => {
 
 const PageWrapper = styled.div`
   min-height: 100vh;
+  @media (${media.desktop}) {
+    padding-bottom: 100px;
+  }
 `
 
 const LayoutArticle = styled.div`

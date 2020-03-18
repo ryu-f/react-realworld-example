@@ -1,4 +1,5 @@
 export { useInitialData } from './useInitialData'
-export { useGetArticle } from './useGetArticle'
+export { useGetSingleArticle } from './useGetSingleArticle'
 export { useGetProfile } from './useGetProfile'
 export { usePostArticle } from './usePostArticle'
+export { usePostComment } from './usePostComment'
