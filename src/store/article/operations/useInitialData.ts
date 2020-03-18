@@ -21,7 +21,7 @@ export const useInitialData = () => {
     batch(() => {
       if (payload.articles)
         dispatch(
-          actions.getArticle({
+          actions.getArticles({
             articles: payload.articles.articles,
             count: payload.articles.articlesCount
           })

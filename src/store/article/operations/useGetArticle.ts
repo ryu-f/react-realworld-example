@@ -1,35 +1,40 @@
-import { Article, Comment } from '@/types/domain'
 import { useCallback, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { Comment } from '@/types/domain'
 import { RootState } from '@/store/rootReducer'
+import { articleActions } from '@/store/article'
 import { articlesAPI } from '@/services/articles'
 import { commentsAPI } from '@/services/comments'
 import { isError } from '@/services/isError'
-import { useSelector } from 'react-redux'
 
 export const useGetArticle = () => {
-  const [article, setArticle] = useState<Article | null>(null)
+  const { getSingleArticle } = articleActions
+  const dipatch = useDispatch()
   const [comments, setComments] = useState<Array<Comment>>([])
   const [isLoading, setLoading] = useState(false)
   const { token } = useSelector((state: RootState) => state.user)
   const { articles } = useSelector((state: RootState) => state.article)
 
-  const getArticleAsync = useCallback(async (slug: string) => {
-    setLoading(true)
-    const findByArticle = articles.find(article => article.slug === slug)
-    if (findByArticle) {
-      setArticle(findByArticle)
-    } else {
-      const response = await articlesAPI.getArticle({ slug })
-      if (!isError(response)) setArticle(response.article)
-    }
+  const getArticlesAsync = useCallback(
+    async (slug: string) => {
+      setLoading(true)
+      const findByArticle = articles.find(article => article.slug === slug)
+      if (findByArticle) {
+        dipatch(getSingleArticle({ singleArticle: findByArticle }))
+      } else {
+        const response = await articlesAPI.getArticle({ slug })
+        if (!isError(response)) dipatch(getSingleArticle({ singleArticle: response.article }))
+      }
 
-    if (token) {
-      const commentsResponse = await commentsAPI.get({ slug })
-      if (!isError(commentsResponse)) setComments(commentsResponse.comments)
-    }
-    setLoading(false)
-  }, [])
+      if (token) {
+        const commentsResponse = await commentsAPI.get({ slug })
+        if (!isError(commentsResponse)) setComments(commentsResponse.comments)
+      }
+      setLoading(false)
+    },
+    [dipatch]
+  )
 
-  return { article, comments, isLoading, getArticleAsync }
+  return { comments, isLoading, getArticlesAsync }
 }
