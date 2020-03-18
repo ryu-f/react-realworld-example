@@ -1,4 +1,5 @@
 export { useInitialAuth } from './useInitialAuth'
 export { useLogin } from './useLogin'
+export { useLogout } from './useLogout'
 export { useRegistration } from './useRegistration'
 export { useUpdate } from './useUpdate'

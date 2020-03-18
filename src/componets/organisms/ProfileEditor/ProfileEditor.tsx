@@ -14,6 +14,7 @@ type Props = {
   bio: string | null
   image: string | null
   onSubmit: (data: FormData) => void
+  logout: () => void
 }
 
 type FormData = {
@@ -25,7 +26,7 @@ type FormData = {
 }
 
 export const ProfileEditor: React.FC<Props> = props => {
-  const { email, username, bio, image, onSubmit } = props
+  const { email, username, bio, image, onSubmit, logout } = props
   const { register, handleSubmit, errors } = useForm<FormData>({
     validateCriteriaMode: 'all',
     defaultValues: { email, username, bio: bio || '', image: image || '' }
@@ -99,6 +100,9 @@ export const ProfileEditor: React.FC<Props> = props => {
       <LayoutFoot>
         <BasicButton size="LARGE" type="submit">
           Update
+        </BasicButton>
+        <BasicButton size="LARGE" type="button" onClick={logout}>
+          Click here to logout.
         </BasicButton>
       </LayoutFoot>
     </Form>

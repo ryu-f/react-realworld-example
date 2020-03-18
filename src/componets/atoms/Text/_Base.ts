@@ -9,13 +9,17 @@ export type BaseProps = {
   align?: string
   lineHeight?: number
   textcolor?: 'BLACK' | 'WHITE' | 'GLAY' | 'DARK_GLAY' | 'RED' | 'HORIZON_BLUE'
+  fontStyle?: string
+  whiteSpace?: string
 }
 
 export const BaseStyle = styled.p<BaseProps>`
+  font-style: ${({ fontStyle }) => fontStyle};
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   color: ${({ textcolor }) => COLOR[textcolor || 'BLACK']};
   text-align: ${({ align }) => align};
+  white-space: ${({ whiteSpace }) => whiteSpace};
 
   @media (${media.desktop}) {
     font-size: ${({ size }) => size}px;

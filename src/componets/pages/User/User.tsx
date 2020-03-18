@@ -34,5 +34,6 @@ const LayoutArticle = styled.div`
   width: 100%;
   @media (${media.desktop}) {
     max-width: 750px;
+    margin: 30px auto 0;
   }
 `

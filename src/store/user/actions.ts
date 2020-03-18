@@ -19,6 +19,8 @@ export const getProfile = (payload: GetProfilePayload['payload']) => ({
   payload
 })
 
+export const logout = () => ({ type: types.LOGOUT })
+
 export const appLoaded = () => ({
   type: types.APP_LOADED
 })

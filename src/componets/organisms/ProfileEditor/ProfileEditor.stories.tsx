@@ -17,5 +17,8 @@ export const Basic = () => (
     onSubmit={() => {
       action('form submitted')
     }}
+    logout={() => {
+      action('logout')
+    }}
   />
 )

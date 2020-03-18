@@ -43,6 +43,16 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         ...state,
         user: action.payload.user
       }
+    case types.LOGOUT:
+      return {
+        ...state,
+        email: '',
+        token: null,
+        username: '',
+        bio: null,
+        image: null,
+        user: null
+      }
     case types.APP_LOADED:
       return {
         ...state,

@@ -51,8 +51,14 @@ export const ArticleDetail: React.FC<Props> = props => {
       </HeroView>
       <ArticleInner>
         <Tags />
-        <BasicText size={20}>{description}</BasicText>
-        <BasicText size={18}>{body}</BasicText>
+        <BasicText size={20} fontStyle="italic">
+          {description}
+        </BasicText>
+        <LayoutBody>
+          <BasicText size={18} whiteSpace="pre-wrap">
+            {body}
+          </BasicText>
+        </LayoutBody>
       </ArticleInner>
     </Wrapper>
   )
@@ -131,5 +137,11 @@ const TagListItem = styled.li`
   display: inline-block;
   @media (${media.desktop}) {
     margin: 0 5px 5px 0;
+  }
+`
+
+const LayoutBody = styled.div`
+  @media (${media.desktop}) {
+    margin-top: 50px;
   }
 `
