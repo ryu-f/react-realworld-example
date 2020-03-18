@@ -19,6 +19,7 @@ type Props = {
 export const Article: React.FC<Props> = props => {
   const { title, description, slug, body, tagList, createdAt, author } = props.article
   const { readingTime } = useReadingTime(body)
+  const onUserClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => e.stopPropagation()
 
   const Tags = () =>
     tagList.length ? (
@@ -34,7 +35,7 @@ export const Article: React.FC<Props> = props => {
   return (
     <Wrapper>
       <Primary>
-        <ImageWrapper to={`/user/${author.username}`}>
+        <ImageWrapper to={`/user/${author.username}`} onClick={onUserClick}>
           <Image src={author.image} loading="lazy" />
         </ImageWrapper>
         <LayoutTitle>
@@ -45,7 +46,12 @@ export const Article: React.FC<Props> = props => {
           <Tags />
           <UserDateArea>
             <BasicText size={14}>by&ensp;</BasicText>
-            <UserText to={`/user/${author.username}`} size={16} textcolor="GLAY">
+            <UserText
+              to={`/user/${author.username}`}
+              size={16}
+              textcolor="GLAY"
+              onClick={onUserClick}
+            >
               {author.username}
             </UserText>
             <BasicText size={16} textcolor="GLAY">

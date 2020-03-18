@@ -29,7 +29,7 @@ export const useGetProfile = () => {
             count: payload.articles.articlesCount
           })
         )
-      if (payload.profile) setProfile(payload.profile)
+      if (payload.profile) setProfile(payload.profile.profile)
     },
     [dispatch]
   )

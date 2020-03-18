@@ -23,10 +23,9 @@ export const App: React.FC = () => {
     <>
       <GlobalStyle />
       <Main>
+        <ScrollToTop />
         <HeaderContainer />
-        <Routes>
-          <ScrollToTop />
-        </Routes>
+        <Routes />
         <LayoutFooter>
           <Footer />
         </LayoutFooter>

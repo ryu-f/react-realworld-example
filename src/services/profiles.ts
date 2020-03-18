@@ -1,4 +1,4 @@
-import { Error, Profile } from '@/types/domain'
+import { Error, ProfileResponse } from '@/types/domain'
 
 import { API } from './API'
 
@@ -23,7 +23,7 @@ export const profilesAPI = {
    */
   get: (payload: GetRequest) => {
     const { username } = payload
-    return API.request<Profile | Error>(`/profiles/${username}`)
+    return API.request<ProfileResponse | Error>(`/profiles/${username}`)
   },
 
   /**
@@ -31,7 +31,7 @@ export const profilesAPI = {
    */
   follow: (payload: FollowRequest) => {
     const { username } = payload
-    return API.request<Profile | Error>(`/profiles/${username}/follow`, { method: 'POST' })
+    return API.request<ProfileResponse | Error>(`/profiles/${username}/follow`, { method: 'POST' })
   },
 
   /**
@@ -39,6 +39,8 @@ export const profilesAPI = {
    */
   unFollow: (payload: UnfollowRequest) => {
     const { username } = payload
-    return API.request<Profile | Error>(`/profiles/${username}/follow`, { method: 'DELETE' })
+    return API.request<ProfileResponse | Error>(`/profiles/${username}/follow`, {
+      method: 'DELETE'
+    })
   }
 }
