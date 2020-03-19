@@ -27,6 +27,7 @@ export const usePostComment = () => {
       }
 
       const commentsResponse = await commentsAPI.get({ slug: singleArticle.slug })
+      setLoading(false)
       if (!isError(commentsResponse)) dispatch(getComments({ comments: commentsResponse.comments }))
     },
     [dispatch]

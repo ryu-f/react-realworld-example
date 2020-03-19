@@ -1,10 +1,9 @@
-import * as actions from '../actions'
-
 import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { RootState } from '@/store/rootReducer'
 import { articlesAPI } from '@/services/articles'
+import { getArticles } from '../actions'
 import { isError } from '@/services/isError'
 
 type Request = {
@@ -26,7 +25,6 @@ export const useGetArticles = () => {
     favoritedQuery
   } = useSelector((state: RootState) => state.article)
   const dispatch = useDispatch()
-  const { getArticles } = actions
 
   const getArticlesAsync = useCallback(
     async (data: Request) => {

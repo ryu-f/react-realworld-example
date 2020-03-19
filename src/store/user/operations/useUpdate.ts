@@ -1,8 +1,7 @@
-import * as actions from '../actions'
-
 import { useCallback, useState } from 'react'
 
 import { API } from '@/services/API'
+import { authenticate } from '../actions'
 import { isError } from '@/services/isError'
 import { useDispatch } from 'react-redux'
 import { usersAPI } from '@/services/users'
@@ -35,7 +34,7 @@ export const useUpdate = () => {
       const { token } = response.user
       localStorage.setItem('jwt', token)
       API.setToken(token)
-      dispatch(actions.authenticate(response.user))
+      dispatch(authenticate(response.user))
     },
     [dispatch]
   )

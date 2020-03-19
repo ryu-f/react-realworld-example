@@ -6,13 +6,14 @@ import { articleActions } from '@/store/article'
 import { articlesAPI } from '@/services/articles'
 import { commentsAPI } from '@/services/comments'
 import { isError } from '@/services/isError'
+import { userSelectors } from '@/store/user'
 
 export const useGetSingleArticle = () => {
   const { getSingleArticle, getComments } = articleActions
   const dispatch = useDispatch()
   const [isLoading, setLoading] = useState(false)
-  const { token } = useSelector((state: RootState) => state.user)
   const { articles } = useSelector((state: RootState) => state.article)
+  const { loggedIn } = userSelectors.useLoggedIn()
 
   const getSingleArticleAsync = useCallback(
     async (slug: string) => {
@@ -25,7 +26,7 @@ export const useGetSingleArticle = () => {
         if (!isError(response)) dispatch(getSingleArticle({ singleArticle: response.article }))
       }
 
-      if (token) {
+      if (loggedIn) {
         const commentsResponse = await commentsAPI.get({ slug })
         if (!isError(commentsResponse))
           dispatch(getComments({ comments: commentsResponse.comments }))

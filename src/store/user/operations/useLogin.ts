@@ -1,8 +1,7 @@
-import * as actions from '../actions'
-
 import { useCallback, useState } from 'react'
 
 import { API } from '@/services/API'
+import { authenticate } from '../actions'
 import { isError } from '@/services/isError'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -35,7 +34,7 @@ export const useLogin = () => {
       const { token } = response.user
       if (remember) localStorage.setItem('jwt', token)
       API.setToken(token)
-      dispatch(actions.authenticate(response.user))
+      dispatch(authenticate(response.user))
       history.push('/')
     },
     [dispatch]

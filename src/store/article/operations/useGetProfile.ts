@@ -1,6 +1,5 @@
-import * as actions from '../actions'
-
 import { articlesAPI } from '@/services/articles'
+import { getArticles } from '../actions'
 import { isError } from '@/services/isError'
 import { profilesAPI } from '@/services/profiles'
 import { useCallback } from 'react'
@@ -17,21 +16,19 @@ export const useGetProfile = () => {
         articlesAPI.get({ limit: 10, offset: 0, author: username }),
         profilesAPI.get({ username })
       ])
-      const payload = {
-        articles: isError(response[0]) ? null : response[0],
-        profile: isError(response[1]) ? null : response[1]
-      }
-      if (payload.articles)
+      const articlesPayload = isError(response[0]) ? null : response[0]
+      const profilePayload = isError(response[1]) ? null : response[1]
+      if (articlesPayload)
         dispatch(
-          actions.getArticles({
-            articles: payload.articles.articles,
-            count: payload.articles.articlesCount,
+          getArticles({
+            articles: articlesPayload.articles,
+            count: articlesPayload.articlesCount,
             limit: 10,
             offset: 0,
             author: username
           })
         )
-      if (payload.profile) dispatch(getProfile({ user: payload.profile.profile }))
+      if (profilePayload) dispatch(getProfile({ user: profilePayload.profile }))
     },
     [dispatch]
   )

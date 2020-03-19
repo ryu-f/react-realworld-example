@@ -1,4 +1,4 @@
-import * as actions from '../actions'
+import { appLoaded, authenticate } from '../actions'
 
 import { API } from '@/services/API'
 import { isError } from '@/services/isError'
@@ -11,13 +11,13 @@ export const useInitialAuth = () => {
 
   const initialAuthAsync = useCallback(
     async (token: string | null) => {
-      if (!token) return dispatch(actions.appLoaded())
+      if (!token) return dispatch(appLoaded())
       API.setToken(token)
       const response = await usersAPI.get()
 
-      if (isError(response)) return dispatch(actions.appLoaded())
+      if (isError(response)) return dispatch(appLoaded())
 
-      return dispatch(actions.authenticate(response.user))
+      return dispatch(authenticate(response.user))
     },
     [dispatch]
   )

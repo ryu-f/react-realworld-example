@@ -1,6 +1,5 @@
-import * as actions from '../actions'
-
 import { batch, useDispatch, useSelector } from 'react-redux'
+import { getArticles, getTags } from '../actions'
 
 import { RootState } from '@/store/rootReducer'
 import { articlesAPI } from '@/services/articles'
@@ -11,25 +10,23 @@ import { useCallback } from 'react'
 export const useInitialData = () => {
   const { limit, offset } = useSelector((state: RootState) => state.article)
   const dispatch = useDispatch()
-  const { getArticles, getTags } = actions
 
   const initialDataAsync = useCallback(async () => {
     const response = await Promise.all([articlesAPI.get({ limit, offset }), tags.get()])
-    const payload = {
-      articles: isError(response[0]) ? null : response[0],
-      tags: isError(response[1]) ? null : response[1]
-    }
+    const articlesPayload = isError(response[0]) ? null : response[0]
+    const tagsPayload = isError(response[1]) ? null : response[1]
+
     batch(() => {
-      if (payload.articles)
+      if (articlesPayload)
         dispatch(
           getArticles({
-            articles: payload.articles.articles,
-            count: payload.articles.articlesCount,
+            articles: articlesPayload.articles,
+            count: articlesPayload.articlesCount,
             limit,
             offset
           })
         )
-      if (payload.tags) dispatch(getTags(payload.tags))
+      if (tagsPayload) dispatch(getTags(tagsPayload))
     })
   }, [dispatch])
 
