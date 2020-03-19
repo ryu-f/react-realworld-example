@@ -11,7 +11,6 @@ export type State = {
   bio: null | string
   image: null | string
   user: null | Profile
-  loaded: boolean
 }
 
 const initialState: State = {
@@ -20,8 +19,7 @@ const initialState: State = {
   username: '',
   bio: null,
   image: null,
-  user: null,
-  loaded: false
+  user: null
 }
 
 type Actions = CreatorToActions<typeof creators>
@@ -35,8 +33,7 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         token: action.payload.token,
         username: action.payload.username,
         bio: action.payload.bio,
-        image: action.payload.image,
-        loaded: true
+        image: action.payload.image
       }
     case types.GET_PROFILE:
       return {
@@ -52,11 +49,6 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         bio: null,
         image: null,
         user: null
-      }
-    case types.APP_LOADED:
-      return {
-        ...state,
-        loaded: true
       }
     default:
       return state

@@ -4,6 +4,7 @@ import configureStore, { history } from './store/configureStore'
 
 import { App } from './App'
 import { ConnectedRouter } from 'connected-react-router'
+import { LoadingProvider } from '@/contexts/LoadingContext'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader/root'
@@ -22,7 +23,9 @@ if (process.env.DEBUG_ENV === 'enable') {
 const Root = hot(() => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App />
+      <LoadingProvider>
+        <App />
+      </LoadingProvider>
     </ConnectedRouter>
   </Provider>
 ))

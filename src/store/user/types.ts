@@ -1,6 +1,5 @@
 export const types = {
   AUTHENTICATE: 'AUTHENTICATE',
   GET_PROFILE: 'GET_PROFILE',
-  LOGOUT: 'LOGOUT',
-  APP_LOADED: 'APP_LOADED'
+  LOGOUT: 'LOGOUT'
 } as const
