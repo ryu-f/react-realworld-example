@@ -35,13 +35,13 @@ export const Article: React.FC = () => {
       ) : (
         <LayoutSignin>
           <BasicText size={16}>
-            <LinkText to="/login" size={16} textcolor="HORIZON_BLUE">
+            <SigninText to="/login" size={16} textcolor="HORIZON_BLUE">
               Sign in
-            </LinkText>
+            </SigninText>
             &nbsp;or&nbsp;
-            <LinkText to="/register" size={16} textcolor="HORIZON_BLUE">
+            <SigninText to="/register" size={16} textcolor="HORIZON_BLUE">
               sign up
-            </LinkText>
+            </SigninText>
             &nbsp;to add comments on this article.
           </BasicText>
         </LayoutSignin>
@@ -79,5 +79,13 @@ const LayoutSignin = styled.div`
     max-width: 940px;
     padding-top: 40px;
     margin: 40px auto 0;
+  }
+`
+
+const SigninText = styled(LinkText)`
+  @media (${media.desktop}) {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `

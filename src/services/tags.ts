@@ -9,5 +9,5 @@ export const tags = {
   /**
    * Get tags. Auth not required
    */
-  get: () => API.request<TagsResponse | Error>('/tags')
+  get: () => API.request<TagsResponse | Error>('/tags', { method: 'GET' })
 }

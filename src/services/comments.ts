@@ -24,7 +24,9 @@ export const commentsAPI = {
    */
   get: (payload: GetRequest) => {
     const { slug } = payload
-    return API.request<MultipleCommentsResponse | Error>(`/articles/${slug}/comments`)
+    return API.request<MultipleCommentsResponse | Error>(`/articles/${slug}/comments`, {
+      method: 'GET'
+    })
   },
 
   /**

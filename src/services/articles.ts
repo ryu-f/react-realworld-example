@@ -44,7 +44,7 @@ export const articlesAPI = {
    */
   getFeed: (payload: GetFeedRequest) => {
     const qs = new URLSearchParams(payload as any)
-    return API.request<MultipleArticlesResponse | Error>(`/articles/feed?${qs}`)
+    return API.request<MultipleArticlesResponse | Error>(`/articles/feed?${qs}`, { method: 'GET' })
   },
 
   /**
@@ -52,7 +52,7 @@ export const articlesAPI = {
    */
   get: (payload: GetRequest) => {
     const qs = new URLSearchParams(payload as any)
-    return API.request<MultipleArticlesResponse | Error>(`/articles?${qs}`)
+    return API.request<MultipleArticlesResponse | Error>(`/articles?${qs}`, { method: 'GET' })
   },
 
   /**
@@ -74,7 +74,7 @@ export const articlesAPI = {
    * Get an article. Auth not required
    */
   getArticle: (payload: GetArticleRequest) =>
-    API.request<SingleArticleResponse | Error>(`/articles/${payload.slug}`),
+    API.request<SingleArticleResponse | Error>(`/articles/${payload.slug}`, { method: 'GET' }),
 
   /**
    * Update an article. Auth is required

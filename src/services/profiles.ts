@@ -23,7 +23,7 @@ export const profilesAPI = {
    */
   get: (payload: GetRequest) => {
     const { username } = payload
-    return API.request<ProfileResponse | Error>(`/profiles/${username}`)
+    return API.request<ProfileResponse | Error>(`/profiles/${username}`, { method: 'GET' })
   },
 
   /**
