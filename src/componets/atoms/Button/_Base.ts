@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components'
 ////////////////////////////////////////////////////////////
 export type BaseProps = {
   size: 'BASE' | 'SMALL' | 'LARGE'
-  layout?: 'BASIC'
+  layout?: 'BASIC' | 'WARNING'
 }
 
 const THEME = {
@@ -17,6 +17,16 @@ const THEME = {
       transition: background 0.3s;
       &:hover {
         background-color: ${BACKGROUND_COLOR.SKY_BLUE};
+      }
+    }
+  `,
+  WARNING: css`
+    color: ${COLOR.WHITE};
+    background-color: ${BACKGROUND_COLOR.RED};
+    @media (${media.desktop}) {
+      transition: background 0.3s;
+      &:hover {
+        background-color: ${BACKGROUND_COLOR.RED};
       }
     }
   `

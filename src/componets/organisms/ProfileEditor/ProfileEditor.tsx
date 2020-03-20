@@ -101,7 +101,7 @@ export const ProfileEditor: React.FC<Props> = props => {
         <BasicButton size="LARGE" type="submit">
           Update
         </BasicButton>
-        <BasicButton size="LARGE" type="button" onClick={logout}>
+        <BasicButton size="LARGE" type="button" layout="WARNING" onClick={logout}>
           Click here to logout.
         </BasicButton>
       </LayoutFoot>
