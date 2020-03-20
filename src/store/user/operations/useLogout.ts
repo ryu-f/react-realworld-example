@@ -11,6 +11,7 @@ export const useLogout = () => {
 
   const logout = useCallback(() => {
     API.deleteToken()
+    localStorage.removeItem('jwt')
     dispatch(actions.logout())
     history.push('/')
   }, [dispatch])

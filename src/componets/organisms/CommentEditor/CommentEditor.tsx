@@ -52,7 +52,7 @@ export const CommentEditor: React.FC<Props> = props => {
 
 const Form = styled.form`
   width: 100%;
-  background-color: ${BACKGROUND_COLOR.SILVER};
+  background-color: ${BACKGROUND_COLOR.WHITE_GLAY};
   @media (${media.desktop}) {
     padding: 10px 10px 5px;
   }

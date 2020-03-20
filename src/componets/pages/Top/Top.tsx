@@ -14,7 +14,7 @@ export const Top: React.FC = () => {
   }, [])
 
   return (
-    <PageWrapper>
+    <Wrapper>
       <Content>
         <LayoutArticle>
           <ArticleListContainer />
@@ -23,11 +23,11 @@ export const Top: React.FC = () => {
           <TagListContainer />
         </LayoutTagList>
       </Content>
-    </PageWrapper>
+    </Wrapper>
   )
 }
 
-const PageWrapper = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   @media (${media.desktop}) {
     padding: 100px 0;

@@ -5,13 +5,13 @@ import styled from 'styled-components'
 
 export const Editor: React.FC = () => {
   return (
-    <PageWrapper>
+    <Wrapper>
       <ArticleEditorContainer />
-    </PageWrapper>
+    </Wrapper>
   )
 }
 
-const PageWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

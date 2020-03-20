@@ -7,16 +7,16 @@ import styled from 'styled-components'
 
 export const Login: React.FC = () => {
   return (
-    <PageWrapper>
+    <Wrapper>
       <LoginFormContainer />
       <RegisterLinkText to="/register" textcolor="WHITE" size={15}>
         Need an account?
       </RegisterLinkText>
-    </PageWrapper>
+    </Wrapper>
   )
 }
 
-const PageWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

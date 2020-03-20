@@ -17,16 +17,16 @@ export const User: React.FC = () => {
     getProfileAsync(name)
   }, [])
   return (
-    <PageWrapper>
+    <Wrapper>
       <ProfileDetailContainer />
       <LayoutArticle>
         <ArticleListContainer />
       </LayoutArticle>
-    </PageWrapper>
+    </Wrapper>
   )
 }
 
-const PageWrapper = styled.div`
+const Wrapper = styled.div`
   min-height: 100vh;
   @media (${media.desktop}) {
     padding-bottom: 100px;

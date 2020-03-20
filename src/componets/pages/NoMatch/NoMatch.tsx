@@ -4,14 +4,14 @@ import { BasicText } from '@/componets/atoms/Text'
 import styled from 'styled-components'
 
 export const NoMatch: React.FC = () => (
-  <PageWrapper>
+  <Wrapper>
     <BasicText size={16} textcolor="BLACK">
       Not Found
     </BasicText>
-  </PageWrapper>
+  </Wrapper>
 )
 
-const PageWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

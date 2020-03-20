@@ -5,13 +5,13 @@ import styled from 'styled-components'
 
 export const Settings: React.FC = () => {
   return (
-    <PageWrapper>
+    <Wrapper>
       <ProfileEditorContainer />
-    </PageWrapper>
+    </Wrapper>
   )
 }
 
-const PageWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
