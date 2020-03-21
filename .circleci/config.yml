@@ -1,9 +1,52 @@
 version: 2.1
 jobs:
-  build:
+  setup:
     docker:
       - image: circleci/node:10
     steps:
       - checkout
-      - run: npm ci
-      - run: npm unit
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./*
+  unit:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - attach_workspace:
+        at: .
+      - restore_cache:
+          keys: yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Unit test
+          command: yarn run unit
+
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - attach_workspace:
+        at: .
+      - restore_cache:
+          keys: yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build
+          command: yarn run build
+
+  workflows:
+    app:
+      jobs:
+        -setup
+        - unit:
+          requires:
+            - setup
+        - build:
+          requires:
+            - setup
