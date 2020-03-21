@@ -26,7 +26,7 @@ jobs:
           keys: yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Unit test
-          command: yarn run unit
+          command: yarn run unit:coverage
 
   build:
     docker:
@@ -43,7 +43,7 @@ jobs:
   workflows:
     app:
       jobs:
-        -setup
+        - setup
         - unit:
           requires:
             - setup

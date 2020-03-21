@@ -6167,6 +6167,13 @@ eslint-config-prettier@6.10.0:
   dependencies:
     get-stdin "^6.0.0"
 
+eslint-plugin-jest-dom@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-2.0.1.tgz#6df85a46992a86ac800b23304a9285b8c5d701f5"
+  integrity sha512-LY2BP5ucZbKO58I71QHnjH18YcL/XFarZEKBB3aQH+BKtMO+Da4t756JfnCpR4ELydYOr5B0DB8hzjgeQlhLBw==
+  dependencies:
+    requireindex "~1.2.0"
+
 eslint-plugin-jest@23.7.0:
   version "23.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.7.0.tgz#84d5603b6e745b59898cb6750df6a44782a39b04"
@@ -12834,6 +12841,11 @@ require-main-filename@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
+
+requireindex@~1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
+  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 requires-port@^1.0.0:
   version "1.0.0"

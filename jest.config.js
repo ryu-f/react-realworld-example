@@ -7,6 +7,7 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.tsx'],
   coveragePathIgnorePatterns: ['.stories.tsx'],
   coverageReporters: ['html'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   preset: 'ts-jest',
   globals: {
     'ts-jest': {

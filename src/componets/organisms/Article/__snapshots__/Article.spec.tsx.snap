@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article 1 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzoLsD RwjOw"
+  >
+    <div
+      class="sc-fzpans kLztrW"
+    >
+      <a
+        class="sc-fzplWN kKHbyV"
+        href="/user/test-user"
+      >
+        <img
+          alt=""
+          class="sc-AxhUy fRFEWe"
+          loading="lazy"
+          src="https://via.placeholder.com/1"
+        />
+      </a>
+      <div
+        class="sc-fznyAO jDRRPK"
+      >
+        <p
+          class="sc-AxjAm sc-AxirZ cLbhoI sc-fznKkj gQEAuv"
+          size="20"
+        >
+          test
+        </p>
+        <p
+          class="sc-AxjAm sc-AxirZ hAlrWo sc-fznZeY cPNPgI"
+          size="14"
+        >
+          test-description
+        </p>
+        <ul
+          class="sc-fzqBZW bsWVik"
+        >
+          <li
+            class="sc-fzqNJr kDyyJu"
+          >
+            <span
+              class="sc-fzozJi diAmiS"
+            >
+              test1
+            </span>
+          </li>
+          <li
+            class="sc-fzqNJr kDyyJu"
+          >
+            <span
+              class="sc-fzozJi diAmiS"
+            >
+              test2
+            </span>
+          </li>
+        </ul>
+        <div
+          class="sc-fzokOt dqxLUb"
+        >
+          <p
+            class="sc-AxjAm sc-AxirZ hAlrWo"
+            size="14"
+          >
+            by 
+          </p>
+          <a
+            class="sc-AxhCb bLNLny sc-fzoyAV ifDJKs"
+            href="/user/test-user"
+            size="16"
+            textcolor="GLAY"
+          >
+            test-user
+          </a>
+          <p
+            class="sc-AxjAm sc-AxirZ ikYLvZ"
+            size="16"
+          >
+            ・Sat Mar 21
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-fzoLag bkLbgZ"
+    >
+      <p
+        class="sc-AxjAm sc-AxirZ hAlrWo sc-fzoXzr bvUUDN"
+        size="14"
+      >
+        1 min read
+      </p>
+      <a
+        class="sc-AxmLO dauKBD sc-fzpjYC gbLMzn"
+        href="/article/test-slug"
+      >
+        READ
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Article snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzoLsD RwjOw"
+  >
+    <div
+      class="sc-fzpans kLztrW"
+    >
+      <a
+        class="sc-fzplWN kKHbyV"
+        href="/user/test-user"
+      >
+        <img
+          alt=""
+          class="sc-AxhUy fRFEWe"
+          loading="lazy"
+          src="https://via.placeholder.com/1"
+        />
+      </a>
+      <div
+        class="sc-fznyAO jDRRPK"
+      >
+        <p
+          class="sc-AxjAm sc-AxirZ cLbhoI sc-fznKkj gQEAuv"
+          size="20"
+        >
+          test
+        </p>
+        <p
+          class="sc-AxjAm sc-AxirZ hAlrWo sc-fznZeY cPNPgI"
+          size="14"
+        >
+          test-description
+        </p>
+        <ul
+          class="sc-fzqBZW bsWVik"
+        >
+          <li
+            class="sc-fzqNJr kDyyJu"
+          >
+            <span
+              class="sc-fzozJi diAmiS"
+            >
+              test1
+            </span>
+          </li>
+          <li
+            class="sc-fzqNJr kDyyJu"
+          >
+            <span
+              class="sc-fzozJi diAmiS"
+            >
+              test2
+            </span>
+          </li>
+        </ul>
+        <div
+          class="sc-fzokOt dqxLUb"
+        >
+          <p
+            class="sc-AxjAm sc-AxirZ hAlrWo"
+            size="14"
+          >
+            by 
+          </p>
+          <a
+            class="sc-AxhCb bLNLny sc-fzoyAV ifDJKs"
+            href="/user/test-user"
+            size="16"
+            textcolor="GLAY"
+          >
+            test-user
+          </a>
+          <p
+            class="sc-AxjAm sc-AxirZ ikYLvZ"
+            size="16"
+          >
+            ・Sat Mar 21
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-fzoLag bkLbgZ"
+    >
+      <p
+        class="sc-AxjAm sc-AxirZ hAlrWo sc-fzoXzr bvUUDN"
+        size="14"
+      >
+        1 min read
+      </p>
+      <a
+        class="sc-AxmLO dauKBD sc-fzpjYC gbLMzn"
+        href="/article/test-slug"
+      >
+        READ
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

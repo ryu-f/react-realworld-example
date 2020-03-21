@@ -18,7 +18,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:react/recommended'
   ],
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jest'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jest', 'jest-dom'],
   env: {
     node: true,
     jest: true,
@@ -52,5 +52,10 @@ module.exports = {
     browser: true,
     context: true,
     jestPuppeteer: true
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }
