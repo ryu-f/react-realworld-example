@@ -6,6 +6,6 @@ export interface Constants {
 }
 
 export const CONSTANTS: Constants = {
-  SCREEN_SHOT_DIR: path.resolve('__tests__/e2e/__snapshots__'),
+  SCREEN_SHOT_DIR: path.resolve('tests/e2e/__snapshots__'),
   NETWORK: 'networkidle2'
 }

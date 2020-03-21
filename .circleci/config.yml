@@ -40,13 +40,13 @@ jobs:
           name: Build
           command: yarn run build
 
-  workflows:
-    app:
-      jobs:
-        - setup
-        - unit:
-          requires:
-            - setup
-        - build:
-          requires:
-            - setup
+ workflows:
+   app:
+     jobs:
+       - setup
+       - unit:
+           requires:
+             - setup
+       - build:
+           requires:
+             - setup

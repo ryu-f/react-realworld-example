@@ -3,7 +3,7 @@ import * as React from 'react'
 import { BACKGROUND_COLOR, COLOR } from '@/styles/Variables'
 import { fireEvent, render } from '@testing-library/react'
 
-import { BasicButton } from './'
+import { BasicButton } from '../'
 
 describe('BasicButton', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {

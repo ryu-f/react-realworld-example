@@ -3,7 +3,7 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
-  coverageDirectory: '__tests__/unit/coverage',
+  coverageDirectory: 'tests/unit/coverage',
   collectCoverageFrom: ['src/**/*.tsx'],
   coveragePathIgnorePatterns: ['.stories.tsx'],
   coverageReporters: ['html'],
