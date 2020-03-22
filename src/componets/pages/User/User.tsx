@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { ArticleListContainer } from '@/componets/containers/ArticleListContainer'
+import { PagenationContainer } from '@/componets/containers/PagenationContainer'
 import { ProfileDetailContainer } from '@/componets/containers/ProfileDetailContainer'
 import { articleOperations } from '@/store/article'
 import { media } from '@/styles/Mixin'
@@ -21,6 +22,7 @@ export const User: React.FC = () => {
       <ProfileDetailContainer />
       <LayoutArticle>
         <ArticleListContainer />
+        <PagenationContainer />
       </LayoutArticle>
     </Wrapper>
   )

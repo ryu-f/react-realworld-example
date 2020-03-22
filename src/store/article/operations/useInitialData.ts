@@ -23,7 +23,8 @@ export const useInitialData = () => {
             articles: articlesPayload.articles,
             count: articlesPayload.articlesCount,
             limit,
-            offset
+            offset,
+            currentPage: 1
           })
         )
       if (tagsPayload) dispatch(getTags(tagsPayload))

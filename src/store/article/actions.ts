@@ -4,6 +4,7 @@ import { types } from './types'
 type GetArticlesPayload = {
   articles: State['articles']
   count: State['count']
+  currentPage: State['currentPage']
   offset: State['offset']
   limit: State['limit']
   author?: State['authorQuery']

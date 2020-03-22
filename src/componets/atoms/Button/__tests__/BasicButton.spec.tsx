@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR, COLOR } from '@/styles/Variables'
 import { fireEvent, render } from '@testing-library/react'
 
 import { BasicButton } from '../'
@@ -20,18 +19,5 @@ describe('BasicButton', () => {
     )
     fireEvent.click(getByText('Test'))
     expect(handler).toHaveBeenCalled()
-  })
-
-  test('propsによってcssが切り替わっているか', () => {
-    const { getByTestId } = render(
-      <BasicButton size="LARGE" layout="WARNING" data-testid="button">
-        Test
-      </BasicButton>
-    )
-    const button = getByTestId('button')
-    expect(button).toHaveStyle(`
-      color: ${COLOR.WHITE};
-      background-color: ${BACKGROUND_COLOR.RED};
-    `)
   })
 })

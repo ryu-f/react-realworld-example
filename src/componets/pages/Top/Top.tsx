@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { ArticleListContainer } from '@/componets/containers/ArticleListContainer'
+import { PagenationContainer } from '@/componets/containers/PagenationContainer'
 import { TagListContainer } from '@/componets/containers/TagListContainer'
 import { articleOperations } from '@/store/article'
 import { media } from '@/styles/Mixin'
@@ -18,6 +19,7 @@ export const Top: React.FC = () => {
       <Content>
         <LayoutArticle>
           <ArticleListContainer />
+          <PagenationContainer />
         </LayoutArticle>
         <LayoutTagList>
           <TagListContainer />

@@ -25,7 +25,8 @@ export const useGetProfile = () => {
             count: articlesPayload.articlesCount,
             limit: 10,
             offset: 0,
-            author: username
+            author: username,
+            currentPage: 1
           })
         )
       if (profilePayload) dispatch(getProfile({ user: profilePayload.profile }))

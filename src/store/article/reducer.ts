@@ -8,12 +8,13 @@ import { types } from './types'
 export type State = {
   articles: Array<Article>
   singleArticle: Article | null
-  count: number
   tags: Array<string>
   selectedTag: string
   comments: Array<Comment>
   limit: number
   offset: number
+  currentPage: number
+  count: number
   tagQuery: string
   authorQuery: string
   favoritedQuery: string
@@ -22,12 +23,13 @@ export type State = {
 const initialState: State = {
   articles: [],
   singleArticle: null,
-  count: 0,
   tags: [],
   selectedTag: '',
   comments: [],
   limit: 10,
   offset: 0,
+  currentPage: 1,
+  count: 0,
   tagQuery: '',
   authorQuery: '',
   favoritedQuery: ''

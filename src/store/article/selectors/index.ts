@@ -1,0 +1,1 @@
+export { useMaxPage } from './useMaxPage'

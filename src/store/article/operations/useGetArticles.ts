@@ -7,8 +7,8 @@ import { getArticles } from '../actions'
 import { isError } from '@/services/isError'
 
 type Request = {
+  nextPage?: number
   limit?: number
-  offset?: number
   tag?: string
   author?: string
   favorited?: string
@@ -20,6 +20,7 @@ export const useGetArticles = () => {
   const {
     limit: stateLimit,
     offset: stateOffset,
+    currentPage,
     authorQuery,
     tagQuery,
     favoritedQuery
@@ -28,10 +29,12 @@ export const useGetArticles = () => {
 
   const getArticlesAsync = useCallback(
     async (data: Request) => {
-      const { limit, offset, tag, author, favorited } = data
+      const { nextPage, tag, author, favorited } = data
+      const limit = data.limit || stateLimit
+      const offset = nextPage ? (nextPage - 1) * limit : stateOffset
       const payload = {
-        limit: limit || stateLimit,
-        offset: offset || stateOffset,
+        limit: limit,
+        offset: offset,
         author: author || authorQuery,
         tag: tag || tagQuery,
         favorited: favorited || favoritedQuery
@@ -50,6 +53,7 @@ export const useGetArticles = () => {
         getArticles({
           ...payload,
           articles: response.articles,
+          currentPage: nextPage || currentPage,
           count: response.articlesCount
         })
       )
