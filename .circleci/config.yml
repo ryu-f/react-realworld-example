@@ -45,3 +45,6 @@ workflows:
       - build:
           requires:
             - setup
+          filters:
+            branches:
+              only: master

@@ -33,7 +33,7 @@ describe('Article', () => {
       </Router>
     )
     fireEvent.click(getByText('READ'))
-    expect(history.location.pathname).toBe(article.slug)
+    expect(history.location.pathname).toBe(`/article/${article.slug}`)
   })
 
   test('ユーザー名クリックでユーザーページに遷移するか', () => {
@@ -44,7 +44,7 @@ describe('Article', () => {
       </Router>
     )
     fireEvent.click(getByText(article.author.username))
-    expect(history.location.pathname).toBe(article.author.username)
+    expect(history.location.pathname).toBe(`/user/${article.author.username}`)
   })
 
   test('snapshot', () => {
