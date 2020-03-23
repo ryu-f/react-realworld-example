@@ -51,7 +51,7 @@ const HeroView = styled.div`
   position: relative;
   background-color: ${BACKGROUND_COLOR.DARK_GLAY};
   @media (${media.desktop}) {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 `
 

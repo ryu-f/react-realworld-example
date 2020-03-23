@@ -73,7 +73,7 @@ const Wrapper = styled.article`
 const HeroView = styled.div`
   background-color: ${BACKGROUND_COLOR.DARK_GLAY};
   @media (${media.desktop}) {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 `
 
@@ -124,7 +124,8 @@ const UserName = styled(LinkText)`
 
 const ArticleInner = styled.div`
   @media (${media.desktop}) {
-    max-width: 940px;
+    max-width: 1000px;
+    padding: 0 20px;
     margin: 30px auto 0;
   }
 `

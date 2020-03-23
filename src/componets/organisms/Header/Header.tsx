@@ -53,6 +53,9 @@ export const Header: React.FC<Props> = props => {
 const Wrapper = styled.header`
   width: 100%;
   background-color: ${BACKGROUND_COLOR.IRON_BLACK};
+  @media (${media.desktop}) {
+    padding: 0 20px;
+  }
 `
 
 const Inner = styled.header`

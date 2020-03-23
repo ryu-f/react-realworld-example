@@ -19,7 +19,9 @@ export const Top: React.FC = () => {
       <Content>
         <LayoutArticle>
           <ArticleListContainer />
-          <PagenationContainer />
+          <LayoutPagenation>
+            <PagenationContainer />
+          </LayoutPagenation>
         </LayoutArticle>
         <LayoutTagList>
           <TagListContainer />
@@ -32,7 +34,7 @@ export const Top: React.FC = () => {
 const Wrapper = styled.div`
   width: 100%;
   @media (${media.desktop}) {
-    padding: 100px 0;
+    padding: 100px 20px;
   }
 `
 
@@ -53,9 +55,16 @@ const LayoutArticle = styled.div`
   }
 `
 
+const LayoutPagenation = styled.div`
+  @media (${media.desktop}) {
+    margin-top: 30px;
+  }
+`
+
 const LayoutTagList = styled.div`
   width: 100%;
   @media (${media.desktop}) {
     max-width: 220px;
+    margin-left: 20px;
   }
 `

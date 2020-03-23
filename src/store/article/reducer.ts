@@ -9,7 +9,6 @@ export type State = {
   articles: Array<Article>
   singleArticle: Article | null
   tags: Array<string>
-  selectedTag: string
   comments: Array<Comment>
   limit: number
   offset: number
@@ -24,7 +23,6 @@ const initialState: State = {
   articles: [],
   singleArticle: null,
   tags: [],
-  selectedTag: '',
   comments: [],
   limit: 10,
   offset: 0,
@@ -46,9 +44,9 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         count: action.payload.count,
         limit: action.payload.limit,
         offset: action.payload.offset,
-        authorQuery: action.payload.author || '',
-        tagQuery: action.payload.tag || '',
-        favoritedQuery: action.payload.favorited || ''
+        authorQuery: action.payload.author || state.authorQuery,
+        tagQuery: action.payload.tag || state.tagQuery,
+        favoritedQuery: action.payload.favorited || state.favoritedQuery
       }
     case types.GET_SINGLE_ARTICLE:
       return {

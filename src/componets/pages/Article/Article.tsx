@@ -60,8 +60,8 @@ const Wrapper = styled.div`
 const LayoutComment = styled.div`
   border-top: 1px solid ${BORDER_COLOR.SILVER};
   @media (${media.desktop}) {
-    max-width: 940px;
-    padding-top: 80px;
+    max-width: 980px;
+    padding: 80px 20px 0;
     margin: 80px auto 0;
   }
 `
@@ -76,8 +76,8 @@ const LayoutSignin = styled.div`
   text-align: center;
   border-top: 1px solid ${BORDER_COLOR.SILVER};
   @media (${media.desktop}) {
-    max-width: 940px;
-    padding-top: 40px;
+    max-width: 980px;
+    padding: 80px 20px 0;
     margin: 40px auto 0;
   }
 `

@@ -20,8 +20,10 @@ const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 10px 0;
   background-color: ${BACKGROUND_COLOR.IRON_BLACK};
+  @media (${media.desktop}) {
+    padding: 10px 20px;
+  }
 `
 
 const Link = styled.a`

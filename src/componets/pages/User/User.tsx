@@ -22,7 +22,9 @@ export const User: React.FC = () => {
       <ProfileDetailContainer />
       <LayoutArticle>
         <ArticleListContainer />
-        <PagenationContainer />
+        <LayoutPagenation>
+          <PagenationContainer />
+        </LayoutPagenation>
       </LayoutArticle>
     </Wrapper>
   )
@@ -38,7 +40,14 @@ const Wrapper = styled.div`
 const LayoutArticle = styled.div`
   width: 100%;
   @media (${media.desktop}) {
-    max-width: 750px;
+    max-width: 790px;
+    padding: 0 20px;
     margin: 30px auto 0;
+  }
+`
+
+const LayoutPagenation = styled.div`
+  @media (${media.desktop}) {
+    margin-top: 30px;
   }
 `
