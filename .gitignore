@@ -10,7 +10,7 @@ dist
 .env
 
 # unit coverrage dist
-tests/unit/coverage
+coverage/*
 
 # e2e capture dist
 tests/e2e/__snapshots__/*

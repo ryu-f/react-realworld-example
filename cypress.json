@@ -1,10 +1,10 @@
 {
   "baseUrl": "http://localhost:3000",
-  "integrationFolder": "tests/e2e/integration",
-  "pluginsFile": "tests/e2e/plugins/index.js",
-  "screenshotsFolder": "tests/e2e/snapshots",
-  "fixturesFolder": "tests/e2e/fixtures",
+  "integrationFolder": "cypress/integration",
+  "pluginsFile": "cypress/plugins/index.js",
+  "screenshotsFolder": "cypress/snapshots",
+  "fixturesFolder": "cypress/fixtures",
   "video": false,
-  "supportFile": "tests/e2e/support/index.ts",
+  "supportFile": "cypress/support/index.ts",
   "responseTimeout": 60000
 }
