@@ -1,8 +1,12 @@
 version: 2.1
-jobs:
-  setup:
+executors:
+  my-executor:
     docker:
       - image: circleci/node:12
+
+jobs:
+  setup:
+    executor: my-executor
     steps:
       - checkout
       - run: yarn install --frozen-lockfile
@@ -16,8 +20,7 @@ jobs:
             - ./*
 
   unit:
-    docker:
-      - image: circleci/node:12
+    executor: my-executor
     steps:
       - attach_workspace:
           at: .
@@ -26,8 +29,7 @@ jobs:
       - run: yarn run unit:coverage
 
   build:
-    docker:
-      - image: circleci/node:12
+    executor: my-executor
     steps:
       - attach_workspace:
           at: .
