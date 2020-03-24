@@ -1,8 +1,9 @@
 import * as React from 'react'
 
+import { media, vw } from '@/styles/Mixin'
+
 import { BasicText } from '@/componets/atoms/Text'
 import { Tag } from '@/componets/atoms/Tag'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 type Props = {
@@ -42,8 +43,13 @@ const Wrapper = styled.div`
 const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
+
   @media (${media.desktop}) {
     margin-top: 10px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(30)};
   }
 `
 
@@ -51,5 +57,9 @@ const ListItem = styled.li`
   @media (${media.desktop}) {
     margin: 0 3px 3px 0;
     cursor: pointer;
+  }
+
+  @media (${media.mobile}) {
+    margin: 0 ${vw(6)} ${vw(6)} 0;
   }
 `

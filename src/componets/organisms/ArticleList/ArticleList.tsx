@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
+import { media, vw } from '@/styles/Mixin'
 
 import { Article } from '@/componets/organisms/Article'
 import { Article as ArticleType } from '@/types/domain'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 
@@ -38,6 +38,10 @@ const Wrapper = styled.div`
 const ArticleItem = styled.li`
   @media (${media.desktop}) {
     margin-top: 10px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(30)};
   }
 
   &:first-child {

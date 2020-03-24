@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
+import { media, vw } from '@/styles/Mixin'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { ArticleListContainer } from '@/componets/containers/ArticleListContainer'
 import { PagenationContainer } from '@/componets/containers/PagenationContainer'
 import { ProfileDetailContainer } from '@/componets/containers/ProfileDetailContainer'
 import { articleOperations } from '@/store/article'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 export const User: React.FC = () => {
@@ -35,6 +35,10 @@ const Wrapper = styled.div`
   @media (${media.desktop}) {
     padding-bottom: 100px;
   }
+
+  @media (${media.mobile}) {
+    padding-bottom: ${vw(200)};
+  }
 `
 
 const LayoutArticle = styled.div`
@@ -44,10 +48,19 @@ const LayoutArticle = styled.div`
     padding: 0 20px;
     margin: 30px auto 0;
   }
+
+  @media (${media.mobile}) {
+    padding: 0 ${vw(40)};
+    margin-top: ${vw(60)};
+  }
 `
 
 const LayoutPagenation = styled.div`
   @media (${media.desktop}) {
     margin-top: 30px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(60)};
   }
 `

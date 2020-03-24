@@ -44,7 +44,9 @@ const View = styled.span<Props>`
     padding: 4px 6px;
     font-size: ${({ size }) => SIZE[size]}px;
   }
+
   @media (${media.mobile}) {
+    padding: ${vw(8)} ${vw(12)};
     font-size: ${({ size }) => vw(SIZE[size] * 2)};
   }
 `

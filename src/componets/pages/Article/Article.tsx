@@ -1,5 +1,6 @@
 import { BasicText, LinkText } from '@/componets/atoms/Text'
 import React, { useEffect } from 'react'
+import { media, vw } from '@/styles/Mixin'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { ArticleDetailContainer } from '@/componets/containers/ArticleDetailContainer'
@@ -7,7 +8,6 @@ import { BORDER_COLOR } from '@/styles/Variables'
 import { CommentEditorContainer } from '@/componets/containers/CommentEditorContainer'
 import { CommentListContainer } from '@/componets/containers/CommentListContainer'
 import { articleOperations } from '@/store/article'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { userSelectors } from '@/store/user'
 
@@ -52,23 +52,40 @@ export const Article: React.FC = () => {
 
 const Wrapper = styled.div`
   min-height: 100vh;
+
   @media (${media.desktop}) {
     padding-bottom: 100px;
+  }
+
+  @media (${media.mobile}) {
+    padding-bottom: ${vw(200)};
   }
 `
 
 const LayoutComment = styled.div`
+  width: 100%;
   border-top: 1px solid ${BORDER_COLOR.SILVER};
+
   @media (${media.desktop}) {
     max-width: 980px;
     padding: 80px 20px 0;
     margin: 80px auto 0;
+  }
+
+  @media (${media.mobile}) {
+    width: ${vw(685)};
+    padding: ${vw(80)} 0 0;
+    margin: ${vw(80)} auto 0;
   }
 `
 
 const LayoutCommentList = styled.div`
   @media (${media.desktop}) {
     margin: 40px auto 0;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(80)};
   }
 `
 

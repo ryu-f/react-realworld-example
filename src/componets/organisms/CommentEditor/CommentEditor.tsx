@@ -1,11 +1,12 @@
 import * as React from 'react'
 
+import { media, vw } from '@/styles/Mixin'
+
 import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicButton } from '@/componets/atoms/Button'
 import { BasicText } from '@/componets/atoms/Text'
 import { Image } from '@/componets/atoms/Image'
 import { TextArea } from '@/componets/atoms/TextArea'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 
@@ -35,7 +36,7 @@ export const CommentEditor: React.FC<Props> = props => {
           })}
         />
         <ErrorText size={16} textcolor="RED">
-          {errors.comment && errors.comment}
+          {errors.comment && errors.comment.message}
         </ErrorText>
       </LayoutTextArea>
       <LayoutFoot>
@@ -56,6 +57,10 @@ const Form = styled.form`
   @media (${media.desktop}) {
     padding: 10px 10px 5px;
   }
+
+  @media (${media.mobile}) {
+    padding: ${vw(20)} ${vw(20)};
+  }
 `
 
 const LayoutTextArea = styled.div`
@@ -66,15 +71,20 @@ const LayoutFoot = styled.div`
   display: flex;
   justify-content: space-between;
   @media (${media.desktop}) {
-    margin-top: 15px;
+    margin-top: 22px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(45)};
   }
 `
 
 const ErrorText = styled(BasicText)`
   position: absolute;
   left: 0;
+
   @media (${media.desktop}) {
-    bottom: -25px;
+    bottom: -20px;
   }
 `
 
@@ -83,14 +93,26 @@ const ImageWrapper = styled.div`
   flex-shrink: 0;
   clip-path: circle(50%);
   object-fit: cover;
+
   @media (${media.desktop}) {
     width: 30px;
     height: 30px;
+    margin-left: 2px;
+  }
+
+  @media (${media.mobile}) {
+    width: ${vw(60)};
+    height: ${vw(60)};
+    margin-left: ${vw(2)};
   }
 `
 
 const SubmitButton = styled(BasicButton)`
   @media (${media.desktop}) {
     width: 150px;
+  }
+
+  @media (${media.mobile}) {
+    width: ${vw(300)};
   }
 `

@@ -1,14 +1,17 @@
 import * as React from 'react'
 
+import { media, vw } from '@/styles/Mixin'
+
 import { LinkText } from '@/componets/atoms/Text'
 import { RegistrationFormContainer } from '@/componets/containers/RegistrationFormContainer'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 export const Register: React.FC = () => {
   return (
     <Wrapper>
-      <RegistrationFormContainer />
+      <LayoutRegistrationFormContainer>
+        <RegistrationFormContainer />
+      </LayoutRegistrationFormContainer>
       <RegisterLinkText to="/login" textcolor="WHITE" size={15}>
         Have an account?
       </RegisterLinkText>
@@ -17,11 +20,29 @@ export const Register: React.FC = () => {
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  @media (${media.desktop}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  @media (${media.mobile}) {
+    padding: 0 ${vw(40)};
+  }
+`
+
+const LayoutRegistrationFormContainer = styled.div`
+  width: 100%;
+
+  @media (${media.desktop}) {
+    max-width: 448px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(170)};
+  }
 `
 
 const RegisterLinkText = styled(LinkText)`
@@ -33,5 +54,9 @@ const RegisterLinkText = styled(LinkText)`
     &:hover {
       text-decoration: none;
     }
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(10)};
   }
 `

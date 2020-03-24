@@ -1,7 +1,7 @@
 import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import React, { forwardRef } from 'react'
+import { media, vw } from '@/styles/Mixin'
 
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 type Props = React.InputHTMLAttributes<HTMLInputElement>
@@ -20,5 +20,9 @@ const View = styled.input`
 
   @media (${media.desktop}) {
     padding: 8px 16px;
+  }
+
+  @media (${media.mobile}) {
+    padding: ${vw(16)} ${vw(32)};
   }
 `

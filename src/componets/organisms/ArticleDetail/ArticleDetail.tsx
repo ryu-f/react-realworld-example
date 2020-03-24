@@ -1,4 +1,5 @@
 import { BasicText, LinkText } from '@/componets/atoms/Text'
+import { media, vw } from '@/styles/Mixin'
 
 import { Article } from '@/types/domain'
 import { BACKGROUND_COLOR } from '@/styles/Variables'
@@ -6,7 +7,6 @@ import { Image } from '@/componets/atoms/Image'
 import { Link } from 'react-router-dom'
 import React from 'react'
 import { Tag } from '@/componets/atoms/Tag'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 type Props = {
@@ -75,6 +75,9 @@ const HeroView = styled.div`
   @media (${media.desktop}) {
     padding: 40px 20px;
   }
+  @media (${media.mobile}) {
+    padding: ${vw(80)} ${vw(40)};
+  }
 `
 
 const HeroViewInner = styled.div`
@@ -89,6 +92,10 @@ const UserArea = styled.div`
   align-items: center;
   @media (${media.desktop}) {
     margin-top: 30px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(30)};
   }
 `
 
@@ -106,11 +113,20 @@ const ImageWrapper = styled(Link)`
       opacity: 0.3;
     }
   }
+
+  @media (${media.mobile}) {
+    width: ${vw(80)};
+    height: ${vw(80)};
+  }
 `
 
 const UserSub = styled.div`
   @media (${media.desktop}) {
     margin-left: 15px;
+  }
+
+  @media (${media.mobile}) {
+    margin-left: ${vw(30)};
   }
 `
 
@@ -123,16 +139,27 @@ const UserName = styled(LinkText)`
 `
 
 const ArticleInner = styled.div`
+  width: 100%;
+
   @media (${media.desktop}) {
     max-width: 1000px;
     padding: 0 20px;
     margin: 30px auto 0;
+  }
+
+  @media (${media.mobile}) {
+    padding: 0 ${vw(40)};
+    margin-top: ${vw(60)};
   }
 `
 
 const TagList = styled.ul`
   @media (${media.desktop}) {
     margin-top: 10px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(20)};
   }
 `
 
@@ -141,16 +168,28 @@ const TagListItem = styled.li`
   @media (${media.desktop}) {
     margin: 0 5px 5px 0;
   }
+
+  @media (${media.mobile}) {
+    margin: 0 ${vw(10)} ${vw(10)} 0;
+  }
 `
 
 const LayoutDescription = styled.div`
   @media (${media.desktop}) {
     margin-top: 30px;
   }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(60)};
+  }
 `
 
 const LayoutBody = styled.div`
   @media (${media.desktop}) {
     margin-top: 50px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(50)};
   }
 `

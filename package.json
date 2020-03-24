@@ -15,6 +15,7 @@
     "unit:coverage": "jest --coverage",
     "unit:watch": "jest --watch",
     "e2e": "cypress open",
+    "e2e:ci": "cypress run",
     "e2e:update": "cypress open --env updateSnapshots=true",
     "storybook": "start-storybook -p 6006 -s ./src/static",
     "storybook:build": "build-storybook",

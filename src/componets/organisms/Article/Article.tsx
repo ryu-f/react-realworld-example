@@ -2,13 +2,13 @@ import * as React from 'react'
 
 import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import { BasicText, LinkText } from '@/componets/atoms/Text'
+import { media, vw } from '@/styles/Mixin'
 
 import { Article as ArticleType } from '@/types/domain'
 import { Image } from '@/componets/atoms/Image'
 import { Link } from 'react-router-dom'
 import { LinkButton } from '@/componets/atoms/Button'
 import { Tag } from '@/componets/atoms/Tag'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useReadingTime } from '@/hooks/useReadingTime'
 
@@ -76,6 +76,7 @@ const Wrapper = styled.div`
   border: 1px solid ${BORDER_COLOR.SILVER};
   border-radius: 5px;
   box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
+
   @media (${media.desktop}) {
     padding: 10px;
     cursor: pointer;
@@ -83,6 +84,10 @@ const Wrapper = styled.div`
     &:hover {
       background-color: ${BACKGROUND_COLOR.SILVER};
     }
+  }
+
+  @media (${media.mobile}) {
+    padding: ${vw(20)};
   }
 `
 
@@ -104,11 +109,20 @@ const ImageWrapper = styled(Link)`
       opacity: 0.3;
     }
   }
+
+  @media (${media.mobile}) {
+    width: ${vw(80)};
+    height: ${vw(80)};
+  }
 `
 
 const LayoutTitle = styled.div`
   @media (${media.desktop}) {
     margin-left: 15px;
+  }
+
+  @media (${media.mobile}) {
+    margin-left: ${vw(30)};
   }
 `
 
@@ -122,6 +136,11 @@ const DescriptionText = styled(BasicText)`
   @media (${media.desktop}) {
     margin-top: 8px;
   }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(16)};
+  }
+
   &::first-line {
     line-height: 1;
   }
@@ -138,12 +157,21 @@ const TagList = styled.ul`
   @media (${media.desktop}) {
     margin-top: 10px;
   }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(26)};
+  }
 `
 
 const TagListItem = styled.li`
   display: inline-block;
+
   @media (${media.desktop}) {
     margin: 0 5px 5px 0;
+  }
+
+  @media (${media.mobile}) {
+    margin: 0 ${vw(10)} ${vw(10)} 0;
   }
 `
 
@@ -168,10 +196,18 @@ const MinText = styled(BasicText)``
 
 const ReadButton = styled(LinkButton)`
   text-align: center;
+
   @media (${media.desktop}) {
     width: 60px;
     height: 30px;
     padding: 6px 8px;
     margin-left: 10px;
+  }
+
+  @media (${media.mobile}) {
+    width: ${vw(120)};
+    height: ${vw(60)};
+    padding: ${vw(12)} ${vw(19)};
+    margin-left: ${vw(20)};
   }
 `

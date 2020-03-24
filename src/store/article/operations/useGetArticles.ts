@@ -58,7 +58,7 @@ export const useGetArticles = () => {
         })
       )
     },
-    [dispatch]
+    [dispatch, stateLimit, stateOffset, currentPage, authorQuery, tagQuery, favoritedQuery]
   )
 
   return { getArticlesAsync, isLoading, errorMessage }

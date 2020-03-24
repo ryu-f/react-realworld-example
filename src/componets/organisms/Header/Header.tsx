@@ -1,10 +1,11 @@
 import * as React from 'react'
 
+import { media, vw } from '@/styles/Mixin'
+
 import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicText } from '@/componets/atoms/Text'
 import { Image } from '@/componets/atoms/Image'
 import { Link } from 'react-router-dom'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 type Props = {
@@ -53,8 +54,13 @@ export const Header: React.FC<Props> = props => {
 const Wrapper = styled.header`
   width: 100%;
   background-color: ${BACKGROUND_COLOR.IRON_BLACK};
+
   @media (${media.desktop}) {
     padding: 0 20px;
+  }
+
+  @media (${media.mobile}) {
+    padding: 0 ${vw(40)};
   }
 `
 
@@ -68,19 +74,31 @@ const Inner = styled.header`
     padding: 5px 0;
     margin: 0 auto;
   }
+
+  @media (${media.mobile}) {
+    padding: ${vw(10)} 0;
+  }
 `
 
 const HeadingLink = styled(Link)`
   display: flex;
   align-items: center;
+
   @media (${media.desktop}) {
     margin-left: -17px;
   }
 `
 
 const LogoImage = styled(Image)`
-  width: 60px;
-  height: 40px;
+  @media (${media.desktop}) {
+    width: 60px;
+    height: 40px;
+  }
+
+  @media (${media.mobile}) {
+    width: ${vw(120)};
+    height: ${vw(80)};
+  }
 `
 
 const NavigationList = styled.ul`

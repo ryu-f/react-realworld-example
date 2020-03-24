@@ -1,11 +1,12 @@
 import * as React from 'react'
 
+import { media, vw } from '@/styles/Mixin'
+
 import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicButton } from '@/componets/atoms/Button'
 import { BasicText } from '@/componets/atoms/Text'
 import { CheckBox } from '@/componets/atoms/CheckBox'
 import { InputText } from '@/componets/atoms/InputText'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 
@@ -87,18 +88,26 @@ const Form = styled.form`
   width: 100%;
   background-color: ${BACKGROUND_COLOR.WHITE};
   border-radius: 5px;
+  box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
 
   @media (${media.desktop}) {
-    max-width: 448px;
     padding: 40px 40px 35px;
-    box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
+  }
+
+  @media (${media.mobile}) {
+    padding: ${vw(80)} ${vw(80)} ${vw(70)};
   }
 `
 
 const LayoutInput = styled.div`
   position: relative;
+
   @media (${media.desktop}) {
     margin-top: 40px;
+  }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(80)};
   }
 `
 
@@ -106,12 +115,21 @@ const LayoutFoot = styled.div`
   @media (${media.desktop}) {
     margin-top: 30px;
   }
+
+  @media (${media.mobile}) {
+    margin-top: ${vw(60)};
+  }
 `
 
 const ErrorText = styled(BasicText)`
   position: absolute;
   left: 0;
+
   @media (${media.desktop}) {
     bottom: -25px;
+  }
+
+  @media (${media.mobile}) {
+    bottom: ${vw(-50)};
   }
 `

@@ -2,10 +2,10 @@ import * as React from 'react'
 
 import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import { BasicText, LinkText } from '@/componets/atoms/Text'
+import { media, vw } from '@/styles/Mixin'
 
 import { Comment as CommentType } from '@/types/domain'
 import { Image } from '@/componets/atoms/Image'
-import { media } from '@/styles/Mixin'
 import styled from 'styled-components'
 
 type Props = {
@@ -47,14 +47,23 @@ const LayoutBody = styled.div`
   @media (${media.desktop}) {
     padding: 20px;
   }
+
+  @media (${media.mobile}) {
+    padding: ${vw(20)} ${vw(40)};
+  }
 `
 
 const LayoutCaption = styled.div`
   display: flex;
   align-items: center;
   background-color: ${BACKGROUND_COLOR.WHITE_GLAY};
+
   @media (${media.desktop}) {
-    padding: 10px 20px;
+    padding: 20px 40px;
+  }
+
+  @media (${media.mobile}) {
+    padding: ${vw(20)} ${vw(40)};
   }
 `
 
@@ -63,9 +72,15 @@ const ImageWrapper = styled.div`
   flex-shrink: 0;
   clip-path: circle(50%);
   object-fit: cover;
+
   @media (${media.desktop}) {
     width: 20px;
     height: 20px;
+  }
+
+  @media (${media.mobile}) {
+    width: ${vw(40)};
+    height: ${vw(40)};
   }
 `
 
@@ -76,10 +91,18 @@ const UserText = styled(LinkText)`
       text-decoration: underline;
     }
   }
+
+  @media (${media.mobile}) {
+    margin-left: ${vw(10)};
+  }
 `
 
 const CreatedAtText = styled(BasicText)`
   @media (${media.desktop}) {
     margin-left: 5px;
+  }
+
+  @media (${media.mobile}) {
+    margin-left: ${vw(10)};
   }
 `

@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import { media, vw } from '@/styles/Mixin'
+
 import { ProfileEditorContainer } from '@/componets/containers/ProfileEditorContainer'
 import styled from 'styled-components'
 
@@ -16,4 +18,14 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+
+  @media (${media.desktop}) {
+    max-width: 980px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  @media (${media.mobile}) {
+    padding: 0 ${vw(40)};
+  }
 `
