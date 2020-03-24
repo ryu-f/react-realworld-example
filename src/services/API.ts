@@ -3,12 +3,12 @@ const API_ROOT = 'https://conduit.productionready.io/api'
 const headers = new Headers()
 headers.append('Content-Type', 'application/json')
 const defaultConfig: RequestInit = { mode: 'cors', headers }
-headers.delete
 
 export const API = {
   request: <T>(url: string, config: RequestInit = {}): Promise<T> => {
     return fetch(`${API_ROOT}${url}`, {
-      ...Object.assign(defaultConfig, config)
+      ...defaultConfig,
+      ...config
     }).then(response => {
       if (!response.ok) {
         throw new Error(response.statusText)
