@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 
-import { Footer } from '@/componets/organisms/Footer'
+import { Footer } from '@/components/organisms/Footer'
 import { GlobalStyle } from './styles'
-import { HeaderContainer } from '@/componets/containers/HeaderContainer'
+import { HeaderContainer } from '@/components/containers/HeaderContainer'
 import { Routes } from './Routes'
-import { ScrollToTop } from '@/componets/templates/ScrollToTop'
+import { ScrollToTop } from '@/components/templates/ScrollToTop'
 import styled from 'styled-components'
 import { useLoading } from '@/contexts/LoadingContext'
 import { userOperations } from '@/store/user'
