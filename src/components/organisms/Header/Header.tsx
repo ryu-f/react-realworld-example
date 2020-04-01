@@ -1,35 +1,95 @@
 import * as React from 'react'
 
+import { BACKGROUND_COLOR, COLOR } from '@/styles/Variables'
 import { media, vw } from '@/styles/Mixin'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicText } from '@/components/atoms/Text'
 import { Image } from '@/components/atoms/Image'
 import { Link } from 'react-router-dom'
+import { SvgIcons } from '@/components/atoms/SvgIcons'
 import styled from 'styled-components'
 
 type Props = {
   loggedIn: boolean
   name: string
+  currentPath: string
 }
 
 export const Header: React.FC<Props> = props => {
-  const { loggedIn, name } = props
+  const { loggedIn, name, currentPath } = props
+
+  const loggedInNavigations = [
+    {
+      to: '/editor',
+      text: 'New Post',
+      id: 'edit' as 'edit'
+    },
+    {
+      to: '/settings',
+      text: 'Settings',
+      id: 'setting' as 'setting'
+    },
+    {
+      to: `/user/${name}`,
+      text: name,
+      id: 'person' as 'person'
+    }
+  ]
+
+  const unregistedNavigations = [
+    {
+      to: '/login',
+      text: 'Sign In',
+      id: 'unlock' as 'unlock'
+    },
+    {
+      to: '/register',
+      text: 'Sign Up',
+      id: 'in' as 'in'
+    }
+  ]
 
   const NavigationContent: React.FC = () =>
     loggedIn ? (
       <nav>
         <NavigationList>
-          <NavigationItem to="/editor">New Post</NavigationItem>
-          <NavigationItem to="/settings">Settings</NavigationItem>
-          <NavigationItem to={`/user/${name}`}>{name}</NavigationItem>
+          {loggedInNavigations.map((nav, i) => (
+            <li key={i}>
+              <NavigationItem to={nav.to}>
+                <NavigationText
+                  size={16}
+                  textcolor={currentPath.includes(nav.to) ? 'HORIZON_BLUE' : 'WHITE'}
+                >
+                  {nav.text}
+                </NavigationText>
+                <NavigationIcon
+                  id={nav.id}
+                  fill={currentPath.includes(nav.to) ? '#5ed7f2' : '#fff'}
+                />
+              </NavigationItem>
+            </li>
+          ))}
         </NavigationList>
       </nav>
     ) : (
       <nav>
         <NavigationList>
-          <NavigationItem to="/login">Sign In</NavigationItem>
-          <NavigationItem to="/register">Sign Up</NavigationItem>
+          {unregistedNavigations.map((nav, i) => (
+            <li key={i}>
+              <NavigationItem to={nav.to}>
+                <NavigationText
+                  size={16}
+                  textcolor={currentPath.includes(nav.to) ? 'HORIZON_BLUE' : 'WHITE'}
+                >
+                  {nav.text}
+                </NavigationText>
+                <NavigationIcon
+                  id={nav.id}
+                  fill={currentPath.includes(nav.to) ? '#5ed7f2' : '#fff'}
+                />
+              </NavigationItem>
+            </li>
+          ))}
         </NavigationList>
       </nav>
     )
@@ -106,6 +166,34 @@ const NavigationList = styled.ul`
   align-items: center;
 `
 
+const NavigationText = styled(BasicText)``
+
+const NavigationIcon = styled(SvgIcons)`
+  @media (${media.desktop}) {
+    top: 50%;
+    left: 107%;
+    width: 21px;
+    height: 21px;
+    transform: translateY(-50%);
+  }
+`
+
 const NavigationItem = styled(Link)`
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media (${media.desktop}) {
+    margin-left: 50px;
+
+    &:hover {
+      ${NavigationText} {
+        color: ${COLOR.HORIZON_BLUE};
+      }
+
+      ${NavigationIcon} {
+        fill: ${COLOR.HORIZON_BLUE};
+      }
+    }
+  }
 `
