@@ -5,6 +5,7 @@ import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
 import { Article as ArticleType } from '@/types/domain'
+import { FavoriteButton } from '@/components/molecules/IconButton'
 import { Image } from '@/components/atoms/Image'
 import { Link } from 'react-router-dom'
 import { LinkButton } from '@/components/atoms/Button'
@@ -17,7 +18,16 @@ type Props = {
 }
 
 export const Article: React.FC<Props> = props => {
-  const { title, description, slug, body, tagList, createdAt, author } = props.article
+  const {
+    title,
+    description,
+    slug,
+    body,
+    tagList,
+    createdAt,
+    author,
+    favoritesCount
+  } = props.article
   const { readingTime } = useReadingTime(body)
   const onUserClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => e.stopPropagation()
 
@@ -61,6 +71,7 @@ export const Article: React.FC<Props> = props => {
         </LayoutTitle>
       </Primary>
       <Secondary>
+        <FavoriteButton size="BASE">{favoritesCount}</FavoriteButton>
         <MinText size={14}>{`${readingTime} min read`}</MinText>
         <ReadButton to={`/article/${slug}`} size="SMALL">
           READ
