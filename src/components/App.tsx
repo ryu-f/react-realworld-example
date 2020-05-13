@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { Footer } from '@/components/organisms/Footer'
-import { GlobalStyle } from './styles'
+import { GlobalStyle } from '@/styles'
 import { HeaderContainer } from '@/components/containers/HeaderContainer'
 import { Routes } from './Routes'
 import { ScrollToTop } from '@/components/templates/ScrollToTop'

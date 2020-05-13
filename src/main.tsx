@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import configureStore, { history } from './store/configureStore'
 
-import { App } from './App'
+import { App } from '@/components/App'
 import { ConnectedRouter } from 'connected-react-router'
 import { LoadingProvider } from '@/contexts/LoadingContext'
 import { Provider } from 'react-redux'
