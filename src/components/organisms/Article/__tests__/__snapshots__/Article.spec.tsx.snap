@@ -1,174 +1,427 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Article 1 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-fzoLsD RwjOw"
-  >
-    <div
-      class="sc-fzpans kLztrW"
-    >
-      <a
-        class="sc-fzplWN kKHbyV"
-        href="/user/test-user"
-      >
-        <img
-          alt=""
-          class="sc-AxhUy fRFEWe"
-          loading="lazy"
-          src="https://via.placeholder.com/1"
-        />
-      </a>
-      <div
-        class="sc-fznyAO jDRRPK"
-      >
-        <p
-          class="sc-AxjAm sc-AxirZ cLbhoI sc-fznKkj gQEAuv"
-          size="20"
-        >
-          test
-        </p>
-        <p
-          class="sc-AxjAm sc-AxirZ hAlrWo sc-fznZeY cPNPgI"
-          size="14"
-        >
-          test-description
-        </p>
-        <ul
-          class="sc-fzqBZW bsWVik"
-        >
-          <li
-            class="sc-fzqNJr kDyyJu"
-          >
-            <span
-              class="sc-fzozJi diAmiS"
-            >
-              test1
-            </span>
-          </li>
-          <li
-            class="sc-fzqNJr kDyyJu"
-          >
-            <span
-              class="sc-fzozJi diAmiS"
-            >
-              test2
-            </span>
-          </li>
-        </ul>
-        <div
-          class="sc-fzokOt dqxLUb"
-        >
-          <p
-            class="sc-AxjAm sc-AxirZ hAlrWo"
-            size="14"
-          >
-            by 
-          </p>
-          <a
-            class="sc-AxhCb bLNLny sc-fzoyAV ifDJKs"
-            href="/user/test-user"
-            size="16"
-            textcolor="GLAY"
-          >
-            test-user
-          </a>
-          <p
-            class="sc-AxjAm sc-AxirZ ikYLvZ"
-            size="16"
-          >
-            ・Sat Mar 21
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-fzoLag bkLbgZ"
-    >
-      <p
-        class="sc-AxjAm sc-AxirZ hAlrWo sc-fzoXzr bvUUDN"
-        size="14"
-      >
-        1 min read
-      </p>
-      <a
-        class="sc-AxmLO dauKBD sc-fzpjYC gbLMzn"
-        href="/article/test-slug"
-      >
-        READ
-      </a>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Article snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-fzoLsD RwjOw"
+  .c5 {
+  font-weight: bold;
+  color: #0d0d0d;
+}
+
+.c7 {
+  color: #0d0d0d;
+}
+
+.c15 {
+  color: #818a91;
+}
+
+.c13 {
+  color: #818a91;
+}
+
+.c17 {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #5ed7f2;
+}
+
+.c20 {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #5ed7f2;
+}
+
+.c19 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.c18 {
+  position: relative;
+}
+
+.c3 {
+  max-width: 100%;
+  height: auto;
+}
+
+.c11 {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #818a91;
+}
+
+.c0 {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: rgba(60,66,87,0.12) 0 7px 14px 0,rgba(0,0,0,0.12) 0 3px 6px 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  display: block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-clip-path: circle(50%);
+  clip-path: circle(50%);
+  object-fit: cover;
+}
+
+.c6::first-line {
+  line-height: 1;
+}
+
+.c8::first-line {
+  line-height: 1;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c10 {
+  display: inline-block;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c21 {
+  text-align: center;
+}
+
+@media (min-width:751px) {
+  .c5 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width:750px) {
+  .c5 {
+    font-size: 5.333333333333333vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c7 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:750px) {
+  .c7 {
+    font-size: 3.7333333333333334vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c15 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:750px) {
+  .c15 {
+    font-size: 4.266666666666667vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c13 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:750px) {
+  .c13 {
+    font-size: 4.266666666666667vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c17 {
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+
+  .c17:hover {
+    background-color: #7ebcf2;
+  }
+}
+
+@media (min-width:751px) {
+  .c17 {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width:750px) {
+  .c17 {
+    font-size: 3.7333333333333334vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c20 {
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+
+  .c20:hover {
+    background-color: #7ebcf2;
+  }
+}
+
+@media (min-width:751px) {
+  .c20 {
+    padding: 8px 16px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width:750px) {
+  .c20 {
+    font-size: 3.2vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c11 {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width:750px) {
+  .c11 {
+    padding: 1.0666666666666667vw 1.6vw;
+    font-size: 2.6666666666666665vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c0 {
+    padding: 10px;
+    cursor: pointer;
+    -webkit-transition: background 0.5s;
+    transition: background 0.5s;
+  }
+
+  .c0:hover {
+    background-color: #ccc;
+  }
+}
+
+@media (max-width:750px) {
+  .c0 {
+    padding: 2.6666666666666665vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c2 {
+    width: 40px;
+    height: 40px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+
+  .c2:hover {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width:750px) {
+  .c2 {
+    width: 10.666666666666666vw;
+    height: 10.666666666666666vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c4 {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width:750px) {
+  .c4 {
+    margin-left: 4vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c8 {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width:750px) {
+  .c8 {
+    margin-top: 2.1333333333333333vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c12 {
+    margin-top: 5px;
+  }
+}
+
+@media (min-width:751px) {
+  .c9 {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width:750px) {
+  .c9 {
+    margin-top: 3.466666666666667vw;
+  }
+}
+
+@media (min-width:751px) {
+  .c10 {
+    margin: 0 5px 5px 0;
+  }
+}
+
+@media (max-width:750px) {
+  .c10 {
+    margin: 0 1.3333333333333333vw 1.3333333333333333vw 0;
+  }
+}
+
+@media (min-width:751px) {
+  .c14:hover {
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width:750px) {
+  .c14 {
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+  }
+}
+
+@media (min-width:751px) {
+  .c21 {
+    width: 60px;
+    height: 30px;
+    padding: 6px 8px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width:750px) {
+  .c21 {
+    width: 16vw;
+    height: 8vw;
+    padding: 1.6vw 2.533333333333333vw;
+    margin-left: 2.6666666666666665vw;
+  }
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-fzpans kLztrW"
+      class="c1"
     >
       <a
-        class="sc-fzplWN kKHbyV"
+        class="c2"
         href="/user/test-user"
       >
         <img
           alt=""
-          class="sc-AxhUy fRFEWe"
+          class="c3"
           loading="lazy"
           src="https://via.placeholder.com/1"
         />
       </a>
       <div
-        class="sc-fznyAO jDRRPK"
+        class="c4"
       >
         <p
-          class="sc-AxjAm sc-AxirZ cLbhoI sc-fznKkj gQEAuv"
+          class="sc-AxjAm c5 c6"
           size="20"
         >
           test
         </p>
         <p
-          class="sc-AxjAm sc-AxirZ hAlrWo sc-fznZeY cPNPgI"
+          class="sc-AxjAm c7 c8"
           size="14"
         >
           test-description
         </p>
         <ul
-          class="sc-fzqBZW bsWVik"
+          class="c9"
         >
           <li
-            class="sc-fzqNJr kDyyJu"
+            class="c10"
           >
             <span
-              class="sc-fzozJi diAmiS"
+              class="c11"
             >
               test1
             </span>
           </li>
           <li
-            class="sc-fzqNJr kDyyJu"
+            class="c10"
           >
             <span
-              class="sc-fzozJi diAmiS"
+              class="c11"
             >
               test2
             </span>
           </li>
         </ul>
         <div
-          class="sc-fzokOt dqxLUb"
+          class="c12"
         >
           <p
-            class="sc-AxjAm sc-AxirZ hAlrWo"
+            class="sc-AxjAm c7"
             size="14"
           >
             by 
           </p>
           <a
-            class="sc-AxhCb bLNLny sc-fzoyAV ifDJKs"
+            class="c13 c14"
             href="/user/test-user"
             size="16"
             textcolor="GLAY"
@@ -176,7 +429,7 @@ exports[`Article snapshot 1`] = `
             test-user
           </a>
           <p
-            class="sc-AxjAm sc-AxirZ ikYLvZ"
+            class="sc-AxjAm c15"
             size="16"
           >
             ・Sat Mar 21
@@ -185,16 +438,29 @@ exports[`Article snapshot 1`] = `
       </div>
     </div>
     <div
-      class="sc-fzoLag bkLbgZ"
+      class="c16"
     >
+      <button
+        class="sc-AxhUy c17 c18"
+      >
+        <svg
+          class="c19"
+          id="heart"
+        >
+          <use
+            xlink:href="/img/icon/icons.svg#heart"
+          />
+        </svg>
+        0
+      </button>
       <p
-        class="sc-AxjAm sc-AxirZ hAlrWo sc-fzoXzr bvUUDN"
+        class="sc-AxjAm c7 "
         size="14"
       >
         1 min read
       </p>
       <a
-        class="sc-AxmLO dauKBD sc-fzpjYC gbLMzn"
+        class="c20 c21"
         href="/article/test-slug"
       >
         READ
