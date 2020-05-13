@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { Route, Switch } from 'react-router-dom'
+import { Route, RouteProps, Switch } from 'react-router-dom'
 
 import { Article } from '@/components/pages/Article'
 import { EditorRoute } from '@/components/pages/Editor'
@@ -15,19 +15,55 @@ import { useLocation } from 'react-router-dom'
 
 export const Routes: React.FC = () => {
   const location = useLocation()
+  const routes: RouteProps[] = [
+    {
+      path: '/',
+      component: Top,
+      exact: true
+    },
+    {
+      path: '/user/:name',
+      component: User,
+      exact: true
+    },
+    {
+      path: '/article/:slug',
+      component: Article,
+      exact: true
+    },
+    {
+      path: '/login',
+      component: LoginRoute,
+      exact: true
+    },
+    {
+      path: '/register',
+      component: RegisterRoute,
+      exact: true
+    },
+    {
+      path: '/settings',
+      component: SettingsRoute,
+      exact: true
+    },
+    {
+      path: '/editor',
+      component: EditorRoute,
+      exact: true
+    },
+    {
+      path: '*',
+      component: NoMatch
+    }
+  ]
 
   return (
     <TransitionGroup>
       <CSSTransition key={location.key} classNames="routing-transition" timeout={500}>
         <Switch location={location}>
-          <Route path="/" component={Top} exact />
-          <Route path="/user/:name" component={User} exact />
-          <Route path="/article/:slug" component={Article} exact />
-          <Route path="/login" component={LoginRoute} exact />
-          <Route path="/register" component={RegisterRoute} exact />
-          <Route path="/settings" component={SettingsRoute} exact />
-          <Route path="/editor" component={EditorRoute} exact />
-          <Route path="*" component={NoMatch} exact />
+          {routes.map((route, i) => (
+            <Route key={i} {...route} />
+          ))}
         </Switch>
       </CSSTransition>
     </TransitionGroup>
