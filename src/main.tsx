@@ -4,9 +4,9 @@ import configureStore, { history } from './store/configureStore'
 
 import { App } from '@/components/App'
 import { ConnectedRouter } from 'connected-react-router'
-import { LoadingProvider } from '@/contexts/LoadingContext'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
+import { RecoilRoot } from 'recoil'
 import { hot } from 'react-hot-loader/root'
 
 const MOUNT_NODE = document.getElementById('root')
@@ -23,9 +23,9 @@ if (process.env.DEBUG_ENV === 'enable') {
 const Root = hot(() => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <LoadingProvider>
+      <RecoilRoot>
         <App />
-      </LoadingProvider>
+      </RecoilRoot>
     </ConnectedRouter>
   </Provider>
 ))

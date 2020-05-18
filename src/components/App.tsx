@@ -5,12 +5,13 @@ import { GlobalStyle } from '@/styles'
 import { HeaderContainer } from '@/components/containers/HeaderContainer'
 import { Routes } from './Routes'
 import { ScrollToTop } from '@/components/templates/ScrollToTop'
+import { loadingState } from '@/atoms/loading'
 import styled from 'styled-components'
-import { useLoading } from '@/contexts/LoadingContext'
+import { useRecoilValue } from 'recoil'
 import { userOperations } from '@/store/user'
 
 export const App: React.FC = () => {
-  const { isAppLoaded } = useLoading()
+  const { isAppLoading } = useRecoilValue(loadingState)
   const { initialAuthAsync } = userOperations.useInitialAuth()
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export const App: React.FC = () => {
     initialAuthAsync(token)
   }, [])
 
-  return isAppLoaded ? (
+  return isAppLoading ? (
     <>
       <GlobalStyle />
       <Main>
