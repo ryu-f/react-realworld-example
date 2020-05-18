@@ -4,7 +4,7 @@ import { COLOR } from '@/styles/Variables'
 import styled from 'styled-components'
 
 export type BaseProps = {
-  size: number
+  size?: number
   weight?: string | number
   align?: string
   lineHeight?: number
@@ -22,9 +22,9 @@ export const BaseStyle = styled.p<BaseProps>`
   white-space: ${({ whiteSpace }) => whiteSpace};
 
   @media (${media.desktop}) {
-    font-size: ${({ size }) => size}px;
+    font-size: ${({ size }) => size || 14}px;
   }
   @media (${media.mobile}) {
-    font-size: ${({ size }) => vw(size * 2)};
+    font-size: ${({ size }) => vw((size || 14) * 2)};
   }
 `

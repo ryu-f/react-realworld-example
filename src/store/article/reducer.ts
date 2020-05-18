@@ -44,6 +44,7 @@ export const reducer = (state: State = initialState, action: Actions): State => 
         count: action.payload.count,
         limit: action.payload.limit,
         offset: action.payload.offset,
+        currentPage: action.payload.currentPage,
         authorQuery: action.payload.author || state.authorQuery,
         tagQuery: action.payload.tag || state.tagQuery,
         favoritedQuery: action.payload.favorited || state.favoritedQuery

@@ -1,10 +1,10 @@
-import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { RootState } from '@/store/rootReducer'
 import { articlesAPI } from '@/services/articles'
 import { getArticles } from '../actions'
 import { isError } from '@/services/isError'
+import { useCallback } from 'react'
 
 type Request = {
   nextPage?: number
@@ -15,8 +15,6 @@ type Request = {
 }
 
 export const useGetArticles = () => {
-  const [isLoading, setLoading] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
   const {
     limit: stateLimit,
     offset: stateOffset,
@@ -40,14 +38,9 @@ export const useGetArticles = () => {
         favorited: favorited || favoritedQuery
       }
 
-      setLoading(true)
-      setErrorMessage('')
       const response = await articlesAPI.get(payload)
-      setLoading(false)
 
-      if (isError(response)) {
-        return response ? setErrorMessage('error') : setErrorMessage('system Error')
-      }
+      if (isError(response)) return
 
       dispatch(
         getArticles({
@@ -61,5 +54,5 @@ export const useGetArticles = () => {
     [dispatch, stateLimit, stateOffset, currentPage, authorQuery, tagQuery, favoritedQuery]
   )
 
-  return { getArticlesAsync, isLoading, errorMessage }
+  return { getArticlesAsync }
 }

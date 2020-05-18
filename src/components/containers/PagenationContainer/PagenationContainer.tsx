@@ -7,12 +7,15 @@ import { RootState } from '@/store/rootReducer'
 import { useSelector } from 'react-redux'
 
 export const PagenationContainer: React.FC = () => {
-  const { articles, currentPage } = useSelector((state: RootState) => state.article)
+  const { currentPage } = useSelector((state: RootState) => state.article)
   const { maxPage } = articleSelectors.useMaxPage()
   const { getArticlesAsync } = articleOperations.useGetArticles()
-  const onHandleChange = (pageNumber: number) => getArticlesAsync({ nextPage: pageNumber })
+  const onHandleChange = (pageNumber: number) => {
+    window.scrollTo(0, 0)
+    getArticlesAsync({ nextPage: pageNumber })
+  }
 
-  return articles.length ? (
+  return (
     <Pagenation
       currentPage={currentPage}
       pageCount={maxPage}
@@ -20,5 +23,5 @@ export const PagenationContainer: React.FC = () => {
       nextLabel=">"
       onHandleChange={onHandleChange}
     />
-  ) : null
+  )
 }

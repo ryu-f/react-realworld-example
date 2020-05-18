@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import * as React from 'react'
+
 import { media, vw } from '@/styles/Mixin'
 
+import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicText } from '@/components/atoms/Text'
-import { COLOR } from '@/styles/Variables'
 import styled from 'styled-components'
 
 type Props = {
@@ -33,24 +34,12 @@ export const Pagenation: React.FC<Props> = ({
   breakLabel = '...',
   onHandleChange
 }) => {
-  const [selected, setSelected] = useState(currentPage)
-  const isFirstRender = useRef(true)
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
-    }
-
-    onHandleChange(selected)
-  }, [selected])
-
-  const startNumber = selected - marginPageDisplayed
-  const endNumber = selected + marginPageDisplayed
-  const isFirstBreakDisplay = (() => selected > marginPageDisplayed + 2)()
-  const isFirstPageDisplay = (() => selected > 1)()
-  const isLastBreakDisplay = (() => selected < pageCount - (marginPageDisplayed + 1))()
-  const IsLastPageDisplay = (() => selected < pageCount)()
+  const startNumber = currentPage - marginPageDisplayed
+  const endNumber = currentPage + marginPageDisplayed
+  const isFirstBreakDisplay = (() => currentPage > marginPageDisplayed + 2)()
+  const isFirstPageDisplay = (() => currentPage > 1)()
+  const isLastBreakDisplay = (() => currentPage < pageCount - (marginPageDisplayed + 1))()
+  const IsLastPageDisplay = (() => currentPage < pageCount)()
 
   /**
    * @param index - ページ番号
@@ -59,10 +48,10 @@ export const Pagenation: React.FC<Props> = ({
   const createPageButton = (index: number) => (
     <PageButton
       key={index}
-      className={index === selected ? 'is-selected' : undefined}
-      onClick={() => setSelected(index)}
+      className={index === currentPage ? 'is-selected' : undefined}
+      onClick={() => onHandleChange(index)}
     >
-      <BasicText size={16} textcolor={index === selected ? 'BLACK' : 'HORIZON_BLUE'}>
+      <BasicText size={18} textcolor={index === currentPage ? 'WHITE' : 'HORIZON_BLUE'}>
         {index}
       </BasicText>
     </PageButton>
@@ -74,8 +63,8 @@ export const Pagenation: React.FC<Props> = ({
    * @returns - 戻る・次へボタンのjsx
    */
   const createArrowLabel = (index: number, label: React.ReactNode) => (
-    <ArrowButton onClick={() => setSelected(index)}>
-      <BasicText size={16} textcolor="HORIZON_BLUE">
+    <ArrowButton onClick={() => onHandleChange(index)}>
+      <BasicText size={18} textcolor="HORIZON_BLUE">
         {label}
       </BasicText>
     </ArrowButton>
@@ -87,9 +76,7 @@ export const Pagenation: React.FC<Props> = ({
    */
   const createBreakLabel = (label: React.ReactNode) => (
     <BreakLabel>
-      <BasicText size={16} textcolor="BLACK">
-        {label}
-      </BasicText>
+      <BasicText>{label}</BasicText>
     </BreakLabel>
   )
 
@@ -106,7 +93,8 @@ export const Pagenation: React.FC<Props> = ({
   /**
    * 戻るボタン
    */
-  const Previous = () => (isFirstPageDisplay ? createArrowLabel(selected - 1, previousLabel) : null)
+  const Previous = () =>
+    isFirstPageDisplay ? createArrowLabel(currentPage - 1, previousLabel) : null
 
   /**
    * 最後の省略記号ボタン
@@ -121,7 +109,7 @@ export const Pagenation: React.FC<Props> = ({
   /**
    * 次へボタン
    */
-  const Next = () => (IsLastPageDisplay ? createArrowLabel(selected + 1, nextLabel) : null)
+  const Next = () => (IsLastPageDisplay ? createArrowLabel(currentPage + 1, nextLabel) : null)
 
   /**
    * 現在のページを基に表示するページ番号のjsxの配列を作成
@@ -130,9 +118,9 @@ export const Pagenation: React.FC<Props> = ({
     .map((_, page) => {
       page += 1
       if (
-        page === selected ||
-        (page < selected && page >= startNumber && page !== 1) ||
-        (page > selected && page <= endNumber && page !== pageCount)
+        page === currentPage ||
+        (page < currentPage && page >= startNumber && page !== 1) ||
+        (page > currentPage && page <= endNumber && page !== pageCount)
       )
         return createPageButton(page)
       return
@@ -158,18 +146,14 @@ const List = styled.ul`
 `
 
 const ArrowButton = styled.li`
-  color: ${COLOR.HORIZON_BLUE};
   text-align: center;
   cursor: pointer;
-
   @media (${media.desktop}) {
     min-width: 30px;
-
     &:hover {
       text-decoration: underline;
     }
   }
-
   @media (${media.mobile}) {
     min-width: ${vw(60)};
   }
@@ -177,34 +161,27 @@ const ArrowButton = styled.li`
 
 const BreakLabel = styled.li`
   text-align: center;
-
   @media (${media.desktop}) {
     min-width: 30px;
   }
-
   @media (${media.mobile}) {
     min-width: ${vw(60)};
   }
 `
 
 const PageButton = styled.li`
-  color: ${COLOR.HORIZON_BLUE};
   text-align: center;
   cursor: pointer;
 
   &.is-selected {
     pointer-events: none;
     cursor: default;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    background: ${BACKGROUND_COLOR.HORIZON_BLUE};
+    border-radius: 8px;
   }
-
   @media (${media.desktop}) {
     min-width: 30px;
   }
-
   @media (${media.mobile}) {
     min-width: ${vw(60)};
   }
