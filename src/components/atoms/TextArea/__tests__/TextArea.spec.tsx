@@ -6,8 +6,8 @@ import { TextArea } from '../'
 
 describe('TextArea', () => {
   test('入力した値が表示されているか', () => {
-    const { getByTestId } = render(<TextArea data-testid="input" />)
-    const input = getByTestId('input') as HTMLInputElement
+    const { getByRole } = render(<TextArea />)
+    const input = getByRole('textbox') as HTMLInputElement
     fireEvent.input(input, { target: { value: 'test' } })
     expect(input.value).toBe('test')
   })

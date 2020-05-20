@@ -1,9 +1,10 @@
 import * as React from 'react'
 
+import { icons } from './_constance'
 import styled from 'styled-components'
 
 interface Props extends React.SVGAttributes<SVGElement> {
-  id: 'person' | 'edit' | 'github' | 'heart' | 'in' | 'unlock' | 'clock' | 'plus' | 'setting'
+  id: typeof icons[number]
 }
 
 export const SvgIcons: React.FC<Props> = props => {

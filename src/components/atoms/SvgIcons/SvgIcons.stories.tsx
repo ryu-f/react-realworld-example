@@ -3,6 +3,7 @@ import * as React from 'react'
 import { select, withKnobs } from '@storybook/addon-knobs'
 
 import { SvgIcons } from './'
+import { icons } from './_constance'
 import styled from 'styled-components'
 
 export default {
@@ -12,8 +13,7 @@ export default {
 }
 
 export const Basic = () => {
-  const options = ['clock', 'edit', 'github', 'heart', 'in', 'unlock', 'person']
-  const id = select('id', options, 'github') as 'github'
+  const id = select('id', icons, 'github') as 'github'
 
   return (
     <Wrapper>
