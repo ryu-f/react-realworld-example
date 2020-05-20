@@ -9,9 +9,9 @@ jobs:
     executor: my-executor
     steps:
       - checkout
-      - run: yarn install --frozen-lockfile
+      - run: npm install --frozen-lockfile
       - save_cache:
-          key: yarn-packages-{{ checksum "package-lock.json" }}
+          key: npm-packages-{{ checksum "package-lock.json" }}
           paths:
              - node_modules
       - persist_to_workspace:
@@ -25,8 +25,8 @@ jobs:
       - attach_workspace:
           at: .
       - restore_cache:
-          key: yarn-packages-{{ checksum "package-lock.json" }}
-      - run: yarn run unit:coverage
+          key: npm-packages-{{ checksum "package-lock.json" }}
+      - run: npm run test:coverage
 
   build:
     executor: my-executor
@@ -34,8 +34,8 @@ jobs:
       - attach_workspace:
           at: .
       - restore_cache:
-          key: yarn-packages-{{ checksum "package-lock.json" }}
-      - run: yarn run build
+          key: npm-packages-{{ checksum "package-lock.json" }}
+      - run: npm run build
 
 workflows:
   app:

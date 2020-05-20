@@ -11,13 +11,13 @@ describe('BasicButton', () => {
   })
 
   test('クリックイベントが発火しているか', () => {
-    const handler = jest.fn()
+    const onClick = jest.fn()
     const { getByText } = render(
-      <BasicButton onClick={handler} size="BASE">
+      <BasicButton onClick={onClick} size="BASE">
         Test
       </BasicButton>
     )
     fireEvent.click(getByText('Test'))
-    expect(handler).toHaveBeenCalled()
+    expect(onClick).toBeCalled()
   })
 })
