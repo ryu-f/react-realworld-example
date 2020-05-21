@@ -424,7 +424,7 @@ exports[`Article snapshot 1`] = `
             class="c13 c14"
             href="/user/test-user"
             size="16"
-            textcolor="GLAY"
+            textcolor="gray"
           >
             test-user
           </a>

@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import { media, vw } from '@/styles/Mixin'
 
-import { BORDER_COLOR } from '@/styles/Variables'
 import { BasicText } from '@/components/atoms/Text'
 import { Tag } from '@/components/atoms/Tag'
 import styled from 'styled-components'
@@ -42,7 +41,7 @@ const Wrapper = styled.div`
 `
 
 const LeadText = styled(BasicText)`
-  border-bottom: 1px solid ${BORDER_COLOR.SILVER};
+  border-bottom: 1px solid ${props => props.theme.border.silver};
 
   @media (${media.desktop}) {
     padding-bottom: 10px;

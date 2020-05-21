@@ -1,4 +1,3 @@
-import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import React, { forwardRef } from 'react'
 import { media, vw } from '@/styles/Mixin'
 
@@ -14,8 +13,8 @@ export const InputText = forwardRef<HTMLInputElement, Props>((props, ref) => {
 
 const View = styled.input`
   width: 100%;
-  background-color: ${BACKGROUND_COLOR.WHITE};
-  border: 1px solid ${BORDER_COLOR.SILVER};
+  background-color: ${props => props.theme.color.white};
+  border: 1px solid ${props => props.theme.border.silver};
   border-radius: 5px;
 
   @media (${media.desktop}) {

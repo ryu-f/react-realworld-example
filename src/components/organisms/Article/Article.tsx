@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
@@ -59,12 +58,12 @@ export const Article: React.FC<Props> = props => {
             <UserText
               to={`/user/${author.username}`}
               size={16}
-              textcolor="GLAY"
+              textcolor="gray"
               onClick={onUserClick}
             >
               {author.username}
             </UserText>
-            <BasicText size={16} textcolor="GLAY">
+            <BasicText size={16} textcolor="gray">
               ・{new Date(createdAt).toDateString().slice(0, -5)}
             </BasicText>
           </UserDateArea>
@@ -84,7 +83,7 @@ export const Article: React.FC<Props> = props => {
 const Wrapper = styled.div`
   display: block;
   width: 100%;
-  border: 1px solid ${BORDER_COLOR.SILVER};
+  border: 1px solid ${props => props.theme.border.silver};
   border-radius: 5px;
   box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
 
@@ -92,8 +91,9 @@ const Wrapper = styled.div`
     padding: 10px;
     cursor: pointer;
     transition: background 0.5s;
+
     &:hover {
-      background-color: ${BACKGROUND_COLOR.SILVER};
+      background-color: ${props => props.theme.background.silver};
     }
   }
 
@@ -111,6 +111,7 @@ const ImageWrapper = styled(Link)`
   flex-shrink: 0;
   clip-path: circle(50%);
   object-fit: cover;
+
   @media (${media.desktop}) {
     width: 40px;
     height: 40px;

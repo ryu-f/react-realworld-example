@@ -4,7 +4,6 @@ import { media, vw } from '@/styles/Mixin'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { ArticleDetailContainer } from '@/components/containers/ArticleDetailContainer'
-import { BORDER_COLOR } from '@/styles/Variables'
 import { CommentEditorContainer } from '@/components/containers/CommentEditorContainer'
 import { CommentListContainer } from '@/components/containers/CommentListContainer'
 import { articleOperations } from '@/store/article'
@@ -35,11 +34,11 @@ export const Article: React.FC = () => {
       ) : (
         <LayoutSignin>
           <BasicText size={16}>
-            <SigninText to="/login" size={16} textcolor="HORIZON_BLUE">
+            <SigninText to="/login" size={16} textcolor="horizonBlue">
               Sign in
             </SigninText>
             &nbsp;or&nbsp;
-            <SigninText to="/register" size={16} textcolor="HORIZON_BLUE">
+            <SigninText to="/register" size={16} textcolor="horizonBlue">
               sign up
             </SigninText>
             &nbsp;to add comments on this article.
@@ -64,7 +63,7 @@ const Wrapper = styled.div`
 
 const LayoutComment = styled.div`
   width: 100%;
-  border-top: 1px solid ${BORDER_COLOR.SILVER};
+  border-top: 1px solid ${props => props.theme.border.silver};
 
   @media (${media.desktop}) {
     max-width: 980px;
@@ -91,7 +90,7 @@ const LayoutCommentList = styled.div`
 
 const LayoutSignin = styled.div`
   text-align: center;
-  border-top: 1px solid ${BORDER_COLOR.SILVER};
+  border-top: 1px solid ${props => props.theme.border.silver};
 
   @media (${media.desktop}) {
     max-width: 980px;

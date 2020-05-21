@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import { media, vw } from '@/styles/Mixin'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicButton } from '@/components/atoms/Button'
 import { BasicText } from '@/components/atoms/Text'
 import { Image } from '@/components/atoms/Image'
@@ -35,7 +34,7 @@ export const CommentEditor: React.FC<Props> = props => {
             maxLength: { value: 1000, message: 'Maxlength is 1000' }
           })}
         />
-        <ErrorText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="red">
           {errors.comment && errors.comment.message}
         </ErrorText>
       </LayoutTextArea>
@@ -53,7 +52,8 @@ export const CommentEditor: React.FC<Props> = props => {
 
 const Form = styled.form`
   width: 100%;
-  background-color: ${BACKGROUND_COLOR.WHITE_GLAY};
+  background-color: ${props => props.theme.background.whiteGray};
+
   @media (${media.desktop}) {
     padding: 10px 10px 5px;
   }

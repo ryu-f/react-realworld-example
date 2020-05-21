@@ -2,7 +2,6 @@ import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
 import { Article } from '@/types/domain'
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { Image } from '@/components/atoms/Image'
 import { Link } from 'react-router-dom'
 import React from 'react'
@@ -31,7 +30,7 @@ export const ArticleDetail: React.FC<Props> = props => {
     <Wrapper>
       <HeroView>
         <HeroViewInner>
-          <BasicText size={36} textcolor="WHITE">
+          <BasicText size={36} textcolor="white">
             {title}
           </BasicText>
           <UserArea>
@@ -39,10 +38,10 @@ export const ArticleDetail: React.FC<Props> = props => {
               <Image src={author.image} loading="lazy" />
             </ImageWrapper>
             <UserSub>
-              <UserName size={16} textcolor="WHITE" to={`/user/${author.username}`}>
+              <UserName size={16} textcolor="white" to={`/user/${author.username}`}>
                 {author.username}
               </UserName>
-              <BasicText size={14} textcolor="GLAY">
+              <BasicText size={14} textcolor="gray">
                 {new Date(createdAt).toDateString().slice(0, -5)}
               </BasicText>
             </UserSub>
@@ -71,10 +70,12 @@ const Wrapper = styled.article`
 `
 
 const HeroView = styled.div`
-  background-color: ${BACKGROUND_COLOR.DARK_GLAY};
+  background-color: ${props => props.theme.background.darkGray};
+
   @media (${media.desktop}) {
     padding: 40px 20px;
   }
+j
   @media (${media.mobile}) {
     padding: ${vw(80)} ${vw(40)};
   }
@@ -90,6 +91,7 @@ const HeroViewInner = styled.div`
 const UserArea = styled.div`
   display: flex;
   align-items: center;
+
   @media (${media.desktop}) {
     margin-top: 30px;
   }
@@ -104,6 +106,7 @@ const ImageWrapper = styled(Link)`
   flex-shrink: 0;
   clip-path: circle(50%);
   object-fit: cover;
+
   @media (${media.desktop}) {
     width: 40px;
     height: 40px;

@@ -1,4 +1,3 @@
-import { BACKGROUND_COLOR, COLOR } from '@/styles/Variables'
 import { media, vw } from '@/styles/Mixin'
 import styled, { css } from 'styled-components'
 
@@ -11,22 +10,26 @@ export type BaseProps = {
 
 const THEME = {
   BASIC: css`
-    color: ${COLOR.WHITE};
-    background-color: ${BACKGROUND_COLOR.HORIZON_BLUE};
+    color: ${props => props.theme.color.white};
+    background-color: ${props => props.theme.color.horizonBlue};
+
     @media (${media.desktop}) {
       transition: background 0.3s;
+
       &:hover {
-        background-color: ${BACKGROUND_COLOR.SKY_BLUE};
+        background-color: ${props => props.theme.background.skyBlue};
       }
     }
   `,
   WARNING: css`
-    color: ${COLOR.WHITE};
-    background-color: ${BACKGROUND_COLOR.RED};
+    color: ${props => props.theme.color.white};
+    background-color: ${props => props.theme.background.red};
+
     @media (${media.desktop}) {
       transition: background 0.3s;
+
       &:hover {
-        background-color: ${BACKGROUND_COLOR.RED};
+        background-color: ${props => props.theme.background.red};
       }
     }
   `

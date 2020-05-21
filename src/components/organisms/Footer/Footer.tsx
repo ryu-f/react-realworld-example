@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import { media, vw } from '@/styles/Mixin'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { SvgIcons } from '@/components/atoms/SvgIcons'
 import styled from 'styled-components'
 
@@ -21,7 +20,7 @@ const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: ${BACKGROUND_COLOR.IRON_BLACK};
+  background-color: ${props => props.theme.background.ironBlack};
 
   @media (${media.desktop}) {
     padding: 10px 20px;

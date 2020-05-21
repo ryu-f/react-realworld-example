@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import { media, vw } from '@/styles/Mixin'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicButton } from '@/components/atoms/Button'
 import { BasicText } from '@/components/atoms/Text'
 import { CheckBox } from '@/components/atoms/CheckBox'
@@ -35,7 +34,7 @@ export const LoginForm: React.FC<Props> = props => {
           placeholder="Email address"
           ref={register({ required: 'Email address is required.' })}
         />
-        <ErrorText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="red">
           {errors.email && errors.email.message}
         </ErrorText>
       </LayoutInput>
@@ -51,7 +50,7 @@ export const LoginForm: React.FC<Props> = props => {
             maxLength: { value: 99, message: 'Maxlength is 99' }
           })}
         />
-        <ErrorText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="red">
           {errors.password && errors.password.message}
         </ErrorText>
       </LayoutInput>
@@ -73,7 +72,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: ${BACKGROUND_COLOR.WHITE};
+  background-color: ${props => props.theme.background.white};
   border-radius: 5px;
   box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
 

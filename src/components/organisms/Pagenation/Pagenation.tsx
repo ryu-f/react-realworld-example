@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import { media, vw } from '@/styles/Mixin'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicText } from '@/components/atoms/Text'
 import styled from 'styled-components'
 
@@ -51,7 +50,7 @@ export const Pagenation: React.FC<Props> = ({
       className={index === currentPage ? 'is-selected' : undefined}
       onClick={() => onHandleChange(index)}
     >
-      <BasicText size={18} textcolor={index === currentPage ? 'WHITE' : 'HORIZON_BLUE'}>
+      <BasicText size={18} textcolor={index === currentPage ? 'white' : 'horizonBlue'}>
         {index}
       </BasicText>
     </PageButton>
@@ -64,7 +63,7 @@ export const Pagenation: React.FC<Props> = ({
    */
   const createArrowLabel = (index: number, label: React.ReactNode) => (
     <ArrowButton onClick={() => onHandleChange(index)}>
-      <BasicText size={18} textcolor="HORIZON_BLUE">
+      <BasicText size={18} textcolor="horizonBlue">
         {label}
       </BasicText>
     </ArrowButton>
@@ -148,12 +147,15 @@ const List = styled.ul`
 const ArrowButton = styled.li`
   text-align: center;
   cursor: pointer;
+
   @media (${media.desktop}) {
     min-width: 30px;
+
     &:hover {
       text-decoration: underline;
     }
   }
+
   @media (${media.mobile}) {
     min-width: ${vw(60)};
   }
@@ -161,9 +163,11 @@ const ArrowButton = styled.li`
 
 const BreakLabel = styled.li`
   text-align: center;
+
   @media (${media.desktop}) {
     min-width: 30px;
   }
+
   @media (${media.mobile}) {
     min-width: ${vw(60)};
   }
@@ -176,12 +180,14 @@ const PageButton = styled.li`
   &.is-selected {
     pointer-events: none;
     cursor: default;
-    background: ${BACKGROUND_COLOR.HORIZON_BLUE};
+    background: ${props => props.theme.background.horizonBlue};
     border-radius: 8px;
   }
+
   @media (${media.desktop}) {
     min-width: 30px;
   }
+
   @media (${media.mobile}) {
     min-width: ${vw(60)};
   }

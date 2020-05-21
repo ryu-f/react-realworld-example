@@ -54,7 +54,7 @@ export const ArticleEditor: React.FC<Props> = props => {
             maxLength: { value: 200, message: 'Maxlength is 200' }
           })}
         />
-        <ErrorText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="red">
           {errors.title && errors.title.message}
         </ErrorText>
       </LayoutInput>
@@ -69,7 +69,7 @@ export const ArticleEditor: React.FC<Props> = props => {
             maxLength: { value: 200, message: 'Maxlength is 200' }
           })}
         />
-        <ErrorText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="red">
           {errors.description && errors.description.message}
         </ErrorText>
       </LayoutInput>
@@ -83,7 +83,7 @@ export const ArticleEditor: React.FC<Props> = props => {
             maxLength: { value: 1000, message: 'Maxlength is 1000' }
           })}
         />
-        <ErrorText size={16} textcolor="RED">
+        <ErrorText size={16} textcolor="red">
           {errors.body && errors.body.message}
         </ErrorText>
       </LayoutInput>

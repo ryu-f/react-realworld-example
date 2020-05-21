@@ -14,7 +14,7 @@ export const Basic = () => {
   const size = number('size', 16)
 
   return (
-    <BasicText size={size} textcolor={'BLACK'}>
+    <BasicText size={size} textcolor={'black'}>
       {text('Label', 'Basic')}
     </BasicText>
   )

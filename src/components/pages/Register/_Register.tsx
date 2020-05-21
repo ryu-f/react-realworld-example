@@ -12,7 +12,7 @@ export const Register: React.FC = () => {
       <LayoutRegistrationFormContainer>
         <RegistrationFormContainer />
       </LayoutRegistrationFormContainer>
-      <RegisterLinkText to="/login" textcolor="HORIZON_BLUE" size={15}>
+      <RegisterLinkText to="/login" textcolor="horizonBlue" size={15}>
         Have an account?
       </RegisterLinkText>
     </Wrapper>

@@ -1,6 +1,5 @@
 import { media, vw } from '@/styles/Mixin'
 
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { BasicText } from '@/components/atoms/Text'
 import { Image } from '@/components/atoms/Image'
 import { LinkButton } from '@/components/atoms/Button'
@@ -31,10 +30,10 @@ export const ProfileDetail: React.FC<Props> = props => {
           <ImageWrapper>
             <Image src={image} />
           </ImageWrapper>
-          <BasicText size={32} textcolor="WHITE">
+          <BasicText size={32} textcolor="white">
             {username}
           </BasicText>
-          <BasicText size={16} textcolor="GLAY">
+          <BasicText size={16} textcolor="gray">
             {bio}
           </BasicText>
           <ActionButton />
@@ -50,7 +49,7 @@ const Wrapper = styled.article`
 
 const HeroView = styled.div`
   position: relative;
-  background-color: ${BACKGROUND_COLOR.DARK_GLAY};
+  background-color: ${props => props.theme.background.darkGray};
 
   @media (${media.desktop}) {
     padding: 40px 20px;

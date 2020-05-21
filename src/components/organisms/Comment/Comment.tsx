@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
@@ -26,10 +25,10 @@ export const Comment: React.FC<Props> = props => {
         <ImageWrapper>
           <Image src={author.image} />
         </ImageWrapper>
-        <UserText to={`/user/${author.username}`} size={14} textcolor="HORIZON_BLUE">
+        <UserText to={`/user/${author.username}`} size={14} textcolor="horizonBlue">
           {author.username}
         </UserText>
-        <CreatedAtText size={13} textcolor="GLAY">
+        <CreatedAtText size={13} textcolor="gray">
           {new Date(createdAt).toDateString().slice(0, -5)}
         </CreatedAtText>
       </LayoutCaption>
@@ -40,7 +39,7 @@ export const Comment: React.FC<Props> = props => {
 const Wrapper = styled.div`
   display: block;
   width: 100%;
-  border: 1px solid ${BORDER_COLOR.WHITE_GLAY};
+  border: 1px solid ${props => props.theme.border.whiteGray};
 `
 
 const LayoutBody = styled.div`
@@ -56,7 +55,7 @@ const LayoutBody = styled.div`
 const LayoutCaption = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${BACKGROUND_COLOR.WHITE_GLAY};
+  background-color: ${props => props.theme.background.whiteGray};
 
   @media (${media.desktop}) {
     padding: 20px 40px;

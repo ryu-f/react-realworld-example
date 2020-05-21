@@ -1,4 +1,3 @@
-import { BACKGROUND_COLOR } from '@/styles/Variables'
 import { css } from 'styled-components'
 
 export const Base = css`
@@ -10,7 +9,7 @@ export const Base = css`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu',
       'Hiragino Sans', 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', sans-serif;
     word-break: break-all;
-    background-color: ${BACKGROUND_COLOR.BRIGHT_GLAY};
+    background-color: ${props => props.theme.background.brightGray};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

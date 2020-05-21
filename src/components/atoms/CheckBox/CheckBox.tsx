@@ -1,4 +1,3 @@
-import { BACKGROUND_COLOR, BORDER_COLOR } from '@/styles/Variables'
 import React, { forwardRef } from 'react'
 import { media, vw } from '@/styles/Mixin'
 
@@ -43,8 +42,8 @@ const View = styled.span`
     width: 100%;
     height: 100%;
     content: '';
-    background-color: ${BACKGROUND_COLOR.WHITE};
-    border: 1px solid ${BORDER_COLOR.SILVER};
+    background-color: ${props => props.theme.color.white};
+    border: 1px solid ${props => props.theme.border.silver};
     border-radius: 5px;
 
     @media (${media.desktop}) {
@@ -87,8 +86,8 @@ const Input = styled.input`
 
   &:checked {
     + ${View}::before {
-      background-color: ${BACKGROUND_COLOR.HORIZON_BLUE};
-      border: 1px solid ${BORDER_COLOR.HORIZON_BLUE};
+      background-color: ${props => props.theme.color.horizonBlue};
+      border: 1px solid ${props => props.theme.border.horizonBlue};
     }
 
     + ${View}::after {

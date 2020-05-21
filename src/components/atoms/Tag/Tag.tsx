@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR, COLOR } from '@/styles/Variables'
 import { media, vw } from '@/styles/Mixin'
 import styled, { css } from 'styled-components'
 
@@ -19,8 +18,8 @@ const SIZE = {
 
 const THEME = {
   BASIC: css`
-    color: ${COLOR.WHITE};
-    background-color: ${BACKGROUND_COLOR.GLAY};
+    color: ${props => props.theme.color.white};
+    background-color: ${props => props.theme.background.gray};
   `
 }
 

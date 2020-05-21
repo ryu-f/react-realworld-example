@@ -5,7 +5,7 @@ import { render } from '@testing-library/react'
 
 describe('Text', () => {
   const size = 16
-  const textcolor = 'BLACK'
+  const textcolor = 'black'
 
   test('チルドレンに渡されたテキストが表示されているか', () => {
     const { getByText } = render(

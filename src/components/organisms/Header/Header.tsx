@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { BACKGROUND_COLOR, COLOR } from '@/styles/Variables'
 import { media, vw } from '@/styles/Mixin'
 
 import { BasicText } from '@/components/atoms/Text'
@@ -58,7 +57,7 @@ export const Header: React.FC<Props> = props => {
               <NavigationItem to={nav.to}>
                 <NavigationText
                   size={16}
-                  textcolor={currentPath.includes(nav.to) ? 'HORIZON_BLUE' : 'WHITE'}
+                  textcolor={currentPath.includes(nav.to) ? 'horizonBlue' : 'white'}
                 >
                   {nav.text}
                 </NavigationText>
@@ -79,7 +78,7 @@ export const Header: React.FC<Props> = props => {
               <NavigationItem to={nav.to}>
                 <NavigationText
                   size={16}
-                  textcolor={currentPath.includes(nav.to) ? 'HORIZON_BLUE' : 'WHITE'}
+                  textcolor={currentPath.includes(nav.to) ? 'horizonBlue' : 'white'}
                 >
                   {nav.text}
                 </NavigationText>
@@ -100,7 +99,7 @@ export const Header: React.FC<Props> = props => {
         <h1>
           <HeadingLink to="/">
             <LogoImage src="/img/logo/logo.png" />
-            <BasicText size={18} textcolor="HORIZON_BLUE">
+            <BasicText size={18} textcolor="horizonBlue">
               React Real World
             </BasicText>
           </HeadingLink>
@@ -113,7 +112,7 @@ export const Header: React.FC<Props> = props => {
 
 const Wrapper = styled.header`
   width: 100%;
-  background-color: ${BACKGROUND_COLOR.IRON_BLACK};
+  background-color: ${props => props.theme.background.ironBlack};
 
   @media (${media.desktop}) {
     padding: 0 20px;
@@ -188,11 +187,11 @@ const NavigationItem = styled(Link)`
 
     &:hover {
       ${NavigationText} {
-        color: ${COLOR.HORIZON_BLUE};
+        color: ${props => props.theme.color.horizonBlue};
       }
 
       ${NavigationIcon} {
-        fill: ${COLOR.HORIZON_BLUE};
+        fill: ${props => props.theme.color.horizonBlue};
       }
     }
   }
