@@ -10,5 +10,7 @@ export const icons = [
   'unlock',
   'person',
   'plus',
-  'setting'
+  'setting',
+  'sun',
+  'moon'
 ] as const
