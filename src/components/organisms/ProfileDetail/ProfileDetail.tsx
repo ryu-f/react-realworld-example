@@ -30,7 +30,7 @@ export const ProfileDetail: React.FC<Props> = props => {
           <ImageWrapper>
             <Image src={image} />
           </ImageWrapper>
-          <BasicText size={32} textcolor="white">
+          <BasicText size={32} textcolor="strong">
             {username}
           </BasicText>
           <BasicText size={16} textcolor="gray">

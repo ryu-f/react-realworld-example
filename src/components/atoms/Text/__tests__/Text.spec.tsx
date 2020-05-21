@@ -4,15 +4,8 @@ import { BasicText } from '../'
 import { render } from '@testing-library/react'
 
 describe('Text', () => {
-  const size = 16
-  const textcolor = 'black'
-
   test('チルドレンに渡されたテキストが表示されているか', () => {
-    const { getByText } = render(
-      <BasicText size={size} textcolor={textcolor}>
-        Test
-      </BasicText>
-    )
+    const { getByText } = render(<BasicText>Test</BasicText>)
     expect(getByText('Test'))
   })
 })

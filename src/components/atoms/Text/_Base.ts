@@ -7,7 +7,7 @@ export type BaseProps = {
   weight?: string | number
   align?: string
   lineHeight?: number
-  textcolor?: 'black' | 'white' | 'gray' | 'darkGray' | 'red' | 'horizonBlue'
+  textcolor?: 'base' | 'strong' | 'gray' | 'darkGray' | 'warning' | 'horizonBlue'
   fontStyle?: string
   whiteSpace?: string
 }
@@ -16,7 +16,7 @@ export const BaseStyle = styled.p<BaseProps>`
   font-style: ${({ fontStyle }) => fontStyle};
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
-  color: ${props => props.theme.color[props.textcolor || 'black']};
+  color: ${props => props.theme.color[props.textcolor || 'base']};
   text-align: ${({ align }) => align};
   white-space: ${({ whiteSpace }) => whiteSpace};
 

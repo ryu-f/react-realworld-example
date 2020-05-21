@@ -34,7 +34,7 @@ export const CommentEditor: React.FC<Props> = props => {
             maxLength: { value: 1000, message: 'Maxlength is 1000' }
           })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.comment && errors.comment.message}
         </ErrorText>
       </LayoutTextArea>

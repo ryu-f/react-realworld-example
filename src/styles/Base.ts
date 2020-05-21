@@ -9,7 +9,7 @@ export const Base = css`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu',
       'Hiragino Sans', 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', sans-serif;
     word-break: break-all;
-    background-color: ${props => props.theme.background.brightGray};
+    background-color: ${props => props.theme.background.overAll};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

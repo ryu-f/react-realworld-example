@@ -6,9 +6,9 @@ import { HeaderContainer } from '@/components/containers/HeaderContainer'
 import { Routes } from './Routes'
 import { ScrollToTop } from '@/components/templates/ScrollToTop'
 import { ThemeProvider } from 'styled-components'
+import { lightTheme } from '@/styles/Theme'
 import { loadingState } from '@/atoms/loading'
 import styled from 'styled-components'
-import { theme } from '@/styles/Theme'
 import { useRecoilValue } from 'recoil'
 import { userOperations } from '@/store/user'
 
@@ -23,7 +23,7 @@ export const App: React.FC = () => {
 
   return isAppLoading ? (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <GlobalStyle />
         <Main>
           <ScrollToTop />

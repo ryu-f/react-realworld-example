@@ -10,7 +10,7 @@ export type BaseProps = {
 
 const THEME = {
   BASIC: css`
-    color: ${props => props.theme.color.white};
+    color: ${props => props.theme.color.strong};
     background-color: ${props => props.theme.color.horizonBlue};
 
     @media (${media.desktop}) {
@@ -22,7 +22,7 @@ const THEME = {
     }
   `,
   WARNING: css`
-    color: ${props => props.theme.color.white};
+    color: ${props => props.theme.color.strong};
     background-color: ${props => props.theme.background.red};
 
     @media (${media.desktop}) {

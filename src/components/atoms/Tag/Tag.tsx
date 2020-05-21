@@ -18,7 +18,7 @@ const SIZE = {
 
 const THEME = {
   BASIC: css`
-    color: ${props => props.theme.color.white};
+    color: ${props => props.theme.color.strong};
     background-color: ${props => props.theme.background.gray};
   `
 }

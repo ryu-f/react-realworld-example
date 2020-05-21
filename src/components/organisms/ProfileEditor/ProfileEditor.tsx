@@ -42,7 +42,7 @@ export const ProfileEditor: React.FC<Props> = props => {
           placeholder="URL of profile picture"
           ref={register({ maxLength: { value: 500, message: 'Maxlength is 500' } })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.image && errors.image.message}
         </ErrorText>
       </LayoutInput>
@@ -54,7 +54,7 @@ export const ProfileEditor: React.FC<Props> = props => {
           placeholder="User name"
           ref={register({ required: 'User name is required.' })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.username && errors.username.message}
         </ErrorText>
       </LayoutInput>
@@ -65,7 +65,7 @@ export const ProfileEditor: React.FC<Props> = props => {
           placeholder="Short bio about you"
           ref={register({ maxLength: { value: 1000, message: 'Maxlength is 1000' } })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.bio && errors.bio.message}
         </ErrorText>
       </LayoutInput>
@@ -77,7 +77,7 @@ export const ProfileEditor: React.FC<Props> = props => {
           placeholder="Email address"
           ref={register({ required: 'Email address is required.' })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.email && errors.email.message}
         </ErrorText>
       </LayoutInput>
@@ -93,7 +93,7 @@ export const ProfileEditor: React.FC<Props> = props => {
             maxLength: { value: 99, message: 'Maxlength is 99' }
           })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.password && errors.password.message}
         </ErrorText>
       </LayoutInput>

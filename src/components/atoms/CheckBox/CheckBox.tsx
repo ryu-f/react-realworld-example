@@ -42,7 +42,7 @@ const View = styled.span`
     width: 100%;
     height: 100%;
     content: '';
-    background-color: ${props => props.theme.color.white};
+    background-color: ${props => props.theme.color.strong};
     border: 1px solid ${props => props.theme.border.silver};
     border-radius: 5px;
 

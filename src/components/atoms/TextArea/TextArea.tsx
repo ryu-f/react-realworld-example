@@ -13,7 +13,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
 
 const View = styled.textarea`
   width: 100%;
-  background-color: ${props => props.theme.color.white};
+  background-color: ${props => props.theme.color.strong};
   border: 1px solid ${props => props.theme.border.silver};
   border-radius: 5px;
 

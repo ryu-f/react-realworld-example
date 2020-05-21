@@ -50,7 +50,7 @@ export const Pagenation: React.FC<Props> = ({
       className={index === currentPage ? 'is-selected' : undefined}
       onClick={() => onHandleChange(index)}
     >
-      <BasicText size={18} textcolor={index === currentPage ? 'white' : 'horizonBlue'}>
+      <BasicText size={18} textcolor={index === currentPage ? 'strong' : 'horizonBlue'}>
         {index}
       </BasicText>
     </PageButton>

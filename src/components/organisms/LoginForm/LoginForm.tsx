@@ -34,7 +34,7 @@ export const LoginForm: React.FC<Props> = props => {
           placeholder="Email address"
           ref={register({ required: 'Email address is required.' })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.email && errors.email.message}
         </ErrorText>
       </LayoutInput>
@@ -50,7 +50,7 @@ export const LoginForm: React.FC<Props> = props => {
             maxLength: { value: 99, message: 'Maxlength is 99' }
           })}
         />
-        <ErrorText size={16} textcolor="red">
+        <ErrorText size={16} textcolor="warning">
           {errors.password && errors.password.message}
         </ErrorText>
       </LayoutInput>
@@ -72,7 +72,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: ${props => props.theme.background.white};
+  background-color: ${props => props.theme.background.base};
   border-radius: 5px;
   box-shadow: rgba(60, 66, 87, 0.12) 0 7px 14px 0, rgba(0, 0, 0, 0.12) 0 3px 6px 0;
 

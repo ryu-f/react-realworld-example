@@ -30,7 +30,7 @@ export const ArticleDetail: React.FC<Props> = props => {
     <Wrapper>
       <HeroView>
         <HeroViewInner>
-          <BasicText size={36} textcolor="white">
+          <BasicText size={36} textcolor="strong">
             {title}
           </BasicText>
           <UserArea>
@@ -38,7 +38,7 @@ export const ArticleDetail: React.FC<Props> = props => {
               <Image src={author.image} loading="lazy" />
             </ImageWrapper>
             <UserSub>
-              <UserName size={16} textcolor="white" to={`/user/${author.username}`}>
+              <UserName size={16} textcolor="strong" to={`/user/${author.username}`}>
                 {author.username}
               </UserName>
               <BasicText size={14} textcolor="gray">

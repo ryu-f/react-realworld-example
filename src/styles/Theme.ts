@@ -5,7 +5,7 @@ const baseColor = {
   black: '#0d0d0d',
   skyBlue: '#7ebcf2',
   horizonBlue: '#5ed7f2',
-  whiet: '#fff',
+  white: '#fff',
   silver: '#ccc',
   gray: '#818a91',
   brightGray: '#f7f7f7',
@@ -15,14 +15,14 @@ const baseColor = {
   red: '#cd3d64'
 }
 
-export const theme = {
+export const lightTheme = {
   /**
    * Text color
    */
   color: {
-    black: baseColor.black,
-    white: baseColor.whiet,
-    red: baseColor.red,
+    base: baseColor.black,
+    strong: baseColor.white,
+    warning: baseColor.red,
     horizonBlue: baseColor.horizonBlue,
     gray: baseColor.gray,
     darkGray: baseColor.darkGray
@@ -32,11 +32,11 @@ export const theme = {
    * Backgruond color
    */
   background: {
-    white: baseColor.whiet,
+    base: baseColor.white,
+    overAll: baseColor.brightGray,
     red: baseColor.red,
     silver: baseColor.silver,
     gray: baseColor.gray,
-    brightGray: baseColor.brightGray,
     darkGray: baseColor.darkGray,
     whiteGray: baseColor.whiteGray,
     ironBlack: baseColor.ironBlack,
@@ -48,7 +48,7 @@ export const theme = {
    * Border color
    */
   border: {
-    white: baseColor.whiet,
+    white: baseColor.white,
     red: baseColor.red,
     silver: baseColor.silver,
     whiteGray: baseColor.whiteGray,
@@ -56,4 +56,45 @@ export const theme = {
   }
 } as const
 
-export type AppTheme = typeof theme
+export type AppTheme = typeof lightTheme
+
+export const darkTheme: AppTheme = {
+  /**
+   * Text color
+   */
+  color: {
+    base: baseColor.white,
+    strong: baseColor.black,
+    warning: baseColor.red,
+    horizonBlue: baseColor.horizonBlue,
+    gray: baseColor.gray,
+    darkGray: baseColor.darkGray
+  },
+
+  /**
+   * Backgruond color
+   */
+  background: {
+    base: baseColor.white,
+    overAll: baseColor.black,
+    red: baseColor.red,
+    silver: baseColor.silver,
+    gray: baseColor.gray,
+    darkGray: baseColor.darkGray,
+    whiteGray: baseColor.whiteGray,
+    ironBlack: baseColor.ironBlack,
+    skyBlue: baseColor.skyBlue,
+    horizonBlue: baseColor.horizonBlue
+  },
+
+  /**
+   * Border color
+   */
+  border: {
+    white: baseColor.white,
+    red: baseColor.red,
+    silver: baseColor.silver,
+    whiteGray: baseColor.whiteGray,
+    horizonBlue: baseColor.horizonBlue
+  }
+} as const

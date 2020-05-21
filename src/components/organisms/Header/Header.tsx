@@ -57,7 +57,7 @@ export const Header: React.FC<Props> = props => {
               <NavigationItem to={nav.to}>
                 <NavigationText
                   size={16}
-                  textcolor={currentPath.includes(nav.to) ? 'horizonBlue' : 'white'}
+                  textcolor={currentPath.includes(nav.to) ? 'horizonBlue' : 'strong'}
                 >
                   {nav.text}
                 </NavigationText>
@@ -78,7 +78,7 @@ export const Header: React.FC<Props> = props => {
               <NavigationItem to={nav.to}>
                 <NavigationText
                   size={16}
-                  textcolor={currentPath.includes(nav.to) ? 'horizonBlue' : 'white'}
+                  textcolor={currentPath.includes(nav.to) ? 'horizonBlue' : 'strong'}
                 >
                   {nav.text}
                 </NavigationText>
