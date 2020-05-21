@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import { darkModeState, useDarkMode } from '@/atoms/darkMode'
+import { darkTheme, lightTheme } from '@/styles/Theme'
 
 import { Footer } from '@/components/organisms/Footer'
 import { GlobalStyle } from '@/styles'
@@ -6,7 +8,6 @@ import { HeaderContainer } from '@/components/containers/HeaderContainer'
 import { Routes } from './Routes'
 import { ScrollToTop } from '@/components/templates/ScrollToTop'
 import { ThemeProvider } from 'styled-components'
-import { lightTheme } from '@/styles/Theme'
 import { loadingState } from '@/atoms/loading'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
@@ -14,16 +15,19 @@ import { userOperations } from '@/store/user'
 
 export const App: React.FC = () => {
   const { isAppLoading } = useRecoilValue(loadingState)
+  const { isDarkMode } = useRecoilValue(darkModeState)
   const { initialAuthAsync } = userOperations.useInitialAuth()
+  const { chaneDarkMode } = useDarkMode()
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) chaneDarkMode(true)
     const token = localStorage.getItem('jwt')
     initialAuthAsync(token)
   }, [])
 
   return isAppLoading ? (
     <>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Main>
           <ScrollToTop />
