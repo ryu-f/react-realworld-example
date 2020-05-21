@@ -32,7 +32,14 @@ export const LoginForm: React.FC<Props> = props => {
           name="email"
           id="email"
           placeholder="Email address"
-          ref={register({ required: 'Email address is required.' })}
+          ref={register({
+            required: 'Email address is required.',
+            pattern: {
+              // eslint-disable-next-line no-useless-escape
+              value: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+              message: 'The email address appears to be incorrect.'
+            }
+          })}
         />
         <ErrorText size={16} textcolor="warning">
           {errors.email && errors.email.message}

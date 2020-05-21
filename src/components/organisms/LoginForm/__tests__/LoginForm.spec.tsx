@@ -25,6 +25,17 @@ describe('LoginForm', () => {
       expect(getByText('Password is required.'))
     })
 
+    test('メールアドレス入力欄の文字がメールアドレス形式でなかった場合に指定したエラーメッセージが表示される', async () => {
+      const { mailInput, button, getByText } = setup()
+      await act(async () => {
+        fireEvent.input(mailInput, { target: { value: 'aaa' } })
+      })
+      await act(async () => {
+        fireEvent.submit(button)
+      })
+      expect(getByText('The email address appears to be incorrect.'))
+    })
+
     test('パスワード入力欄の文字数が6文字以下だった場合に指定したエラーメッセージが表示される', async () => {
       const { passwordInput, button, getByText } = setup()
       await act(async () => {
