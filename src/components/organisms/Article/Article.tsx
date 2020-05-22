@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import { LinkButton } from '@/components/atoms/Button'
 import { Tag } from '@/components/atoms/Tag'
 import styled from 'styled-components'
-import { useReadingTime } from '@/hooks/useReadingTime'
+import { useReadingTime } from '@/shared/hooks/useReadingTime'
 
 type Props = {
   article: ArticleType

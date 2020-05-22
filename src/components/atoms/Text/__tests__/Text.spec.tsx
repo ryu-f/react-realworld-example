@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { BasicText } from '../'
-import { render } from '@testing-library/react'
+import { render } from '@/shared/test/util'
 
 describe('Text', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {

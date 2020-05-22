@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { MemoryRouter, Router } from 'react-router'
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render } from '@/shared/test/util'
 
 import { Article } from '../'
+import { Router } from 'react-router'
 import { createMemoryHistory } from 'history'
 
 describe('Article', () => {
@@ -48,7 +48,7 @@ describe('Article', () => {
   })
 
   test('snapshot', () => {
-    const { asFragment } = render(<Article article={article} />, { wrapper: MemoryRouter })
+    const { asFragment } = render(<Article article={article} />)
     expect(asFragment()).toMatchSnapshot()
   })
 })

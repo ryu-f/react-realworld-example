@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect'
 import * as React from 'react'
 
 import { Image } from '../'
-import { render } from '@testing-library/react'
+import { render } from '@/shared/test/util'
 
 describe('Image', () => {
   const props = {

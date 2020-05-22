@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { act, fireEvent, render } from '@testing-library/react'
+import { act, fireEvent, render } from '@/shared/test/util'
 
 import { LoginForm } from '../'
 
@@ -33,7 +33,7 @@ describe('LoginForm', () => {
       await act(async () => {
         fireEvent.submit(button)
       })
-      expect(getByText('The email address appears to be incorrect.'))
+      expect(getByText('The email address appears to be inorrect.'))
     })
 
     test('パスワード入力欄の文字数が6文字以下だった場合に指定したエラーメッセージが表示される', async () => {
