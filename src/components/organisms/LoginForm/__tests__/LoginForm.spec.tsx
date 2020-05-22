@@ -33,7 +33,7 @@ describe('LoginForm', () => {
       await act(async () => {
         fireEvent.submit(button)
       })
-      expect(getByText('The email address appears to be inorrect.'))
+      expect(getByText('The email address appears to be incorrect.'))
     })
 
     test('パスワード入力欄の文字数が6文字以下だった場合に指定したエラーメッセージが表示される', async () => {

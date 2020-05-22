@@ -27,7 +27,7 @@ export const Article: React.FC<Props> = props => {
     author,
     favoritesCount
   } = props.article
-  const { readingTime } = useReadingTime(body)
+  const { calculateReadingTime } = useReadingTime()
   const onUserClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => e.stopPropagation()
 
   const Tags = () =>
@@ -71,7 +71,7 @@ export const Article: React.FC<Props> = props => {
       </Primary>
       <Secondary>
         <FavoriteButton size="BASE">{favoritesCount}</FavoriteButton>
-        <MinText size={14}>{`${readingTime} min read`}</MinText>
+        <MinText size={14}>{`${calculateReadingTime(body)} min read`}</MinText>
         <ReadButton to={`/article/${slug}`} size="SMALL">
           READ
         </ReadButton>
