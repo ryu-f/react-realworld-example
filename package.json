@@ -24,8 +24,7 @@
     "sort:import": "import-sort --write \"**/*.ts{,x}\"",
     "sprite:svg": "svg-sprite-generate -d ./material/sprite -o ./src/static/img/icon/icons.svg",
     "_webpack:dev": "webpack-dev-server --config webpack.dev.js",
-    "_webpack:production": "webpack --config webpack.prod.js",
-    "postinstall": "rm -rf node_modules/@types/react-native"
+    "_webpack:production": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,10 @@
   "author": "ryu.furuta",
   "license": "ISC",
   "homepage": "https://github.com/ryu-f/react-realworld-example#readme",
+  "engines": {
+    "node": "12.13.*",
+    "yarn": "1.*.*"
+  },
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
