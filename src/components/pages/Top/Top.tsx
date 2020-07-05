@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { media, vw } from '@/styles/Mixin'
 
 import { ArticleListContainer } from '@/components/containers/ArticleListContainer'
-import { PagenationContainer } from '@/components/containers/PagenationContainer'
+import { PaginationContainer } from '@/components/containers/PaginationContainer'
 import { TagListContainer } from '@/components/containers/TagListContainer'
 import { articleOperations } from '@/store/article'
 import styled from 'styled-components'
@@ -19,9 +19,9 @@ export const Top: React.FC = () => {
       <Content>
         <LayoutArticle>
           <ArticleListContainer />
-          <LayoutPagenation>
-            <PagenationContainer />
-          </LayoutPagenation>
+          <LayoutPagination>
+            <PaginationContainer />
+          </LayoutPagination>
         </LayoutArticle>
         <LayoutTagList>
           <TagListContainer />
@@ -66,7 +66,7 @@ const LayoutArticle = styled.div`
   }
 `
 
-const LayoutPagenation = styled.div`
+const LayoutPagination = styled.div`
   @media (${media.desktop}) {
     margin-top: 30px;
   }

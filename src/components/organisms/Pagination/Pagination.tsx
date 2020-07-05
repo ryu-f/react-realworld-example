@@ -24,7 +24,7 @@ type Props = {
  * @param breakLabel - 省略箇所に表示する内容
  * @param onHandleChange - クリック時のコールバック
  */
-export const Pagenation: React.FC<Props> = ({
+export const Pagination: React.FC<Props> = ({
   currentPage,
   pageCount,
   marginPageDisplayed = 2,

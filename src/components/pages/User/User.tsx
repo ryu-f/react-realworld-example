@@ -3,7 +3,7 @@ import { media, vw } from '@/styles/Mixin'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { ArticleListContainer } from '@/components/containers/ArticleListContainer'
-import { PagenationContainer } from '@/components/containers/PagenationContainer'
+import { PaginationContainer } from '@/components/containers/PaginationContainer'
 import { ProfileDetailContainer } from '@/components/containers/ProfileDetailContainer'
 import { articleOperations } from '@/store/article'
 import styled from 'styled-components'
@@ -22,9 +22,9 @@ export const User: React.FC = () => {
       <ProfileDetailContainer />
       <LayoutArticle>
         <ArticleListContainer />
-        <LayoutPagenation>
-          <PagenationContainer />
-        </LayoutPagenation>
+        <LayoutPagination>
+          <PaginationContainer />
+        </LayoutPagination>
       </LayoutArticle>
     </Wrapper>
   )
@@ -55,7 +55,7 @@ const LayoutArticle = styled.div`
   }
 `
 
-const LayoutPagenation = styled.div`
+const LayoutPagination = styled.div`
   @media (${media.desktop}) {
     margin-top: 30px;
   }

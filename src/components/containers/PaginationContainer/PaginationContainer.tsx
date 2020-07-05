@@ -2,11 +2,11 @@ import * as React from 'react'
 
 import { articleOperations, articleSelectors } from '@/store/article'
 
-import { Pagenation } from '@/components/organisms/Pagenation'
+import { Pagination } from '@/components/organisms/Pagination'
 import { RootState } from '@/store/rootReducer'
 import { useSelector } from 'react-redux'
 
-export const PagenationContainer: React.FC = () => {
+export const PaginationContainer: React.FC = () => {
   const { currentPage } = useSelector((state: RootState) => state.article)
   const { maxPage } = articleSelectors.useMaxPage()
   const { getArticlesAsync } = articleOperations.useGetArticles()
@@ -16,7 +16,7 @@ export const PagenationContainer: React.FC = () => {
   }
 
   return (
-    <Pagenation
+    <Pagination
       currentPage={currentPage}
       pageCount={maxPage}
       previousLabel="<"
