@@ -2,11 +2,11 @@ import * as React from 'react'
 
 import { render, screen } from '@/shared/test/util'
 
-import { BasicText } from '../'
+import { Tag } from './'
 
-describe('Text', () => {
+describe('Tag', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {
-    render(<BasicText>Test</BasicText>)
+    render(<Tag size="BASE">Test</Tag>)
     expect(screen.getByText('Test'))
   })
 })

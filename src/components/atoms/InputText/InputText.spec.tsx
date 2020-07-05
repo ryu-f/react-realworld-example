@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { fireEvent, render, screen } from '@/shared/test/util'
 
-import { InputText } from '../'
+import { InputText } from './'
 
 describe('InputText', () => {
   test('入力した値が表示されているか', () => {

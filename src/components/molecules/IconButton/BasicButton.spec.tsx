@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { fireEvent, render, screen } from '@/shared/test/util'
 
-import { FavoriteButton } from '../'
+import { FavoriteButton } from './'
 
 describe('BasicButton', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {

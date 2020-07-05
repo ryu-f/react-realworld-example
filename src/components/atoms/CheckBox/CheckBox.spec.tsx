@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { fireEvent, render, screen } from '@/shared/test/util'
 
-import { CheckBox } from '../'
+import { CheckBox } from './'
 
 describe('CheckBox', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {

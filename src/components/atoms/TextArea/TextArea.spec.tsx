@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { fireEvent, render, screen } from '@/shared/test/util'
 
-import { TextArea } from '../'
+import { TextArea } from './'
 
 describe('TextArea', () => {
   test('入力した値が表示されているか', () => {

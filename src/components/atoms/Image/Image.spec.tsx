@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import { render, screen } from '@/shared/test/util'
 
-import { Image } from '../'
+import { Image } from './'
 
 describe('Image', () => {
   const props = {

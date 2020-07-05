@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { act, fireEvent, render, screen } from '@/shared/test/util'
 
-import { RegistrationForm } from '../'
+import { RegistrationForm } from './'
 
 describe('RegistrationForm', () => {
   const setup = () => {
