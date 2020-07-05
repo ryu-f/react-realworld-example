@@ -1,11 +1,12 @@
 import * as React from 'react'
 
+import { render, screen } from '@/shared/test/util'
+
 import { BasicText } from '../'
-import { render } from '@/shared/test/util'
 
 describe('Text', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {
-    const { getByText } = render(<BasicText>Test</BasicText>)
-    expect(getByText('Test'))
+    render(<BasicText>Test</BasicText>)
+    expect(screen.getByText('Test'))
   })
 })

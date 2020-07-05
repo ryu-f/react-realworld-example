@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { act, fireEvent, render } from '@/shared/test/util'
+import { act, fireEvent, render, screen } from '@/shared/test/util'
 
 import { RegistrationForm } from '../'
 
@@ -8,10 +8,10 @@ describe('RegistrationForm', () => {
   const setup = () => {
     const onSubmit = jest.fn()
     const utils = render(<RegistrationForm onSubmit={onSubmit} />)
-    const userInput = utils.getByPlaceholderText('User name')
-    const mailInput = utils.getByPlaceholderText('Email address')
-    const passwordInput = utils.getByPlaceholderText('Password')
-    const button = utils.getByRole('button')
+    const userInput = screen.getByPlaceholderText('User name')
+    const mailInput = screen.getByPlaceholderText('Email address')
+    const passwordInput = screen.getByPlaceholderText('Password')
+    const button = screen.getByRole('button')
 
     return { onSubmit, userInput, mailInput, passwordInput, button, ...utils }
   }

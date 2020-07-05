@@ -1,18 +1,18 @@
 import * as React from 'react'
 
-import { fireEvent, render } from '@/shared/test/util'
+import { fireEvent, render, screen } from '@/shared/test/util'
 
 import { CheckBox } from '../'
 
 describe('CheckBox', () => {
   test('チルドレンに渡されたテキストが表示されているか', () => {
-    const { getByText } = render(<CheckBox>Test</CheckBox>)
-    expect(getByText('Test'))
+    render(<CheckBox>Test</CheckBox>)
+    expect(screen.getByText('Test'))
   })
 
   test('チェックボックスをクリックしてcheckedがtrueになっているか', () => {
-    const { getByLabelText } = render(<CheckBox>Test</CheckBox>)
-    const checkbox = getByLabelText('Test') as HTMLInputElement
+    render(<CheckBox>Test</CheckBox>)
+    const checkbox = screen.getByLabelText('Test') as HTMLInputElement
     fireEvent.click(checkbox, { checked: true })
     expect(checkbox.checked).toBeTruthy()
   })

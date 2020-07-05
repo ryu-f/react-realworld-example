@@ -2,8 +2,9 @@ import '@testing-library/jest-dom/extend-expect'
 
 import * as React from 'react'
 
+import { render, screen } from '@/shared/test/util'
+
 import { Image } from '../'
-import { render } from '@/shared/test/util'
 
 describe('Image', () => {
   const props = {
@@ -12,12 +13,12 @@ describe('Image', () => {
   }
 
   test('指定した画像が表示されているか', () => {
-    const { getByRole } = render(<Image {...props} />)
-    expect(getByRole('img')).toHaveAttribute('src', props.src)
+    render(<Image {...props} />)
+    expect(screen.getByRole('img')).toHaveAttribute('src', props.src)
   })
 
   test('指定した属性が設定されているか', () => {
-    const { getByAltText } = render(<Image {...props} />)
-    expect(getByAltText(props.alt))
+    render(<Image {...props} />)
+    expect(screen.getByAltText(props.alt))
   })
 })
