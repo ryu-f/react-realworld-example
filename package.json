@@ -38,6 +38,9 @@
     "node": "12.13.*",
     "yarn": "1.*.*"
   },
+  "resolutions": {
+    "@types/react": "16.9.23"
+  },
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
