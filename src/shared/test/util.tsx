@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { RenderOptions, render } from '@testing-library/react'
+import { RenderOptions, RenderResult, render } from '@testing-library/react'
 
 import { MemoryRouter } from 'react-router'
 import { ThemeProvider } from 'styled-components'
@@ -12,7 +12,7 @@ const Providers: React.FC = ({ children }) => (
   </ThemeProvider>
 )
 
-const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, 'queries'>) =>
+const customRender = (ui: React.ReactElement, options?: RenderOptions): RenderResult =>
   render(ui, { wrapper: Providers, ...options })
 
 export * from '@testing-library/react'

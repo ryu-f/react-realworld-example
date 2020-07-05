@@ -1,19 +1,18 @@
 import * as React from 'react'
 
-import { act, fireEvent, render } from '@/shared/test/util'
+import { act, fireEvent, render, screen } from '@/shared/test/util'
 
-import { RegistrationForm } from '../'
+import { LoginForm } from './'
 
-describe('RegistrationForm', () => {
+describe('LoginForm', () => {
   const setup = () => {
     const onSubmit = jest.fn()
-    const utils = render(<RegistrationForm onSubmit={onSubmit} />)
-    const userInput = utils.getByPlaceholderText('User name')
-    const mailInput = utils.getByPlaceholderText('Email address')
-    const passwordInput = utils.getByPlaceholderText('Password')
-    const button = utils.getByRole('button')
+    const utils = render(<LoginForm onSubmit={onSubmit} />)
+    const mailInput = screen.getByPlaceholderText('Email address')
+    const passwordInput = screen.getByPlaceholderText('Password')
+    const button = screen.getByRole('button')
 
-    return { onSubmit, userInput, mailInput, passwordInput, button, ...utils }
+    return { onSubmit, mailInput, passwordInput, button, ...utils }
   }
 
   describe('error', () => {
@@ -22,7 +21,6 @@ describe('RegistrationForm', () => {
       await act(async () => {
         fireEvent.submit(button)
       })
-      expect(getByText('User name is required.'))
       expect(getByText('Email address is required.'))
       expect(getByText('Password is required.'))
     })
@@ -64,10 +62,7 @@ describe('RegistrationForm', () => {
 
   describe('success', () => {
     test('送信イベントの確認', async () => {
-      const { userInput, mailInput, passwordInput, button, onSubmit } = setup()
-      await act(async () => {
-        fireEvent.input(userInput, { target: { value: 'user' } })
-      })
+      const { mailInput, passwordInput, button, onSubmit } = setup()
       await act(async () => {
         fireEvent.input(mailInput, { target: { value: 'test@test.com' } })
       })
