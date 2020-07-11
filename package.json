@@ -17,6 +17,7 @@
     "e2e": "cypress open",
     "e2e:ci": "cypress run",
     "e2e:update": "cypress open --env updateSnapshots=true",
+    "typecheck": "tsc --noEmit",
     "storybook": "start-storybook -p 6006 -s ./src/static",
     "storybook:build": "build-storybook",
     "copy:static": "cpx \"./src/static/**/*\" \"./dist\"",
