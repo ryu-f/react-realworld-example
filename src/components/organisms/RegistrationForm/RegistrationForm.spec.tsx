@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { act, fireEvent, render, screen } from '@/shared/test/util'
+import { act, fireEvent, render, screen } from 'testing-library-utils'
 
 import { RegistrationForm } from './'
 import userEvent from '@testing-library/user-event'

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { fireEvent, render, screen } from '@/shared/test/util'
+import { fireEvent, render, screen } from 'testing-library-utils'
 
 import { TextArea } from './'
 

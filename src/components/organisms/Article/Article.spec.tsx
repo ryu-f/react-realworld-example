@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { render, screen } from '@/shared/test/util'
+import { render, screen } from 'testing-library-utils'
 
 import { Article } from './'
 import { Router } from 'react-router'

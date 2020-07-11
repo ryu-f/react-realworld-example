@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { render, screen } from '@/shared/test/util'
+import { render, screen } from 'testing-library-utils'
 
 import { BasicButton } from './'
 import userEvent from '@testing-library/user-event'
