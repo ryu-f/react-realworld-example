@@ -39,13 +39,13 @@ function setup() {
 }
 
 describe('Article', () => {
-  test('READボタンクリックで記事詳細に遷移するか', () => {
+  test('READボタンクリックで記事詳細に遷移する', () => {
     const { history } = setup()
     userEvent.click(screen.getByText('READ'))
     expect(history.location.pathname).toBe(`/article/${props.article.slug}`)
   })
 
-  test('ユーザー名クリックでユーザーページに遷移するか', () => {
+  test('ユーザー名クリックでユーザーページに遷移する', () => {
     const { history } = setup()
     userEvent.click(screen.getByText(props.article.author.username))
     expect(history.location.pathname).toBe(`/user/${props.article.author.username}`)

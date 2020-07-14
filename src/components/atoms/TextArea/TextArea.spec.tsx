@@ -6,10 +6,15 @@ import { TextArea } from './'
 
 // import userEvent from '@testing-library/user-event'
 
+function setup() {
+  const utils = render(<TextArea />)
+  return { ...utils }
+}
+
 describe('TextArea', () => {
-  test('入力した値が表示されているか', async () => {
+  test('入力した値が表示されている', async () => {
+    setup()
     const targetText = 'test'
-    render(<TextArea />)
     const input = screen.getByRole('textbox')
     fireEvent.input(input, { target: { value: targetText } })
     // await userEvent.type(input, targetText, { delay: 1000 })
