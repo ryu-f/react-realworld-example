@@ -1,8 +1,9 @@
 import * as React from 'react'
 
-import { act, fireEvent, render, screen } from '@/shared/test/util'
+import { act, fireEvent, render, screen } from 'testing-library-utils'
 
 import { LoginForm } from './'
+import userEvent from '@testing-library/user-event'
 
 describe('LoginForm', () => {
   const setup = () => {
@@ -28,7 +29,7 @@ describe('LoginForm', () => {
     test('メールアドレス入力欄の文字がメールアドレス形式でなかった場合に指定したエラーメッセージが表示される', async () => {
       const { mailInput, button, getByText } = setup()
       await act(async () => {
-        fireEvent.input(mailInput, { target: { value: 'aaa' } })
+        userEvent.type(mailInput, 'aaa')
       })
       await act(async () => {
         fireEvent.submit(button)
@@ -39,7 +40,7 @@ describe('LoginForm', () => {
     test('パスワード入力欄の文字数が6文字以下だった場合に指定したエラーメッセージが表示される', async () => {
       const { passwordInput, button, getByText } = setup()
       await act(async () => {
-        fireEvent.input(passwordInput, { target: { value: 'aaa' } })
+        userEvent.type(passwordInput, 'aaa')
       })
       await act(async () => {
         fireEvent.submit(button)
@@ -51,7 +52,7 @@ describe('LoginForm', () => {
       const { passwordInput, button, getByText } = setup()
       const textInput = () => [...Array(100)].map(() => 'a').join('')
       await act(async () => {
-        fireEvent.input(passwordInput, { target: { value: textInput() } })
+        userEvent.type(passwordInput, textInput())
       })
       await act(async () => {
         fireEvent.submit(button)
@@ -64,10 +65,10 @@ describe('LoginForm', () => {
     test('送信イベントの確認', async () => {
       const { mailInput, passwordInput, button, onSubmit } = setup()
       await act(async () => {
-        fireEvent.input(mailInput, { target: { value: 'test@test.com' } })
+        userEvent.type(mailInput, 'test@test.com')
       })
       await act(async () => {
-        fireEvent.input(passwordInput, { target: { value: '123456' } })
+        userEvent.type(passwordInput, '123456')
       })
       await act(async () => {
         fireEvent.submit(button)
