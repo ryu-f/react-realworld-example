@@ -4,9 +4,17 @@ import { render, screen } from 'testing-library-utils'
 
 import { Tag } from './'
 
+const targetText = 'test'
+
+function setup() {
+  const utils = render(<Tag size="BASE">{targetText}</Tag>)
+
+  return { ...utils }
+}
+
 describe('Tag', () => {
-  test('チルドレンに渡されたテキストが表示されているか', () => {
-    render(<Tag size="BASE">Test</Tag>)
-    expect(screen.getByText('Test'))
+  test('チルドレンに渡されたテキストが表示される', () => {
+    setup()
+    expect(screen.getByText(targetText))
   })
 })

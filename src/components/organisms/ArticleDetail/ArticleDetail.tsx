@@ -75,7 +75,7 @@ const HeroView = styled.div`
   @media (${media.desktop}) {
     padding: 40px 20px;
   }
-j
+
   @media (${media.mobile}) {
     padding: ${vw(80)} ${vw(40)};
   }

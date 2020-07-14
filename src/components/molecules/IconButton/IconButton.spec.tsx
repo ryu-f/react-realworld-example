@@ -6,28 +6,29 @@ import { FavoriteButton } from '.'
 import userEvent from '@testing-library/user-event'
 
 function setup() {
-  const handler = jest.fn()
-  const utils = render(
-    <FavoriteButton onClick={handler} size="BASE">
-      Test
-    </FavoriteButton>
-  )
+  const onClick = jest.fn()
+  const utils = render(<FavoriteButton size="BASE">Test</FavoriteButton>)
 
   return {
     ...utils,
-    handler
+    onClick
   }
 }
 
 describe('BasicButton', () => {
-  test('チルドレンに渡されたテキストが表示されているか', () => {
+  test('チルドレンに渡されたテキストが表示されている', () => {
     setup()
     expect(screen.getByText('Test'))
   })
 
-  test('クリックイベントが発火しているか', () => {
-    const { handler } = setup()
+  test('クリックイベントが発火している', () => {
+    const { onClick, rerender } = setup()
+    rerender(
+      <FavoriteButton size="BASE" onClick={onClick}>
+        Test
+      </FavoriteButton>
+    )
     userEvent.click(screen.getByText('Test'))
-    expect(handler).toHaveBeenCalled()
+    expect(onClick).toHaveBeenCalled()
   })
 })
