@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { darkModeState, useDarkMode } from '@/atoms/darkMode'
 import { darkTheme, lightTheme } from '@/styles/Theme'
 
+import { BrowserRouter } from 'react-router-dom'
 import { Footer } from '@/components/organisms/Footer'
 import { GlobalStyle } from '@/styles'
 import { HeaderContainer } from '@/components/containers/HeaderContainer'
@@ -27,17 +28,19 @@ export const App: React.FC = () => {
 
   return isAppLoading ? (
     <>
-      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-        <GlobalStyle />
-        <Main>
-          <ScrollToTop />
-          <HeaderContainer />
-          <Routes />
-          <LayoutFooter>
-            <Footer />
-          </LayoutFooter>
-        </Main>
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+          <GlobalStyle />
+          <Main>
+            <ScrollToTop />
+            <HeaderContainer />
+            <Routes />
+            <LayoutFooter>
+              <Footer />
+            </LayoutFooter>
+          </Main>
+        </ThemeProvider>
+      </BrowserRouter>
     </>
   ) : null
 }

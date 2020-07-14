@@ -1,14 +1,8 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 
-import { createBrowserHistory } from 'history'
 import rootReducer from './rootReducer'
-import { routerMiddleware } from 'connected-react-router'
-
-export const history = createBrowserHistory()
 
 const middlewares: any[] = []
-
-middlewares.push(routerMiddleware(history))
 
 const composeEnhancers =
   typeof window === 'object' && ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as any)
@@ -17,7 +11,7 @@ const composeEnhancers =
 const enhancer = composeEnhancers(applyMiddleware(...middlewares))
 
 const configureStore = () => {
-  const store = createStore(rootReducer(history), enhancer)
+  const store = createStore(rootReducer, enhancer)
   return store
 }
 
