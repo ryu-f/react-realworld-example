@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { CommentEditor } from './'
 import { action } from '@storybook/addon-actions'
+import { CommentEditor } from './'
 
 export default {
   title: 'organisms|CommentEditor',

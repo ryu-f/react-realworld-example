@@ -1,11 +1,11 @@
 import { batch, useDispatch, useSelector } from 'react-redux'
-import { getArticles, getTags } from '../actions'
 
+import { useCallback } from 'react'
+import { getArticles, getTags } from '../actions'
 import { RootState } from '@/store/rootReducer'
 import { articlesAPI } from '@/services/articles'
 import { isError } from '@/services/isError'
 import { tags } from '@/services/tags'
-import { useCallback } from 'react'
 
 export const useInitialData = () => {
   const { limit, offset } = useSelector((state: RootState) => state.article)

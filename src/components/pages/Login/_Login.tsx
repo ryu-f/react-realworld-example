@@ -1,10 +1,10 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { LinkText } from '@/components/atoms/Text'
 import { LoginFormContainer } from '@/components/containers/LoginFormContainer'
-import styled from 'styled-components'
 
 export const Login: React.FC = () => {
   return (

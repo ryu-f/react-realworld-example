@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import { render, screen } from 'testing-library-utils'
-
-import { CheckBox } from './'
 import userEvent from '@testing-library/user-event'
+import { CheckBox } from './'
+import { render, screen } from 'testing-library-utils'
 
 const testText = 'Test'
 

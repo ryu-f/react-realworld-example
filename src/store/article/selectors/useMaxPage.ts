@@ -1,5 +1,5 @@
-import { RootState } from '@/store/rootReducer'
 import { useSelector } from 'react-redux'
+import { RootState } from '@/store/rootReducer'
 
 export const useMaxPage = () => {
   const maxPage = useSelector((state: RootState) => {

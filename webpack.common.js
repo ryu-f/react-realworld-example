@@ -28,7 +28,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
+      'testing-library-utils': path.resolve(__dirname, 'tests/unit/testing-library-utils')
     }
   },
 

@@ -378,13 +378,13 @@ exports[`Article snapshot 1`] = `
         class="c4"
       >
         <p
-          class="sc-AxjAm c5 c6"
+          class="c5 c6"
           size="20"
         >
           test
         </p>
         <p
-          class="sc-AxjAm c7 c8"
+          class="c7 c8"
           size="14"
         >
           test-description
@@ -415,7 +415,7 @@ exports[`Article snapshot 1`] = `
           class="c12"
         >
           <p
-            class="sc-AxjAm c7"
+            class="c7"
             size="14"
           >
             by 
@@ -429,7 +429,7 @@ exports[`Article snapshot 1`] = `
             test-user
           </a>
           <p
-            class="sc-AxjAm c15"
+            class="c15"
             size="16"
           >
             ・Sat Mar 21
@@ -441,7 +441,7 @@ exports[`Article snapshot 1`] = `
       class="c16"
     >
       <button
-        class="sc-AxhUy c17 c18"
+        class="c17 c18"
       >
         <svg
           class="c19"
@@ -454,7 +454,7 @@ exports[`Article snapshot 1`] = `
         0
       </button>
       <p
-        class="sc-AxjAm c7 "
+        class="c7 "
         size="14"
       >
         1 min read

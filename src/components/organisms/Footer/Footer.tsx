@@ -1,9 +1,9 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { SvgIcons } from '@/components/atoms/SvgIcons'
-import styled from 'styled-components'
 
 export const Footer: React.FC = () => {
   return (

@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { App } from '@/components/App'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
-import configureStore from './store/configureStore'
 import { hot } from 'react-hot-loader/root'
+import configureStore from './store/configureStore'
+import { App } from '@/components/App'
 
 const MOUNT_NODE = document.getElementById('root')
 const store = configureStore()

@@ -1,8 +1,7 @@
 import * as React from 'react'
 
-import { render, screen } from 'testing-library-utils'
-
 import { Tag } from './'
+import { render, screen } from 'testing-library-utils'
 
 const targetText = 'test'
 

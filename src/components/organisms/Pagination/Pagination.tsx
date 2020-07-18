@@ -1,9 +1,9 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { BasicText } from '@/components/atoms/Text'
-import styled from 'styled-components'
 
 type Props = {
   currentPage: number

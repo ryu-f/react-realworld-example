@@ -1,9 +1,8 @@
 import * as creators from './actions'
-
+import { types } from './types'
 import { Article, Comment } from '@/types/domain'
 
 import { CreatorToActions } from '@/types/utils'
-import { types } from './types'
 
 export type State = {
   articles: Array<Article>

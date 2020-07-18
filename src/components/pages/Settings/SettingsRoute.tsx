@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { AuthRoute } from '@/components/pages/AuthRoute'
 import { Settings } from './_Settings'
+import { AuthRoute } from '@/components/pages/AuthRoute'
 
 export const SettingsRoute: React.FC = () => {
   return (

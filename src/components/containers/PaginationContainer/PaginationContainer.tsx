@@ -1,10 +1,10 @@
 import * as React from 'react'
 
+import { useSelector } from 'react-redux'
 import { articleOperations, articleSelectors } from '@/store/article'
 
 import { Pagination } from '@/components/organisms/Pagination'
 import { RootState } from '@/store/rootReducer'
-import { useSelector } from 'react-redux'
 
 export const PaginationContainer: React.FC = () => {
   const { currentPage } = useSelector((state: RootState) => state.article)

@@ -1,9 +1,9 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { ProfileEditorContainer } from '@/components/containers/ProfileEditorContainer'
-import styled from 'styled-components'
 
 export const Settings: React.FC = () => {
   return (

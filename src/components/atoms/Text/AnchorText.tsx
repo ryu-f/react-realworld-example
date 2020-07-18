@@ -11,10 +11,10 @@ interface AnchorTextProps extends BaseProps, React.AnchorHTMLAttributes<HTMLAnch
 // jsx
 ////////////////////////////////////////////////////////////
 export const AnchorText: React.FC<AnchorTextProps> = props => {
-  const { href, size, textcolor, children } = props
+  const { size, textcolor, children } = props
 
   return (
-    <AnchorView href={href} size={size} textcolor={textcolor} {...props}>
+    <AnchorView size={size} textcolor={textcolor} {...props}>
       {children}
     </AnchorView>
   )

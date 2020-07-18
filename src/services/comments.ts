@@ -1,6 +1,5 @@
-import { Error, MultipleCommentsResponse, NewCommentRequest } from '@/types/domain'
-
 import { API } from './API'
+import { Error, MultipleCommentsResponse, NewCommentRequest } from '@/types/domain'
 
 type GetRequest = {
   slug: string

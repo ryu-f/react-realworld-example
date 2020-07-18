@@ -1,11 +1,11 @@
+import React from 'react'
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { BasicText } from '@/components/atoms/Text'
 import { Image } from '@/components/atoms/Image'
 import { LinkButton } from '@/components/atoms/Button'
 import { Profile } from '@/types/domain'
-import React from 'react'
-import styled from 'styled-components'
 
 type Props = {
   myname: string

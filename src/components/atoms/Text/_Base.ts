@@ -1,6 +1,5 @@
-import { media, vw } from '@/styles/Mixin'
-
 import styled from 'styled-components'
+import { media, vw } from '@/styles/Mixin'
 
 export type BaseProps = {
   size?: number

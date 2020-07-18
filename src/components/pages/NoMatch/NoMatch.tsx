@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { BasicText } from '@/components/atoms/Text'
 import styled from 'styled-components'
+import { BasicText } from '@/components/atoms/Text'
 
 export const NoMatch: React.FC = () => (
   <Wrapper>

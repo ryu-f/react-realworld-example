@@ -1,7 +1,6 @@
+import { combineReducers } from 'redux'
 import { ArticleState, articleReducer } from './article'
 import { UserState, userReducer } from './user'
-
-import { combineReducers } from 'redux'
 
 export type RootState = {
   user: UserState

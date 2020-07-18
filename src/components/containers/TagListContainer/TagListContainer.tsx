@@ -1,9 +1,9 @@
 import * as React from 'react'
 
+import { useSelector } from 'react-redux'
 import { RootState } from '@/store/rootReducer'
 import { TagList } from '@/components/organisms/TagList'
 import { articleOperations } from '@/store/article'
-import { useSelector } from 'react-redux'
 
 export const TagListContainer: React.FC = () => {
   const { tags, tagQuery } = useSelector((state: RootState) => state.article)
