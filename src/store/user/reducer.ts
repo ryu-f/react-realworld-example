@@ -1,8 +1,7 @@
 import * as creators from './actions'
-
+import { types } from './types'
 import { CreatorToActions } from '@/types/utils'
 import { Profile } from '@/types/domain'
-import { types } from './types'
 
 export type State = {
   email: string

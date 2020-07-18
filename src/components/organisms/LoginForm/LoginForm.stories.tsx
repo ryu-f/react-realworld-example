@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { LoginForm } from './'
 import { action } from '@storybook/addon-actions'
+import { LoginForm } from './'
 
 export default {
   title: 'organisms|LoginForm',

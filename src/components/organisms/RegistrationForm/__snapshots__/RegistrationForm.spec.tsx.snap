@@ -251,7 +251,7 @@ exports[`RegistrationForm snapshot 1`] = `
     class="c0"
   >
     <p
-      class="sc-AxhUy c1"
+      class="c1"
       size="20"
     >
       Sign up to Real World
@@ -267,7 +267,7 @@ exports[`RegistrationForm snapshot 1`] = `
         type="text"
       />
       <p
-        class="sc-AxhUy c4 c5"
+        class="c4 c5"
         size="16"
       />
     </div>
@@ -282,7 +282,7 @@ exports[`RegistrationForm snapshot 1`] = `
         type="email"
       />
       <p
-        class="sc-AxhUy c4 c5"
+        class="c4 c5"
         size="16"
       />
     </div>
@@ -297,7 +297,7 @@ exports[`RegistrationForm snapshot 1`] = `
         type="password"
       />
       <p
-        class="sc-AxhUy c4 c5"
+        class="c4 c5"
         size="16"
       />
     </div>
@@ -324,7 +324,7 @@ exports[`RegistrationForm snapshot 1`] = `
       class="c6"
     >
       <button
-        class="sc-AxjAm c11"
+        class="c11"
         type="submit"
       >
         Sign Up

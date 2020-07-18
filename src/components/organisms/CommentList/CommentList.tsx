@@ -1,8 +1,8 @@
+import React from 'react'
+import styled from 'styled-components'
 import { Comment } from '@/components/organisms/Comment'
 import { Comment as CommentType } from '@/types/domain'
-import React from 'react'
 import { media } from '@/styles/Mixin'
-import styled from 'styled-components'
 
 type Props = {
   comments: Array<CommentType>

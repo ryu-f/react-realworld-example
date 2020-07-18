@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { media, vw } from '@/styles/Mixin'
 import styled, { css } from 'styled-components'
+import { media, vw } from '@/styles/Mixin'
 
 // types
 ////////////////////////////////////////////////////////////

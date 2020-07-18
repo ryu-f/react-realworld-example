@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { InputText } from './'
 import { action } from '@storybook/addon-actions'
+import { InputText } from './'
 
 export default {
   title: 'atoms|InputText',

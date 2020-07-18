@@ -1,6 +1,6 @@
-import { loadingState } from './state'
 import { useCallback } from 'react'
 import { useSetRecoilState } from 'recoil'
+import { loadingState } from './state'
 
 export const useLoading = () => {
   const toggleAppLoading = useSetRecoilState(loadingState)

@@ -1,8 +1,7 @@
 import * as React from 'react'
 
-import { render, screen } from 'testing-library-utils'
-
 import { Image } from './'
+import { render, screen } from 'testing-library-utils'
 
 const props = {
   src: 'https://via.placeholder.com/1',

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import styled, { ThemeProvider } from 'styled-components'
+import { useRecoilValue } from 'recoil'
+import { Routes } from './Routes'
 import { darkModeState, useDarkMode } from '@/atoms/darkMode'
 import { darkTheme, lightTheme } from '@/styles/Theme'
 
-import { BrowserRouter } from 'react-router-dom'
 import { Footer } from '@/components/organisms/Footer'
 import { GlobalStyle } from '@/styles'
 import { HeaderContainer } from '@/components/containers/HeaderContainer'
-import { Routes } from './Routes'
 import { ScrollToTop } from '@/components/templates/ScrollToTop'
-import { ThemeProvider } from 'styled-components'
 import { loadingState } from '@/atoms/loading'
-import styled from 'styled-components'
-import { useRecoilValue } from 'recoil'
+
 import { userOperations } from '@/store/user'
 
 export const App: React.FC = () => {

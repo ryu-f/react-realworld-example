@@ -2,8 +2,6 @@ import * as React from 'react'
 
 import { BaseProps, BaseStyle } from './_Base'
 
-import styled from 'styled-components'
-
 // type
 ////////////////////////////////////////////////////////////
 type BasicTextProps = BaseProps
@@ -22,4 +20,4 @@ export const BasicText: React.FC<BasicTextProps> = props => {
 
 // styled
 ////////////////////////////////////////////////////////////
-const BasicView = styled(BaseStyle)``
+const BasicView = BaseStyle.withComponent('p')

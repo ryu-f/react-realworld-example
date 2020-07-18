@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react'
-import { media, vw } from '@/styles/Mixin'
-
 import styled from 'styled-components'
+import { media, vw } from '@/styles/Mixin'
 
 type Props = React.TextareaHTMLAttributes<HTMLTextAreaElement>
 

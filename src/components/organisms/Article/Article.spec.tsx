@@ -1,11 +1,10 @@
 import * as React from 'react'
 
-import { render, screen } from 'testing-library-utils'
-
-import { Article } from './'
 import { Router } from 'react-router'
 import { createMemoryHistory } from 'history'
 import userEvent from '@testing-library/user-event'
+import { Article } from './'
+import { render, screen } from 'testing-library-utils'
 
 const props = {
   article: {

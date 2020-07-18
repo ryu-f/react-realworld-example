@@ -1,22 +1,22 @@
 import * as React from 'react'
 
+import { Link } from 'react-router-dom'
 import { BaseProps, BaseStyle } from './_Base'
-import { Link, LinkProps } from 'react-router-dom'
 
 // type
 ////////////////////////////////////////////////////////////
 
-interface LinkTextProps extends BaseProps, LinkProps {
+interface LinkTextProps extends BaseProps {
   to: string
 }
 
 // jsx
 ////////////////////////////////////////////////////////////
 export const LinkText: React.FC<LinkTextProps> = props => {
-  const { to, size, textcolor, children } = props
+  const { size, textcolor, children } = props
 
   return (
-    <LinkView to={to} size={size} textcolor={textcolor} {...props}>
+    <LinkView size={size} textcolor={textcolor} {...props}>
       {children}
     </LinkView>
   )

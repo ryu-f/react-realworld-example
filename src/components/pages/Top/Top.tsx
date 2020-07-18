@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { ArticleListContainer } from '@/components/containers/ArticleListContainer'
 import { PaginationContainer } from '@/components/containers/PaginationContainer'
 import { TagListContainer } from '@/components/containers/TagListContainer'
 import { articleOperations } from '@/store/article'
-import styled from 'styled-components'
 
 export const Top: React.FC = () => {
   const { initialDataAsync } = articleOperations.useInitialData()

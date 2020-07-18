@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import { render, screen } from 'testing-library-utils'
-
-import { InputText } from './'
 import userEvent from '@testing-library/user-event'
+import { InputText } from './'
+import { render, screen } from 'testing-library-utils'
 
 function setup() {
   const utils = render(<InputText />)

@@ -1,8 +1,7 @@
 import * as React from 'react'
 
-import { fireEvent, render, screen } from 'testing-library-utils'
-
 import { TextArea } from './'
+import { fireEvent, render, screen } from 'testing-library-utils'
 
 // import userEvent from '@testing-library/user-event'
 

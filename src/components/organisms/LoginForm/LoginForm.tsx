@@ -1,13 +1,13 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
+import { useForm } from 'react-hook-form'
 import { media, vw } from '@/styles/Mixin'
 
 import { BasicButton } from '@/components/atoms/Button'
 import { BasicText } from '@/components/atoms/Text'
 import { CheckBox } from '@/components/atoms/CheckBox'
 import { InputText } from '@/components/atoms/InputText'
-import styled from 'styled-components'
-import { useForm } from 'react-hook-form'
 
 type Props = {
   onSubmit: (data: FormData) => void

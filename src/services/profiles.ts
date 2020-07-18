@@ -1,6 +1,5 @@
-import { Error, ProfileResponse } from '@/types/domain'
-
 import { API } from './API'
+import { Error, ProfileResponse } from '@/types/domain'
 
 type GetRequest = {
   username: string

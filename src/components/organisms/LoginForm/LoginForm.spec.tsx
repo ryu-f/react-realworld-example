@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import { act, fireEvent, render, screen } from 'testing-library-utils'
-
-import { LoginForm } from './'
 import userEvent from '@testing-library/user-event'
+import { LoginForm } from './'
+import { act, fireEvent, render, screen } from 'testing-library-utils'
 
 const setup = () => {
   const onSubmit = jest.fn()

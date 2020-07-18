@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { TagList } from './'
 import { action } from '@storybook/addon-actions'
+import { TagList } from './'
 
 export default {
   title: 'organisms|TagList',

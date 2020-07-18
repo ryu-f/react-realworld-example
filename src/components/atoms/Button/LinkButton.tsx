@@ -1,21 +1,21 @@
 import * as React from 'react'
 
+import { Link } from 'react-router-dom'
 import { BaseProps, BaseStyle } from './_Base'
-import { Link, LinkProps } from 'react-router-dom'
 
 // type
 ////////////////////////////////////////////////////////////
-export interface LinkButtonProps extends BaseProps, LinkProps {
+export interface LinkButtonProps extends BaseProps {
   to: string
 }
 
 // jsx
 ////////////////////////////////////////////////////////////
 export const LinkButton: React.FC<LinkButtonProps> = props => {
-  const { to, size, layout, children } = props
+  const { layout, children } = props
 
   return (
-    <LinkView to={to} size={size} layout={layout} {...props}>
+    <LinkView layout={layout} {...props}>
       {children}
     </LinkView>
   )
