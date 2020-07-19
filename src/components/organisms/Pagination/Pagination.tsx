@@ -4,20 +4,18 @@ import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { BasicText } from '@/components/atoms/Text'
+import { usePaginationContainer } from '@/components/organisms/Pagination/hooks'
 
 type Props = {
-  currentPage: number
-  pageCount: number
   marginPageDisplayed?: number
   previousLabel?: React.ReactNode
   nextLabel?: React.ReactNode
   breakLabel?: React.ReactNode
-  onHandleChange: (pageNumber: number) => void
 }
 
 /**
  * @param currentPage - 現在のページ
- * @param pageCount - ページ上限
+ * @param maxPage - ページ上限
  * @param marginPageDisplayed - 現在のページから左右に表示する単位数
  * @param previousLabel - 戻るボタンに表示する内容
  * @param nextLabel - 次へボタンに表示する内容
@@ -25,20 +23,18 @@ type Props = {
  * @param onHandleChange - クリック時のコールバック
  */
 export const Pagination: React.FC<Props> = ({
-  currentPage,
-  pageCount,
   marginPageDisplayed = 2,
   previousLabel = 'Previous',
   nextLabel = 'Next',
-  breakLabel = '...',
-  onHandleChange
+  breakLabel = '...'
 }) => {
+  const { currentPage, maxPage, onHandleChange } = usePaginationContainer()
   const startNumber = currentPage - marginPageDisplayed
   const endNumber = currentPage + marginPageDisplayed
   const isFirstBreakDisplay = (() => currentPage > marginPageDisplayed + 2)()
   const isFirstPageDisplay = (() => currentPage > 1)()
-  const isLastBreakDisplay = (() => currentPage < pageCount - (marginPageDisplayed + 1))()
-  const IsLastPageDisplay = (() => currentPage < pageCount)()
+  const isLastBreakDisplay = (() => currentPage < maxPage - (marginPageDisplayed + 1))()
+  const IsLastPageDisplay = (() => currentPage < maxPage)()
 
   /**
    * @param index - ページ番号
@@ -103,7 +99,7 @@ export const Pagination: React.FC<Props> = ({
   /**
    * 最後のページボタン
    */
-  const LastPage = () => (IsLastPageDisplay ? createPageButton(pageCount) : null)
+  const LastPage = () => (IsLastPageDisplay ? createPageButton(maxPage) : null)
 
   /**
    * 次へボタン
@@ -113,13 +109,13 @@ export const Pagination: React.FC<Props> = ({
   /**
    * 現在のページを基に表示するページ番号のjsxの配列を作成
    */
-  const items = Array.from({ length: pageCount })
+  const items = Array.from({ length: maxPage })
     .map((_, page) => {
       page += 1
       if (
         page === currentPage ||
         (page < currentPage && page >= startNumber && page !== 1) ||
-        (page > currentPage && page <= endNumber && page !== pageCount)
+        (page > currentPage && page <= endNumber && page !== maxPage)
       )
         return createPageButton(page)
       return
