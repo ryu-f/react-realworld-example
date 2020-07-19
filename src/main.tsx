@@ -1,13 +1,11 @@
 import * as React from 'react'
 
-import configureStore, { history } from './store/configureStore'
-
-import { App } from '@/components/App'
-import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
 import { hot } from 'react-hot-loader/root'
+import configureStore from './store/configureStore'
+import { App } from '@/components/App'
 
 const MOUNT_NODE = document.getElementById('root')
 const store = configureStore()
@@ -22,11 +20,9 @@ if (process.env.DEBUG_ENV === 'enable') {
 
 const Root = hot(() => (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>
-    </ConnectedRouter>
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </Provider>
 ))
 

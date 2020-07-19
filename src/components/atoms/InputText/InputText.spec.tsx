@@ -1,14 +1,21 @@
 import * as React from 'react'
 
-import { fireEvent, render, screen } from '@/shared/test/util'
-
+import userEvent from '@testing-library/user-event'
 import { InputText } from './'
+import { render, screen } from 'testing-library-utils'
+
+function setup() {
+  const utils = render(<InputText />)
+
+  return { ...utils }
+}
 
 describe('InputText', () => {
-  test('入力した値が表示されているか', () => {
-    render(<InputText />)
-    const input = screen.getByRole('textbox') as HTMLInputElement
-    fireEvent.input(input, { target: { value: 'test' } })
-    expect(input.value).toBe('test')
+  test('入力した値が表示される', () => {
+    setup()
+    const targetText = 'value'
+    const input = screen.getByRole('textbox')
+    userEvent.type(input, targetText)
+    expect(input).toHaveValue(targetText)
   })
 })

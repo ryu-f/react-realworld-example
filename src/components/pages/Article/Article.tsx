@@ -1,13 +1,13 @@
-import { BasicText, LinkText } from '@/components/atoms/Text'
 import React, { useEffect } from 'react'
-import { media, vw } from '@/styles/Mixin'
 import { useHistory, useParams } from 'react-router-dom'
+import styled from 'styled-components'
+import { BasicText, LinkText } from '@/components/atoms/Text'
+import { media, vw } from '@/styles/Mixin'
 
 import { ArticleDetailContainer } from '@/components/containers/ArticleDetailContainer'
 import { CommentEditorContainer } from '@/components/containers/CommentEditorContainer'
 import { CommentListContainer } from '@/components/containers/CommentListContainer'
 import { articleOperations } from '@/store/article'
-import styled from 'styled-components'
 import { userSelectors } from '@/store/user'
 
 export const Article: React.FC = () => {

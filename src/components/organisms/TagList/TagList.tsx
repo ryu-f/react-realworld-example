@@ -1,10 +1,10 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { BasicText } from '@/components/atoms/Text'
 import { Tag } from '@/components/atoms/Tag'
-import styled from 'styled-components'
 
 type Props = {
   tags: Array<string>

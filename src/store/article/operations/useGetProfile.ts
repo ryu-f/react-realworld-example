@@ -1,9 +1,9 @@
-import { articlesAPI } from '@/services/articles'
-import { getArticles } from '../actions'
-import { isError } from '@/services/isError'
-import { profilesAPI } from '@/services/profiles'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import { getArticles } from '../actions'
+import { articlesAPI } from '@/services/articles'
+import { isError } from '@/services/isError'
+import { profilesAPI } from '@/services/profiles'
 import { userActions } from '@/store/user'
 
 export const useGetProfile = () => {

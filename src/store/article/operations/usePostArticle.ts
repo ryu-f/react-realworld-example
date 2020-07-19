@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react'
 
+import { useHistory } from 'react-router-dom'
 import { articlesAPI } from '@/services/articles'
 import { isError } from '@/services/isError'
-import { useHistory } from 'react-router-dom'
 
 type PostRequestPayload = {
   title: string

@@ -1,14 +1,23 @@
 import * as React from 'react'
 
-import { fireEvent, render, screen } from '@/shared/test/util'
-
 import { TextArea } from './'
+import { fireEvent, render, screen } from 'testing-library-utils'
+
+// import userEvent from '@testing-library/user-event'
+
+function setup() {
+  const utils = render(<TextArea />)
+  return { ...utils }
+}
 
 describe('TextArea', () => {
-  test('入力した値が表示されているか', () => {
-    render(<TextArea />)
-    const input = screen.getByRole('textbox') as HTMLInputElement
-    fireEvent.input(input, { target: { value: 'test' } })
-    expect(input.value).toBe('test')
+  test('入力した値が表示されている', async () => {
+    setup()
+    const targetText = 'test'
+    const input = screen.getByRole('textbox')
+    fireEvent.input(input, { target: { value: targetText } })
+    // await userEvent.type(input, targetText, { delay: 1000 })
+    // TODO valueがshuffleされてしまうのでfireEventを止む無く使用
+    expect(input).toHaveValue(targetText)
   })
 })

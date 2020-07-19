@@ -1,21 +1,15 @@
-import { ArticleState, articleReducer } from './article'
-import { RouterState, connectRouter } from 'connected-react-router'
-import { UserState, userReducer } from './user'
-
-import { History } from 'history'
 import { combineReducers } from 'redux'
+import { ArticleState, articleReducer } from './article'
+import { UserState, userReducer } from './user'
 
 export type RootState = {
   user: UserState
   article: ArticleState
-  router: RouterState
 }
 
-const rootReducer = (history: History) =>
-  combineReducers({
-    user: userReducer,
-    article: articleReducer,
-    router: connectRouter(history)
-  })
+const rootReducer = combineReducers({
+  user: userReducer,
+  article: articleReducer
+})
 
 export default rootReducer

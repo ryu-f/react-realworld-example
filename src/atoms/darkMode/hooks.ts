@@ -1,6 +1,6 @@
-import { darkModeState } from './state'
 import { useCallback } from 'react'
 import { useSetRecoilState } from 'recoil'
+import { darkModeState } from './state'
 
 export const useDarkMode = () => {
   const toggleDarkMode = useSetRecoilState(darkModeState)

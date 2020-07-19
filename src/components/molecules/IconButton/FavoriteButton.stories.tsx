@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import { text, withKnobs } from '@storybook/addon-knobs'
 
-import { FavoriteButton } from './'
 import { action } from '@storybook/addon-actions'
+import { FavoriteButton } from './'
 
 export default {
   title: 'atoms|Button',

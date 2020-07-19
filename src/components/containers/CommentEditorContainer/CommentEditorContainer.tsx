@@ -1,8 +1,8 @@
-import { CommentEditor } from '@/components/organisms/CommentEditor'
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { CommentEditor } from '@/components/organisms/CommentEditor'
 import { RootState } from '@/store/rootReducer'
 import { articleOperations } from '@/store/article'
-import { useSelector } from 'react-redux'
 
 type FormData = {
   comment: string

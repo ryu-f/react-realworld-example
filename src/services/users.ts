@@ -1,6 +1,5 @@
-import { Error, UserResponse } from '@/types/domain'
-
 import { API } from './API'
+import { Error, UserResponse } from '@/types/domain'
 
 type LoginRequest = {
   email: string

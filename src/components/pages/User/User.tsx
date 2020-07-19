@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import { media, vw } from '@/styles/Mixin'
 import { useHistory, useParams } from 'react-router-dom'
+import styled from 'styled-components'
+import { media, vw } from '@/styles/Mixin'
 
 import { ArticleListContainer } from '@/components/containers/ArticleListContainer'
-import { PaginationContainer } from '@/components/containers/PaginationContainer'
+import { Pagination } from '@/components/organisms/Pagination'
 import { ProfileDetailContainer } from '@/components/containers/ProfileDetailContainer'
 import { articleOperations } from '@/store/article'
-import styled from 'styled-components'
 
 export const User: React.FC = () => {
   const { name } = useParams()
@@ -23,7 +23,7 @@ export const User: React.FC = () => {
       <LayoutArticle>
         <ArticleListContainer />
         <LayoutPagination>
-          <PaginationContainer />
+          <Pagination previousLabel="<" nextLabel=">" />
         </LayoutPagination>
       </LayoutArticle>
     </Wrapper>

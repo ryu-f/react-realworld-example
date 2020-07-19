@@ -1,8 +1,8 @@
-import { API } from '@/services/API'
-import { authenticate } from '../actions'
-import { isError } from '@/services/isError'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import { authenticate } from '../actions'
+import { API } from '@/services/API'
+import { isError } from '@/services/isError'
 import { useLoading } from '@/atoms/loading'
 import { usersAPI } from '@/services/users'
 

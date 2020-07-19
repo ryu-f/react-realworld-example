@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
 
+import { useCallback } from 'react'
+import { getArticles } from '../actions'
 import { RootState } from '@/store/rootReducer'
 import { articlesAPI } from '@/services/articles'
-import { getArticles } from '../actions'
 import { isError } from '@/services/isError'
-import { useCallback } from 'react'
 
 type Request = {
   nextPage?: number

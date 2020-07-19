@@ -4,7 +4,7 @@ import { RenderOptions, RenderResult, render } from '@testing-library/react'
 
 import { MemoryRouter } from 'react-router'
 import { ThemeProvider } from 'styled-components'
-import { lightTheme } from '@/styles/Theme'
+import { lightTheme } from '../../src/styles/Theme'
 
 const Providers: React.FC = ({ children }) => (
   <ThemeProvider theme={lightTheme}>

@@ -1,6 +1,5 @@
-import { Error, TagsResponse } from '@/types/domain'
-
 import { API } from './API'
+import { Error, TagsResponse } from '@/types/domain'
 
 /**
  * Tags

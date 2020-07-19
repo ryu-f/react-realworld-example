@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { CheckBox } from './'
 import { action } from '@storybook/addon-actions'
+import { CheckBox } from './'
 
 export default {
   title: 'atoms|CheckBox',

@@ -1,8 +1,8 @@
 import * as React from 'react'
 
+import { useSelector } from 'react-redux'
 import { ProfileEditor } from '@/components/organisms/ProfileEditor'
 import { RootState } from '@/store/rootReducer'
-import { useSelector } from 'react-redux'
 import { userOperations } from '@/store/user'
 
 type FormData = {

@@ -1,11 +1,11 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
 import { Comment as CommentType } from '@/types/domain'
 import { Image } from '@/components/atoms/Image'
-import styled from 'styled-components'
 
 type Props = {
   comment: CommentType

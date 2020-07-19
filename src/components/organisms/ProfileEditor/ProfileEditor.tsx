@@ -1,12 +1,12 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
+import { useForm } from 'react-hook-form'
 import { BasicButton } from '@/components/atoms/Button'
 import { BasicText } from '@/components/atoms/Text'
 import { InputText } from '@/components/atoms/InputText'
 import { TextArea } from '@/components/atoms/TextArea'
 import { media } from '@/styles/Mixin'
-import styled from 'styled-components'
-import { useForm } from 'react-hook-form'
 
 type Props = {
   email: string

@@ -1,9 +1,9 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { ArticleEditorContainer } from '@/components/containers/ArticleEditorContainer'
-import styled from 'styled-components'
 
 export const Editor: React.FC = () => {
   return (

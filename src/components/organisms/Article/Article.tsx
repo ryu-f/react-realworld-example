@@ -1,15 +1,15 @@
 import * as React from 'react'
 
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
 import { Article as ArticleType } from '@/types/domain'
 import { FavoriteButton } from '@/components/molecules/IconButton'
 import { Image } from '@/components/atoms/Image'
-import { Link } from 'react-router-dom'
 import { LinkButton } from '@/components/atoms/Button'
 import { Tag } from '@/components/atoms/Tag'
-import styled from 'styled-components'
 import { useReadingTime } from '@/shared/hooks/useReadingTime'
 
 type Props = {
@@ -55,12 +55,7 @@ export const Article: React.FC<Props> = props => {
           <Tags />
           <UserDateArea>
             <BasicText size={14}>by&ensp;</BasicText>
-            <UserText
-              to={`/user/${author.username}`}
-              size={16}
-              textcolor="gray"
-              onClick={onUserClick}
-            >
+            <UserText to={`/user/${author.username}`} size={16} textcolor="gray">
               {author.username}
             </UserText>
             <BasicText size={16} textcolor="gray">

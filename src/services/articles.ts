@@ -1,3 +1,4 @@
+import { API } from './API'
 import {
   Error,
   MultipleArticlesResponse,
@@ -5,8 +6,6 @@ import {
   RequestNumber,
   SingleArticleResponse
 } from '@/types/domain'
-
-import { API } from './API'
 
 type GetFeedRequest = RequestNumber
 

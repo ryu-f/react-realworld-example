@@ -24,7 +24,8 @@
     "outDir": "./dist",
     "paths": {
       "@/*": ["src/*"],
-      "@": ["src"]
+      "@": ["src"],
+      "testing-library-utils": ["./tests/unit/testing-library-utils"]
     }
   },
   "include": ["src", "src/**/d.ts"],

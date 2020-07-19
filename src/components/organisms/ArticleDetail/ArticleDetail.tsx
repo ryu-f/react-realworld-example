@@ -1,12 +1,12 @@
+import { Link } from 'react-router-dom'
+import React from 'react'
+import styled from 'styled-components'
 import { BasicText, LinkText } from '@/components/atoms/Text'
 import { media, vw } from '@/styles/Mixin'
 
 import { Article } from '@/types/domain'
 import { Image } from '@/components/atoms/Image'
-import { Link } from 'react-router-dom'
-import React from 'react'
 import { Tag } from '@/components/atoms/Tag'
-import styled from 'styled-components'
 
 type Props = {
   article: Article
@@ -75,7 +75,7 @@ const HeroView = styled.div`
   @media (${media.desktop}) {
     padding: 40px 20px;
   }
-j
+
   @media (${media.mobile}) {
     padding: ${vw(80)} ${vw(40)};
   }

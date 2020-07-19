@@ -1,12 +1,19 @@
 import * as React from 'react'
 
-import { render, screen } from '@/shared/test/util'
-
 import { Tag } from './'
+import { render, screen } from 'testing-library-utils'
+
+const targetText = 'test'
+
+function setup() {
+  const utils = render(<Tag size="BASE">{targetText}</Tag>)
+
+  return { ...utils }
+}
 
 describe('Tag', () => {
-  test('チルドレンに渡されたテキストが表示されているか', () => {
-    render(<Tag size="BASE">Test</Tag>)
-    expect(screen.getByText('Test'))
+  test('チルドレンに渡されたテキストが表示される', () => {
+    setup()
+    expect(screen.getByText(targetText))
   })
 })

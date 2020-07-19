@@ -2,9 +2,9 @@ import * as React from 'react'
 
 import { select, withKnobs } from '@storybook/addon-knobs'
 
-import { SvgIcons } from './'
-import { icons } from './_constance'
 import styled from 'styled-components'
+import { icons } from './_constance'
+import { SvgIcons } from './'
 
 export default {
   title: 'atoms|SvgIcons',

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { Route, RouteProps, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation, RouteProps } from 'react-router-dom'
 
 import { Article } from '@/components/pages/Article'
 import { EditorRoute } from '@/components/pages/Editor'
@@ -11,7 +11,6 @@ import { RegisterRoute } from '@/components/pages/Register'
 import { SettingsRoute } from '@/components/pages/Settings'
 import { Top } from '@/components/pages/Top'
 import { User } from '@/components/pages/User'
-import { useLocation } from 'react-router-dom'
 
 export const Routes: React.FC = () => {
   const location = useLocation()

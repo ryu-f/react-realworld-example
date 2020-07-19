@@ -1,10 +1,10 @@
 import * as React from 'react'
 
+import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { LinkText } from '@/components/atoms/Text'
 import { RegistrationFormContainer } from '@/components/containers/RegistrationFormContainer'
-import styled from 'styled-components'
 
 export const Register: React.FC = () => {
   return (

@@ -1,13 +1,13 @@
 import * as React from 'react'
 
-import { fireEvent, render, screen } from '@/shared/test/util'
-
-import { Article } from './'
 import { Router } from 'react-router'
 import { createMemoryHistory } from 'history'
+import userEvent from '@testing-library/user-event'
+import { Article } from './'
+import { render, screen } from 'testing-library-utils'
 
-describe('Article', () => {
-  const article = {
+const props = {
+  article: {
     title: 'test',
     slug: 'test-slug',
     body: 'test-body',
@@ -24,31 +24,34 @@ describe('Article', () => {
     favorited: false,
     favoritesCount: 0
   }
+}
 
-  test('READボタンクリックで記事詳細に遷移するか', () => {
-    const history = createMemoryHistory()
-    render(
-      <Router history={history}>
-        <Article article={article} />
-      </Router>
-    )
-    fireEvent.click(screen.getByText('READ'))
-    expect(history.location.pathname).toBe(`/article/${article.slug}`)
+function setup() {
+  const history = createMemoryHistory()
+  const utils = render(
+    <Router history={history}>
+      <Article {...props} />
+    </Router>
+  )
+
+  return { ...utils, history }
+}
+
+describe('Article', () => {
+  test('READボタンクリックで記事詳細に遷移する', () => {
+    const { history } = setup()
+    userEvent.click(screen.getByText('READ'))
+    expect(history.location.pathname).toBe(`/article/${props.article.slug}`)
   })
 
-  test('ユーザー名クリックでユーザーページに遷移するか', () => {
-    const history = createMemoryHistory()
-    render(
-      <Router history={history}>
-        <Article article={article} />
-      </Router>
-    )
-    fireEvent.click(screen.getByText(article.author.username))
-    expect(history.location.pathname).toBe(`/user/${article.author.username}`)
+  test('ユーザー名クリックでユーザーページに遷移する', () => {
+    const { history } = setup()
+    userEvent.click(screen.getByText(props.article.author.username))
+    expect(history.location.pathname).toBe(`/user/${props.article.author.username}`)
   })
 
   test('snapshot', () => {
-    const { asFragment } = render(<Article article={article} />)
+    const { asFragment } = setup()
     expect(asFragment()).toMatchSnapshot()
   })
 })
