@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { media, vw } from '@/styles/Mixin'
 
 import { ArticleListContainer } from '@/components/containers/ArticleListContainer'
-import { PaginationContainer } from '@/components/containers/PaginationContainer'
+import { Pagination } from '@/components/organisms/Pagination'
 import { TagListContainer } from '@/components/containers/TagListContainer'
 import { articleOperations } from '@/store/article'
 
@@ -20,7 +20,7 @@ export const Top: React.FC = () => {
         <LayoutArticle>
           <ArticleListContainer />
           <LayoutPagination>
-            <PaginationContainer />
+            <Pagination previousLabel="<" nextLabel=">" />
           </LayoutPagination>
         </LayoutArticle>
         <LayoutTagList>
