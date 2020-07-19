@@ -21,15 +21,9 @@ module.exports = {
         configureJSX: true
       }
     },
-    '@storybook/addon-actions',
-    '@storybook/addon-links',
-    '@storybook/addon-events',
-    '@storybook/addon-notes',
-    '@storybook/addon-options',
-    '@storybook/addon-knobs',
-    '@storybook/addon-backgrounds',
-    '@storybook/addon-a11y',
-    '@storybook/addon-jest',
-    '@storybook/addon-storysource'
+    '@storybook/addon-actions/register',
+    '@storybook/addon-viewport/register',
+    '@storybook/addon-backgrounds/register',
+    '@storybook/addon-storysource/register'
   ]
 }
