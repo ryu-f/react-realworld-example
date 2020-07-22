@@ -7,14 +7,7 @@ module.exports = {
   ],
   plugins: ['stylelint-order'],
   rules: {
-    'unit-no-unknown': null,
-    'selector-type-no-unknown': [
-      true,
-      {
-        ignoreTypes: ['/-styled-mixin/']
-      }
-    ],
-    'order/order': [['custom-properties', 'declarations'], { disableFix: true }],
+    'order/order': [['custom-properties', 'declarations']],
     'value-keyword-case': null
   }
 }
