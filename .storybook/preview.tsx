@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import { withScreenshot } from 'storycap'
 import { addParameters, addDecorator } from '@storybook/react'
 import { GlobalStyle } from '../src/styles'
 import { lightTheme } from '../src/styles/Theme'
@@ -15,6 +16,8 @@ addDecorator(story => (
     </ThemeProvider>
   </Provider>
 ))
+
+addDecorator(withScreenshot())
 
 addParameters({ viewport: { viewports: INITIAL_VIEWPORTS, defaultViewport: 'iphone6' } })
 
