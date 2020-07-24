@@ -8,6 +8,7 @@ module.exports = {
   plugins: ['stylelint-order'],
   rules: {
     'order/order': [['custom-properties', 'declarations']],
-    'value-keyword-case': null
+    'value-keyword-case': null,
+    'function-name-case': null
   }
 }
