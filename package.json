@@ -12,7 +12,7 @@
     "lint:css": "stylelint \"**/*.ts{,x}\" --fix",
     "fmt": "prettier --loglevel warn --write \"**/*.{js,ts,tsx}\"",
     "test": "jest",
-    "test:coverage": "jest --runInBand --coverage && codecov",
+    "test:coverage": "jest --ci --runInBand --coverage && codecov",
     "test:watch": "jest --watch",
     "tsc": "tsc --noEmit",
     "e2e": "cypress open",
