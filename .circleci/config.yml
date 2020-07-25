@@ -1,12 +1,16 @@
 version: 2.1
 executors:
-  my-executor:
+  node-executor:
     docker:
       - image: circleci/node:12.13.0
+  regviz-executor:
+    docker:
+      - image: regviz/node-xcb
 
 jobs:
   setup:
-    executor: my-executor
+    executor: node-executor
+    working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
@@ -16,28 +20,24 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
              - node_modules
-      - persist_to_workspace:
-          root: .
-          paths:
-            - ./*
 
   unit:
-    executor: my-executor
+    executor: node-executor
+    working_directory: ~/repo
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
       - restore_cache:
           key: yarn-packages-{{ checksum "yarn.lock" }}
       - run: npm run test:coverage
 
-  build:
-    executor: my-executor
+  regression:
+    executor: regviz-executor
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
       - restore_cache:
           key: yarn-packages-{{ checksum "yarn.lock" }}
-      - run: npm run build
+      - run: yarn storycap
+      - run: yarn regression
 
 workflows:
   app:
@@ -46,7 +46,7 @@ workflows:
       - unit:
           requires:
             - setup
-      - build:
+      - regression:
           requires:
             - setup
           filters:
