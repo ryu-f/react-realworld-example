@@ -1,0 +1,19 @@
+{
+  "core": {
+    "workingDir": ".reg",
+    "actualDir": "__screenshots__",
+    "thresholdRate": 0,
+    "ximgdiff": {
+      "invocationType": "client"
+    }
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": true,
+    "reg-notify-github-plugin": {
+      "clientId": "MzIxMzczNjQy1y9KTUwu0QWSOeX5RTkpuqkVibkFOan6hgbmFhbGlqb6RZWlumkA"
+    },
+    "reg-publish-s3-plugin": {
+      "bucketName": "ryu-f-realworld-static"
+    }
+  }
+}
