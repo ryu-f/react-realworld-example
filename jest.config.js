@@ -8,7 +8,7 @@ module.exports = {
   moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
   collectCoverageFrom: ['src/**/*.(ts|tsx)'],
   coveragePathIgnorePatterns: ['.stories.tsx', '.d.ts'],
-  coverageReporters: ['html'],
+  coverageReporters: ['lcov'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   preset: 'ts-jest',
   globals: {
