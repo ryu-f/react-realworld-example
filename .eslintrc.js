@@ -22,19 +22,20 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+    'prettier/react',
+    'prettier/@typescript-eslint'
   ],
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jest', 'jest-dom'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'jest', 'jest-dom'],
   env: {
-    node: true,
-    jest: true,
-    browser: true
+    browser: true,
+    jest: true
   },
   rules: {
     complexity: ['warn', 10],
@@ -57,7 +58,7 @@ module.exports = {
     'react/display-name': 'off',
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'import/order': ['error'],
+    'import/order': 'error',
     'import/named': 'off',
     'jest/no-disabled-tests': IS_PRODUCTION ? 'error' : 'off'
   },
