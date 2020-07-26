@@ -27,13 +27,16 @@ step_save_cache: &save_cache
     key: v1-dependencies-{{ checksum "yarn.lock" }}-1
 
 jobs:
-  unit:
+  test:
     <<: *defaults
     steps:
       - checkout
       - *restore_cache
       - *install_deps
       - *save_cache
+      - run: yarn lint:ts
+      - run: yarn lint:css
+      - run: yarn tsc
       - run: yarn test:coverage
 
   regression:
@@ -45,6 +48,18 @@ jobs:
       - *save_cache
       - run: yarn storycap
       - run: yarn regression
+
+  storybook:
+    <<: *regviz
+    steps:
+      - checkout
+      - *restore_cache
+      - *install_deps
+      - *save_cache
+      - run: yarn storybook:build
+      - store_artifacts:
+        path: ./storybook-static
+        destination: ~/storybook
 
 workflows:
   version: 2.1
