@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 defaults: &defaults
   docker:
@@ -62,7 +62,7 @@ jobs:
 
 
 workflows:
-  version: 2.1
+  version: 2
   ci:
     jobs:
       - test
