@@ -1,24 +1,30 @@
 import * as React from 'react'
 
-import { text, withKnobs } from '@storybook/addon-knobs'
-
 import { action } from '@storybook/addon-actions'
 import { AnchorButton, BasicButton } from './'
 
 export default {
   title: 'atoms|Button',
-  component: BasicButton,
-  decorators: [withKnobs]
+  component: BasicButton
 }
 
-export const Basic = () => (
-  <BasicButton onClick={action('onClick')} size="BASE" layout="BASIC">
-    {text('Label', 'Basic')}
-  </BasicButton>
-)
+type BasicButtonProps = React.ComponentProps<typeof BasicButton>
 
-export const Anchor = () => (
-  <AnchorButton href="#" onClick={action('onClick')} size="BASE" layout="BASIC">
-    {text('Label', 'Anchor')}
-  </AnchorButton>
-)
+export const Basic = (args: BasicButtonProps) => <BasicButton {...args}>Basic</BasicButton>
+
+Basic.args = {
+  size: 'BASE',
+  layout: 'BASIC',
+  onClick: action('onClick')
+}
+
+type AnchorButtonProps = React.ComponentProps<typeof AnchorButton>
+
+export const Anchor = (args: AnchorButtonProps) => <AnchorButton {...args}>Anchor</AnchorButton>
+
+Anchor.args = {
+  href: '#',
+  size: 'BASE',
+  layout: 'BASIC',
+  onClick: action('onClick')
+}

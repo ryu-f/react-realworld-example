@@ -1,17 +1,14 @@
 import * as React from 'react'
 
-import { number, text, withKnobs } from '@storybook/addon-knobs'
-
 import { BasicText } from './'
 
 export default {
   title: 'atoms|Text',
-  component: Text,
-  decorators: [withKnobs]
+  component: Text
 }
 
-export const Basic = () => {
-  const size = number('size', 16)
+type Props = React.ComponentProps<typeof BasicText>
 
-  return <BasicText size={size}>{text('Label', 'Basic')}</BasicText>
+export const Basic = (args: Props) => {
+  return <BasicText {...args}>Basic</BasicText>
 }

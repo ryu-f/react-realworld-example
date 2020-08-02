@@ -1,25 +1,26 @@
 import * as React from 'react'
 
-import { select, withKnobs } from '@storybook/addon-knobs'
-
 import styled from 'styled-components'
 import { icons } from './_constance'
 import { SvgIcons } from './'
 
 export default {
   title: 'atoms|SvgIcons',
-  component: SvgIcons,
-  decorators: [withKnobs]
+  component: SvgIcons
 }
 
-export const Basic = () => {
-  const id = select('id', icons, 'github') as 'github'
+type Props = React.ComponentProps<typeof SvgIcons>
 
+export const Basic = (args: Props) => {
   return (
     <Wrapper>
-      <SvgIcons id={id} />
+      <SvgIcons {...args} />
     </Wrapper>
   )
+}
+
+Basic.args = {
+  id: { control: { type: 'select', options: icons } }
 }
 
 const Wrapper = styled.div`

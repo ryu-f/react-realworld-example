@@ -15,16 +15,12 @@ module.exports = {
     return config
   },
   addons: [
-    {
-      name: '@storybook/addon-docs/preset',
-      options: {
-        configureJSX: true
-      }
-    },
     '@storybook/addon-actions/register',
     '@storybook/addon-viewport/register',
     '@storybook/addon-backgrounds/register',
     '@storybook/addon-storysource/register',
+    '@storybook/addon-docs',
+    '@storybook/addon-controls',
     'storycap/register'
   ]
 }
