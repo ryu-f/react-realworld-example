@@ -48,7 +48,7 @@ jobs:
       - *save_cache
       - run: yarn storybook:build
       - store_artifacts:
-        path: ./storybook-static
+          path: ./storybook-static
 
   regression:
     <<: *regviz
