@@ -65,7 +65,7 @@ workflows:
   version: 2.1
   ci:
     jobs:
-      - unit
+      - test
       - storybook
       - regression:
           filters:
