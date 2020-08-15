@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+// eslint-disable-next-line import/named
 import { Route, Switch, useLocation, RouteProps } from 'react-router-dom'
 
 import { Article } from '@/components/pages/Article'
