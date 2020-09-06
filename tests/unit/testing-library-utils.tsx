@@ -1,9 +1,10 @@
 /* eslint-disable import/export */
 import * as React from 'react'
 
+// eslint-disable-next-line import/named
 import { RenderOptions, RenderResult, render } from '@testing-library/react'
 
-import { MemoryRouter } from 'react-router'
+import { MemoryRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme } from '../../src/styles/Theme'
 

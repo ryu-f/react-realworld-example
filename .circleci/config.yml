@@ -37,7 +37,7 @@ jobs:
       - run: yarn lint:ts
       - run: yarn lint:css
       - run: yarn tsc
-      - run: yarn test:coverage
+      - run: yarn test:ci
 
   storybook:
     <<: *defaults

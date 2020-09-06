@@ -1,3 +1,5 @@
+'use strict'
+
 const baseConfig = {
   presets: [
     [
@@ -13,29 +15,17 @@ const baseConfig = {
     ],
     '@babel/preset-react',
     '@babel/preset-typescript'
-  ],
-  plugins: ['@babel/plugin-syntax-dynamic-import', 'babel-plugin-styled-components']
-}
-
-const productionConfig = {
-  ...baseConfig,
-  plugins: [
-    '@babel/plugin-syntax-dynamic-import',
-    [
-      'babel-plugin-styled-components',
-      {
-        ssr: false,
-        fileName: false,
-        displayName: false,
-        pure: true
-      }
-    ]
   ]
 }
 
 module.exports = {
   ...baseConfig,
   env: {
-    production: { ...productionConfig }
+    development: {
+      plugins: ['@babel/plugin-syntax-dynamic-import', 'babel-plugin-styled-components']
+    },
+    production: {
+      plugins: ['@babel/plugin-syntax-dynamic-import']
+    }
   }
 }

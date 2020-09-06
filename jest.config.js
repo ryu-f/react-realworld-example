@@ -1,7 +1,9 @@
+'use strict'
+
 module.exports = {
   testMatch: ['<rootDir>/src/**/*.(spec|test).(ts|tsx)'],
   transform: {
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.[j|t]sx?$': 'babel-jest'
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
@@ -10,11 +12,5 @@ module.exports = {
   coveragePathIgnorePatterns: ['.stories.tsx', '.d.ts'],
   coverageReporters: ['lcov'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  preset: 'ts-jest',
-  globals: {
-    'ts-jest': {
-      tsConfig: 'tsconfig.json'
-    }
-  },
   moduleDirectories: ['node_modules', 'tests/unit']
 }

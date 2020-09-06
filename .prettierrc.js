@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   useTabs: false,
   printWidth: 100,

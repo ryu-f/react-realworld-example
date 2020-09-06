@@ -65,10 +65,5 @@ module.exports = {
     'import/default': 'error',
     'import/export': 'error',
     'jest/no-disabled-tests': IS_PRODUCTION ? 'error' : 'off'
-  },
-  globals: {
-    page: true,
-    browser: true,
-    context: true
   }
 }
