@@ -20,7 +20,7 @@
     "typecheck": "tsc --noEmit",
     "storybook": "start-storybook -p 6006 -s ./src/static",
     "storybook:build": "build-storybook",
-    "storycap": "rm -rf ./__screenshots__ && storycap --serverCmd \"yarn storybook --ci\" http://localhost:6006 -f \"true\" --serverTimeout \"200000\"",
+    "storycap": "rm -rf ./__screenshots__ && storycap --serverCmd \"npm run storybook --ci\" http://localhost:6006 -f \"true\" --serverTimeout \"200000\"",
     "regression": "reg-suit run",
     "copy:static": "cpx \"./src/static/**/*\" \"./dist\"",
     "del:dist": "rm -rf \"./dist\"",
@@ -37,8 +37,7 @@
   "license": "ISC",
   "homepage": "https://github.com/ryu-f/react-realworld-example#readme",
   "engines": {
-    "node": "12.x",
-    "yarn": "1.*.*"
+    "node": "12.x"
   },
   "dependencies": {
     "@babel/core": "^7.7.5",
