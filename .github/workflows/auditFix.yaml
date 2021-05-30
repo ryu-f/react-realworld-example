@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo'
 on:
   schedule:
-    - cron: '30 0 * * *'
+    - cron: '55 0 * * *'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         run: npm audit fix
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v1.7.0
+        uses: peter-evans/create-pull-request@v3
         with:
           title: Security Update into master.
           labels: Auto PR
