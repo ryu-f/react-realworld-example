@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo'
 on:
   schedule:
-    - cron: '20 9 * * *'
+    - cron: '30 0 * * *'
 
 jobs:
   build:
