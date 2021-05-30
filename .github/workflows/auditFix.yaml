@@ -1,9 +1,9 @@
 name: auditFix
 env:
-  TZ: Asia/Tokyo
+  TZ: 'Asia/Tokyo'
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '20 9 * * *'
 
 jobs:
   build:
@@ -36,4 +36,4 @@ jobs:
           title: Security Update into master.
           labels: Auto PR
           branch: securityFix
-          token: ${{ secrets.GITHUB }}
+          token: ${{ secrets.GITHUB_TOKEN }}
