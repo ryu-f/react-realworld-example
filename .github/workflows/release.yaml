@@ -19,6 +19,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           title: ${{ steps.vars.outputs.pr_title }}
-          main: master
+          base: master
           branch: ${{ steps.vars.outputs.branch }}
+          delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
