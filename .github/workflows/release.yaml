@@ -21,5 +21,4 @@ jobs:
           title: ${{ steps.vars.outputs.pr_title }}
           main: master
           branch: ${{ steps.vars.outputs.branch }}
-          delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
