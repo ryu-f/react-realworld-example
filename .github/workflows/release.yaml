@@ -13,13 +13,13 @@ jobs:
       - name: Set output variables
         id: vars
         run: |
+          echo "::set-output name=pr_title::Release $(date +%d-%m-%Y)"
           echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
       - name: Create Pull Request
-        id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          title: title
-          branch: master
-          base: ${{ steps.vars.outputs.branch }}
+          title: ${{ steps.vars.outputs.pr_title }}
+          main: master
+          branch: ${{ steps.vars.outputs.branch }}
+          delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
-
