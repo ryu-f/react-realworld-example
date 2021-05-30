@@ -10,12 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set output variables
+      id: vars
+      run: |
+        echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           title: title
           base: master
-          branch: release-4
+          branch: ${{ steps.vars.outputs.branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
