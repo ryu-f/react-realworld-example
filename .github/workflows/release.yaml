@@ -1,0 +1,15 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - release-*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${GITHUB_REF#refs/heads/}"
+      - run: echo "${GITHUB_REF_CONTEXT#refs/heads/}"
+    env:
+      GITHUB_REF_CONTEXT: ${{ github.ref }}
