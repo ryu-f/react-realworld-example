@@ -9,4 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${GITHUB_REF#refs/heads/}"
+      - uses: actions/checkout@v2
+      - run: echo ""
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: title
+          branch: ${GITHUB_REF#refs/heads/}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
