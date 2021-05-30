@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set output variables
-      id: vars
-      run: |
-        echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+        id: vars
+        run: |
+          echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
