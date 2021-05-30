@@ -17,6 +17,6 @@ jobs:
         with:
           title: title
           base: master
-          branch: ${GITHUB_REF#refs/heads/}
+          branch: '${GITHUB_REF#refs/heads/}'
           token: ${{ secrets.GITHUB_TOKEN }}
 
