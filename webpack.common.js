@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 /** @type import('webpack').Configuration */
@@ -34,7 +33,6 @@ module.exports = {
   },
 
   plugins: [
-    new ProgressBarPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
